@@ -1,8 +1,7 @@
 {
   "name": "test_theme",
-  "component": true,
-  "about_url": "https://github.com/paviliondev/discourse-dropdown-header",
-  "license_url": "https://github.com/paviliondev/discourse-dropdown-header/blob/main/LICENSE.txt",
+  "about_url": null,
+  "license_url": null,
   "theme_version": "1.0",
   "assets": {},
   "modifiers": {

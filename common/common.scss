@@ -2,18 +2,19 @@
 @import 'buttons';
 
 // .d-header {
-//   .floating-search-input {
-//     max-width: 30rem;
-//     // adjust to align with the main content panel
-//     margin-left: 110px;
+.floating-search-input {
+  max-width: 30rem;
+  // adjust to align with the main content panel
+  margin-left: 110px;
 
-//     .search-banner-inner.wrap .search-menu {
-//       .search-input {
-//         position: relative;
-//         border: 1px solid #E0E0E0;
-//       }
-//     }
-//   }
+  .search-banner-inner.wrap .search-menu {
+    .search-input {
+      position: relative;
+      border: 1px solid #E0E0E0;
+    }
+  }
+}
+
 // }
 
 .custom-header-links {

@@ -1,6 +1,21 @@
 @import 'mixins';
 @import 'buttons';
 
+.d-header {
+  .floating-search-input {
+    max-width: 30rem;
+    // adjust to align with the main content panel
+    margin-left: 110px;
+
+    .search-banner-inner.wrap .search-menu {
+      .search-input {
+        position: relative;
+        border: 1px solid #E0E0E0;
+      }
+    }
+  }
+}
+
 .custom-header-links {
   .top-level-links {
     list-style: none;
@@ -16,6 +31,7 @@
 
       &-icon {
         margin-right: 0.5rem;
+
         img {
           width: 1.5em;
           height: 1.5em;
@@ -24,6 +40,7 @@
 
       &-caret {
         margin-left: 0.5rem;
+
         svg {
           transition: transform 0.25s ease;
         }

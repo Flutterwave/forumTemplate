@@ -4,6 +4,9 @@
   "license_url": null,
   "theme_version": "1.0",
   "assets": {},
+  "components": [
+    "https://github.com/discourse/discourse-header-search.git"
+  ],
   "modifiers": {
     "svg_icons": [
       "caret-square-down"

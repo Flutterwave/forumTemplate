@@ -9,6 +9,10 @@
 
   .search-banner-inner.wrap .search-menu {
     .search-input {
+      font-family: 'Moderat';
+      font-style: normal;
+      font-weight: 500;
+      color: #BDBDBD;
       position: relative;
       border: 1px solid #E0E0E0;
     }
@@ -27,6 +31,8 @@
 
     .custom-header-link {
       font-family: 'Moderat';
+      font-style: normal;
+      font-weight: 500;
       color: #2A3362;
       padding-block: 1rem;
       cursor: default;

@@ -3,7 +3,11 @@
   "about_url": null,
   "license_url": null,
   "theme_version": "1.0",
-  "assets": {},
+  "assets": {
+    "Moderat-Regular": "assets/fonts/Moderat-Regular.woff",
+    "Moderat-Medium": "assets/fonts/Moderat-Medium.woff",
+    "Moderat-Bold": "assets/fonts/Moderat-Bold.woff"
+  },
   "components": [
     "https://github.com/discourse/discourse-header-search.git"
   ],

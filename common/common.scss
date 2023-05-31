@@ -273,7 +273,7 @@ $tertiary: #ffffff;
           border: 1px solid #E0E0E0;
 
           .d-icon .d-icon-search {
-            background-image: url($search-icon);
+            content: url($search-icon);
           }
         }
       }

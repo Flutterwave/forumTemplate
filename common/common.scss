@@ -253,23 +253,21 @@ $tertiary: #ffffff;
 // CJ's Common styles END
 
 .d-header {
-  .wrap{
-    margin: 0;
-  
+  margin:0;
+  padding:0;
 
-    .floating-search-input {
-      max-width: 30rem;
-      // margin-left: 110px;
+  .floating-search-input {
+    max-width: 30rem;
+    margin-left: 110px;
 
-      .search-banner-inner.wrap .search-menu {
-        .search-input {
-          font-family: 'Moderat';
-          font-style: normal;
-          font-weight: 500;
-          color: #BDBDBD;
-          position: relative;
-          border: 1px solid #E0E0E0;
-        }
+    .search-banner-inner.wrap .search-menu {
+      .search-input {
+        font-family: 'Moderat';
+        font-style: normal;
+        font-weight: 500;
+        color: #BDBDBD;
+        position: relative;
+        border: 1px solid #E0E0E0;
       }
     }
   }

@@ -6,12 +6,17 @@
   "assets": {
     "Moderat-Regular": "assets/Moderat-Regular.woff",
     "Moderat-Medium": "assets/Moderat-Medium.woff",
-    "Moderat-Bold": "assets/Moderat-Bold.woff"
+    "Moderat-Bold": "assets/Moderat-Bold.woff",
+    "eye-icon": "assets/icons/eye-icon.svg",
+    "message-icon": "assets/icons/message-icon.svg",
+    "more-options-icon": "assets/icons/more-options-icon.svg",
+    "time-icon": "assets/icons/time-icon.svg"
   },
   "components": [
     "https://github.com/discourse/discourse-header-search.git"
   ],
   "modifiers": {
+    "serialize_topic_excerpts": true,
     "svg_icons": [
       "caret-square-down"
     ]

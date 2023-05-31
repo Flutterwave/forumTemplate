@@ -19,6 +19,239 @@
   font-weight: 700;
 }
 
+// CJ's Common styles START
+
+$black10: #f2f2f2;
+$black20: #e0e0e0;
+$black40: #828282;
+$black60: #4f4f4f;
+$black80: #333333;
+$primary: #ff5805;
+$primary-light: #fff6e9;
+$secondary: #2a3362;
+$tertiary: #ffffff;
+
+@mixin font1 {
+  font-size: 0.93rem;// 16px
+  line-height: 1.2rem;// 19.2px
+  font-weight: 500;
+}
+@mixin font2 {
+  font-size: 0.935rem;// 14px
+  line-height: 1.05rem;// 16.8px
+  font-weight: 500;
+}
+@mixin font3 {
+  font-size: 0.8rem;// 12px
+  line-height: 0.9rem;// 14.4px
+  font-weight: 400;
+}
+@mixin font4 {
+  font-size: 1.2rem;// 18px
+  line-height: 1.35rem;// 21.6px
+  font-weight: 700;
+}
+@mixin font5 {
+  font-size: 0.935rem;// 14px
+  line-height: 1.5625rem;// 25px
+  font-weight: 400;
+}
+@mixin font6 {
+  font-size: 0.8rem;// 12px
+  line-height: 0.9rem;// 14.4px
+  font-weight: 500;
+}
+@mixin font7 {
+  font-size: 0.935rem;// 14px
+  line-height: 1.05rem;// 16.8px
+  font-weight: 400;
+}
+
+* {
+  font-family: 'Moderat', sans-serif;
+  box-sizing: border-box;
+}
+
+#main-outlet-wrapper.wrap {
+  max-width: 100%;
+  margin: 0;
+  padding: 0 30vmin;
+}
+
+.category-breadcrumb, .topic-excerpt-more {
+  display: none;
+}
+
+.navigation-container {
+  .nav-pills {
+    @include font1;
+    gap: 0.875rem;
+
+    li {
+      margin: 0;
+
+      &.nav-item_categories, &.nav-item_styleguide {
+        display: none;
+      }
+
+      a {
+        padding: 0.5rem 1rem;
+        background-color: $black10;
+        color: $black60;
+        border-radius: 0.416875rem;
+      }
+
+      &.active a {
+        font-weight: 700;
+        background-color: $primary-light;
+        color: $primary;
+      }
+    }
+}
+
+  .btn-default {
+    @include font2;
+    padding: 0.75rem 1.25rem 0.75rem 1.5rem;
+    border-radius: 0.25rem;
+    background-color: $primary;
+    color: $tertiary;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+
+    svg {
+      margin: 0;
+      fill: $tertiary;
+    }
+  }
+}
+
+.topic-list-item, tbody, tr {
+  border: none;
+}
+
+.topic-list, .topic-list-body, .topic-list-item, .main-link {
+  display: flex;
+  flex-direction: column;
+}
+
+.topic-list-item {
+  .main-link {
+    margin: 0.75rem 0;
+    padding: 0 1.5rem;
+    gap: 1rem;
+    background-color: $tertiary;
+    border-radius: 0.3125rem;
+    border: 0.0625rem solid $black10;
+  }
+
+  .author-line {
+    display: flex;
+    justify-content: space-between;
+
+    .avatar {
+      width: 2rem;
+      height: 2rem;
+      border: none;
+    }
+
+    a {
+      display: flex;
+      gap: 0.5rem;
+
+      .name-and-date {
+        display: flex;
+        flex-direction: column;
+        gap: 0.125rem;
+
+        .full-name-tlist {
+          @include font2;
+          color: $black80;
+        }
+
+        .list-date {
+          @include font3;
+          color: $black40;
+        }
+      }
+    }
+  }
+
+  .topic-title-line {
+    a.title {
+      @include font4;
+      color: $secondary;
+      padding: 0;
+    }
+  }
+
+  .topic-excerpt-line {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    & * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .topic-excerpt {
+      @include font5;
+    }
+
+    .topic-image {
+      border-radius: 0.3125rem;
+      padding: 19.098301% 0;
+    }
+  }
+
+  .topic-list-item-extras {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .topic-list-item-tags {
+      .discourse-tags {
+        display: flex;
+        gap: 0.5rem;
+
+        .discourse-tag {
+          @include font6;
+          padding: 0.25rem 1rem;
+          border-radius: 0.25rem;
+          background-color: $black20;
+          color: $black80;
+          text-transform: capitalize;
+
+          &:after {
+            display: none;
+          }
+        }
+      }
+    }
+
+    .topic-list-item-info {
+      @include font7;
+      display: flex;
+      gap: 1rem;
+
+      a {
+        width: auto;
+        display: flex;
+        gap: 0.25rem;
+        align-items: center;
+
+        span {
+          color: $black40;
+        }
+      }
+    }
+  }
+}
+
+// CJ's Common styles END
+
 .d-header {
   .floating-search-input {
     max-width: 30rem;

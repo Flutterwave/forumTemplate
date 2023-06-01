@@ -3,38 +3,20 @@
 
 @font-face {
   font-family: 'Moderat';
-  src: url($Moderat-Thin) format("ttf");
-  font-weight: 100;
-}
-
-@font-face {
-  font-family: 'Moderat';
-  src: url($Moderat-Light) format("ttf");
-  font-weight: 200;
-}
-
-@font-face {
-  font-family: 'Moderat';
-  src: url($Moderat-Regular) format("ttf");
-  font-weight: 300;
-}
-
-@font-face {
-  font-family: 'Moderat';
-  src: url($Moderat-Medium) format("ttf");
+  src: url($Moderat-Regular) format("woff");
   font-weight: 400;
 }
 
 @font-face {
   font-family: 'Moderat';
-  src: url($Moderat-Bold) format("ttf");
-  font-weight: 700;
+  src: url($Moderat-Medium) format("woff");
+  font-weight: 500;
 }
 
 @font-face {
   font-family: 'Moderat';
-  src: url($Moderat-Black) format("ttf");
-  font-weight: 900;
+  src: url($Moderat-Bold) format("woff");
+  font-weight: 700;
 }
 
 // CJ's Common styles START
@@ -285,7 +267,7 @@ $tertiary: #ffffff;
         .search-input {
           font-family: 'Moderat';
           font-style: normal;
-          font-weight: 200;
+          font-weight: 400;
           color: #BDBDBD;
           position: relative;
           border: 1px solid #E0E0E0;        
@@ -293,6 +275,11 @@ $tertiary: #ffffff;
       }
     }
   }
+
+  .d-icon-search {
+    content: url(assets/icons/search.svg);
+  }
+
 
   .custom-header-links {
     .top-level-links {
@@ -305,7 +292,7 @@ $tertiary: #ffffff;
       .custom-header-link {
         font-family: 'Moderat';
         font-style: normal;
-        font-weight: 300;
+        font-weight: 500;
         color: #2A3362;
         padding-block: 1rem;
         cursor: default;

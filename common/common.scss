@@ -90,6 +90,7 @@ $tertiary: #ffffff;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    gap: 24px;
 
     .banner-item {
       flex-basis: calc(33.33% - 24px);

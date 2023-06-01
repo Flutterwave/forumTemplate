@@ -87,13 +87,15 @@ $tertiary: #ffffff;
   margin-bottom: 50px;
 
   .banner-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
+    display: flex;
+    flex-wrap: wrap;
     justify-items: center;
     justify-content: center;
 
     .banner-item {
+      flex-basis: calc(33.33% - 48px);
+      margin: 24px;
+
       .banner-image{
         margin: 0;
 
@@ -110,7 +112,7 @@ $tertiary: #ffffff;
           color: #000;
           text-decoration: none;
           border-radius: 10px;
-          transition: transform .2s;
+          transition: transform 0.3s ease-in-out;
         }
         .first-item{
           background-image: url($collections-payments);

@@ -113,7 +113,7 @@ $tertiary: #ffffff;
         .first-item{
           background-image: url($collections-payments);
           &:hover{
-            transform: scale(1.2);
+            transform: scale(1.02);
             transition-delay: 0s;
           }
         }
@@ -121,7 +121,7 @@ $tertiary: #ffffff;
         .second-item{
           background-image: url($card-payments);
           &:hover{
-            transform: scale(1.2);
+            transform: scale(1.02);
             transition-delay: 0s;
           }
         }
@@ -129,7 +129,7 @@ $tertiary: #ffffff;
         .third-item{
           background-image: url($sdks-plugins);
           &:hover{
-            transform: scale(1.2);
+            transform: scale(1.02);
             transition-delay: 0s;
           }
         }

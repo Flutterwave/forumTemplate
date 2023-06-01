@@ -202,7 +202,6 @@ html {
 
 .navigation-container {
   .nav-pills {
-    @include font1;
     gap: 0.875rem;
 
     li {
@@ -214,6 +213,7 @@ html {
       }
 
       a {
+        @include font1;
         padding: 0.5rem 1rem;
         background-color: $black10;
         color: $black60;

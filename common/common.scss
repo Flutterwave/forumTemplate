@@ -94,12 +94,12 @@ $tertiary: #ffffff;
     justify-content: center;
 
     .banner-item {
-
-      .banner-image-1 {
-        background: url();
-      }
-
       .banner-item-text-area {
+        img{
+          height: 170px;
+          width: 300px;
+        }
+        
         .banner-item-title {
           font-size: 18px;
           font-weight: 500;
@@ -112,11 +112,6 @@ $tertiary: #ffffff;
           font-weight: 400;
           color: $black40;
           line-height: 20px;
-        }
-
-        .banner-item-text-area img{
-          height: 170px;
-          width: 300px;
         }
       }
     }

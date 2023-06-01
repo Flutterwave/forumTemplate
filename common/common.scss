@@ -32,38 +32,44 @@ $secondary: #2a3362;
 $tertiary: #ffffff;
 
 @mixin font1 {
-  font-size: 0.93rem;// 16px
-  line-height: 1.2rem;// 19.2px
+  font-size: 0.93rem; // 16px
+  line-height: 1.2rem; // 19.2px
   font-weight: 500;
 }
+
 @mixin font2 {
-  font-size: 0.935rem;// 14px
-  line-height: 1.05rem;// 16.8px
+  font-size: 0.935rem; // 14px
+  line-height: 1.05rem; // 16.8px
   font-weight: 500;
 }
+
 @mixin font3 {
-  font-size: 0.8rem;// 12px
-  line-height: 0.9rem;// 14.4px
+  font-size: 0.8rem; // 12px
+  line-height: 0.9rem; // 14.4px
   font-weight: 400;
 }
+
 @mixin font4 {
-  font-size: 1.2rem;// 18px
-  line-height: 1.35rem;// 21.6px
+  font-size: 1.2rem; // 18px
+  line-height: 1.35rem; // 21.6px
   font-weight: 700;
 }
+
 @mixin font5 {
-  font-size: 0.935rem;// 14px
-  line-height: 1.5625rem;// 25px
+  font-size: 0.935rem; // 14px
+  line-height: 1.5625rem; // 25px
   font-weight: 400;
 }
+
 @mixin font6 {
-  font-size: 0.8rem;// 12px
-  line-height: 0.9rem;// 14.4px
+  font-size: 0.8rem; // 12px
+  line-height: 0.9rem; // 14.4px
   font-weight: 500;
 }
+
 @mixin font7 {
-  font-size: 0.935rem;// 14px
-  line-height: 1.05rem;// 16.8px
+  font-size: 0.935rem; // 14px
+  line-height: 1.05rem; // 16.8px
   font-weight: 400;
 }
 
@@ -73,35 +79,39 @@ $tertiary: #ffffff;
 }
 
 .hello-world-banner {
-    height: 300px;
-    width: 100%;
-    display: flex;
-    align-items: center;
+  height: 300px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1em;
+
+  .banner-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    justify-items: center;
     justify-content: center;
-    margin-bottom: 1em;
 
-    .banner-grid{
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-      justify-items: center;
-      justify-content: center;
+    .banner-item {
 
-      .banner-item {
-        .banner-item-text-area{
-          .banner-item-title{
-            font-size: 18px;
-            font-weight: 500;
-            color: $secondary;
-            ;
-          }
+      .banner-image-1 {
+        background: url();
+      }
 
-          .banner-item-description{
-            font-size: 16px;
-            font-weight: 400;
-            color: $black40;
-            line-height: 20px;
-          }
+      .banner-item-text-area {
+        .banner-item-title {
+          font-size: 18px;
+          font-weight: 500;
+          color: $secondary;
+          ;
+        }
+
+        .banner-item-description {
+          font-size: 16px;
+          font-weight: 400;
+          color: $black40;
+          line-height: 20px;
         }
 
         .banner-item-text-area img{
@@ -110,6 +120,7 @@ $tertiary: #ffffff;
         }
       }
     }
+  }
 }
 
 // .fa{
@@ -122,7 +133,8 @@ $tertiary: #ffffff;
   padding: 0 30vmin;
 }
 
-.category-breadcrumb, .topic-excerpt-more {
+.category-breadcrumb,
+.topic-excerpt-more {
   display: none;
 }
 
@@ -134,7 +146,8 @@ $tertiary: #ffffff;
     li {
       margin: 0;
 
-      &.nav-item_categories, &.nav-item_styleguide {
+      &.nav-item_categories,
+      &.nav-item_styleguide {
         display: none;
       }
 
@@ -151,7 +164,7 @@ $tertiary: #ffffff;
         color: $primary;
       }
     }
-}
+  }
 
   .btn-default {
     @include font2;
@@ -171,11 +184,16 @@ $tertiary: #ffffff;
   }
 }
 
-.topic-list-item, tbody, tr {
+.topic-list-item,
+tbody,
+tr {
   border: none;
 }
 
-.topic-list, .topic-list-body, .topic-list-item, .main-link {
+.topic-list,
+.topic-list-body,
+.topic-list-item,
+.main-link {
   display: flex;
   flex-direction: column;
 }
@@ -299,10 +317,9 @@ $tertiary: #ffffff;
 .d-header {
   --d-max-width: 100%;
 
-  .wrap{
-    margin-left: 24px;
-    margin-right: 17px;
-    padding: 0;
+  .wrap {
+    margin: 0;
+    padding: 22px 17px 22px 24px;
 
 
     .floating-search-input {
@@ -317,7 +334,7 @@ $tertiary: #ffffff;
           color: #BDBDBD;
           position: relative;
           border: 1px solid #E0E0E0;
-          width: 319px;        
+          width: 319px;
         }
       }
     }

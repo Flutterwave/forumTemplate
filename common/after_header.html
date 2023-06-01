@@ -1,4 +1,17 @@
-<div class="hello-world-banner">
+<script>
+  Discourse.Dialect.addPreProcessor(function (text) {
+    if (Discourse.currentRouteName() === 'discovery.latest') {
+      text = text.replace(/<div id="after-header">/g, '<div id="after-header" style="display: block;">');
+    } else {
+      text = text.replace(/<div id="after-header">/g, '<div id="after-header" style="display: none;">');
+    }
+    return text;
+  });
+  </script>
+  
+
+
+<div id="after-header" class="hello-world-banner">
     <div class="banner-grid">
       <div class="banner-item">
         <div class="banner-image">

@@ -1,4 +1,12 @@
-
+<script>
+  if (Discourse.currentRouteName() === 'discovery.latest') {
+    var afterHeaderElement = document.getElementById('after-header');
+    if (afterHeaderElement) {
+      afterHeaderElement.style.display = 'block';
+    }
+  }
+</script>
+  
 <div id="after-header" class="hello-world-banner">
   <div class="banner-grid">
     <div class="banner-item">

@@ -72,6 +72,10 @@ $tertiary: #ffffff;
   box-sizing: border-box;
 }
 
+.fa{
+  font-weight: 200;
+}
+
 #main-outlet-wrapper.wrap {
   max-width: 100%;
   margin: 0;
@@ -123,7 +127,6 @@ $tertiary: #ffffff;
     svg {
       margin: 0;
       fill: $tertiary;
-      font-weight: 300;
     }
   }
 }

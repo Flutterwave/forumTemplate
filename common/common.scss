@@ -89,6 +89,26 @@ $tertiary: #ffffff;
 
       .banner-item {
         background: red;
+
+        .banner-image-1{
+          background: url();
+        }
+
+        .banner-item-text-area{
+          .banner-item-title{
+            font-size: 18px;
+            font-weight: 500;
+            color: $secondary;
+            ;
+          }
+
+          .banner-item-description{
+            font-size: 18px;
+            font-weight: 500;
+            color: $black40;
+            line-height: 20px;
+          }
+        }
       }
     }
 }

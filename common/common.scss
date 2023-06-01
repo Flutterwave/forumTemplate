@@ -32,43 +32,43 @@ $secondary: #2a3362;
 $tertiary: #ffffff;
 
 @mixin font1 {
-  font-size: 0.93rem; // 16px
+  font-size: 1rem; // 16px
   line-height: 1.2rem; // 19.2px
   font-weight: 500;
 }
 
 @mixin font2 {
-  font-size: 0.935rem; // 14px
+  font-size: 0.875; // 14px
   line-height: 1.05rem; // 16.8px
   font-weight: 500;
 }
 
 @mixin font3 {
-  font-size: 0.8rem; // 12px
+  font-size: 0.75rem; // 12px
   line-height: 0.9rem; // 14.4px
   font-weight: 400;
 }
 
 @mixin font4 {
-  font-size: 1.2rem; // 18px
+  font-size: 1.125rem; // 18px
   line-height: 1.35rem; // 21.6px
   font-weight: 700;
 }
 
 @mixin font5 {
-  font-size: 0.935rem; // 14px
+  font-size: 0.875rem; // 14px
   line-height: 1.5625rem; // 25px
   font-weight: 400;
 }
 
 @mixin font6 {
-  font-size: 0.8rem; // 12px
+  font-size: 0.75rem; // 12px
   line-height: 0.9rem; // 14.4px
   font-weight: 500;
 }
 
 @mixin font7 {
-  font-size: 0.935rem; // 14px
+  font-size: 0.875rem; // 14px
   line-height: 1.05rem; // 16.8px
   font-weight: 400;
 }

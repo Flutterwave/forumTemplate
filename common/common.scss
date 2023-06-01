@@ -78,6 +78,10 @@ $tertiary: #ffffff;
   box-sizing: border-box;
 }
 
+html {
+  font-size: 16px;
+}
+
 .hello-world-banner {
   width: 100%;
   display: flex;
@@ -161,14 +165,34 @@ $tertiary: #ffffff;
   }
 }
 
-// .fa{
-//   font-weight: 200;
-// }
-
 #main-outlet-wrapper.wrap {
   max-width: 100%;
   margin: 0;
-  padding: 0 30vmin;
+  padding: 0 1rem;
+
+  @media screen and (min-width: 640px) {
+    & {
+      padding: 0 12.5vw;
+    }
+  }
+  
+  @media screen and (min-width: 960px) {
+    & {
+      padding: 0 16.67vw;
+    }
+  }
+  
+  @media screen and (min-width: 1280px) {
+    & {
+      padding: 18.75vw;
+    }
+  }
+  
+  @media screen and (min-width: 1600px) {
+    & {
+      padding: 20vw;
+    }
+  }
 }
 
 .category-breadcrumb,

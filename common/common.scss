@@ -32,43 +32,43 @@ $secondary: #2a3362;
 $tertiary: #ffffff;
 
 @mixin font1 {
-  font-size: 0.93rem; // 16px
+  font-size: 1rem; // 16px
   line-height: 1.2rem; // 19.2px
   font-weight: 500;
 }
 
 @mixin font2 {
-  font-size: 0.935rem; // 14px
+  font-size: 0.875; // 14px
   line-height: 1.05rem; // 16.8px
   font-weight: 500;
 }
 
 @mixin font3 {
-  font-size: 0.8rem; // 12px
+  font-size: 0.75rem; // 12px
   line-height: 0.9rem; // 14.4px
   font-weight: 400;
 }
 
 @mixin font4 {
-  font-size: 1.2rem; // 18px
+  font-size: 1.125rem; // 18px
   line-height: 1.35rem; // 21.6px
   font-weight: 700;
 }
 
 @mixin font5 {
-  font-size: 0.935rem; // 14px
+  font-size: 0.875rem; // 14px
   line-height: 1.5625rem; // 25px
   font-weight: 400;
 }
 
 @mixin font6 {
-  font-size: 0.8rem; // 12px
+  font-size: 0.75rem; // 12px
   line-height: 0.9rem; // 14.4px
   font-weight: 500;
 }
 
 @mixin font7 {
-  font-size: 0.935rem; // 14px
+  font-size: 0.875rem; // 14px
   line-height: 1.05rem; // 16.8px
   font-weight: 400;
 }
@@ -168,30 +168,29 @@ html {
 #main-outlet-wrapper.wrap {
   max-width: 100%;
   margin: 0;
-  // padding: 0 30vmin;
   padding: 0 1rem;
 
   @media screen and (min-width: 640px) {
     & {
-      padding: 0 6.25vw;
+      padding: 0 6vw;
     }
   }
   
   @media screen and (min-width: 960px) {
     & {
-      padding: 0 8.335vw;
+      padding: 0 12vw;
     }
   }
   
   @media screen and (min-width: 1280px) {
     & {
-      padding: 0 9.375vw;
+      padding: 0 18vw;
     }
   }
   
   @media screen and (min-width: 1600px) {
     & {
-      padding: 0 10vw;
+      padding: 0 20vw;
     }
   }
 }
@@ -203,7 +202,6 @@ html {
 
 .navigation-container {
   .nav-pills {
-    @include font1;
     gap: 0.875rem;
 
     li {
@@ -215,6 +213,7 @@ html {
       }
 
       a {
+        @include font1;
         padding: 0.5rem 1rem;
         background-color: $black10;
         color: $black60;

@@ -1,22 +1,66 @@
 @import 'mixins';
 @import 'buttons';
 
+// Font family
 @font-face {
   font-family: 'Moderat';
-  src: url($Moderat-Regular) format("woff");
+  src: url($Moderat-Thin) format("truetype");
+  font-weight: 100;
+}
+@font-face {
+  font-family: 'Moderat';
+  src: url($Moderat-Thin-Italic) format("truetype");
+  font-weight: 100;
+}
+@font-face {
+  font-family: 'Moderat';
+  src: url($Moderat-Light) format("truetype");
+  font-weight: 300;
+}
+@font-face {
+  font-family: 'Moderat';
+  src: url($Moderat-Light-Italic) format("truetype");
+  font-weight: 300;
+}
+@font-face {
+  font-family: 'Moderat';
+  src: url($Moderat-Regular) format("truetype");
   font-weight: 400;
 }
-
 @font-face {
   font-family: 'Moderat';
-  src: url($Moderat-Medium) format("woff");
+  src: url($Moderat-Regular-Italic) format("truetype");
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'Moderat';
+  src: url($Moderat-Medium) format("truetype");
   font-weight: 500;
 }
-
 @font-face {
   font-family: 'Moderat';
-  src: url($Moderat-Bold) format("woff");
+  src: url($Moderat-Medium-Italic) format("truetype");
+  font-weight: 500;
+}
+@font-face {
+  font-family: 'Moderat';
+  src: url($Moderat-Bold) format("truetype");
   font-weight: 700;
+}
+@font-face {
+  font-family: 'Moderat';
+  src: url($Moderat-Bold-Italic) format("truetype");
+  font-weight: 700;
+}
+@font-face {
+  font-family: 'Moderat';
+  src: url($Moderat-Black) format("truetype");
+  font-weight: 900;
+}
+@font-face {
+  font-family: 'Moderat';
+  src: url($Moderat-Black-Italic) format("truetype");
+  font-weight: 900;
 }
 
 // CJ's Common styles START

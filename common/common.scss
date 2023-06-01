@@ -262,9 +262,8 @@ $tertiary: #ffffff;
 
 
     .floating-search-input {
-      // max-width: 30rem;
-      // margin-left: 110px;
-      margin: 0;
+      width: 319px;
+      margin: 0 auto;
 
       .search-banner-inner.wrap .search-menu {
         .search-input {
@@ -273,7 +272,8 @@ $tertiary: #ffffff;
           font-weight: 400;
           color: #BDBDBD;
           position: relative;
-          border: 1px solid #E0E0E0;        
+          border: 1px solid #E0E0E0;
+          width: 319px;        
         }
       }
     }

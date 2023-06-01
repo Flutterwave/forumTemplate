@@ -1,3 +1,21 @@
+<script type="text/discourse-plugin" version="0.8">
+  api.addPostRenderer((post, doc) => {
+    const route = Discourse.Route.current();
+    if (route && route.name === "discovery.latest") {
+      const afterHeader = doc.getElementById("after-header");
+      if (afterHeader) {
+        afterHeader.style.display = "block";
+      }
+    } else {
+      const afterHeader = doc.getElementById("after-header");
+      if (afterHeader) {
+        afterHeader.remove();
+      }
+    }
+  });
+</script>
+
+
 <div id="after-header" class="hello-world-banner">
   <div class="banner-grid">
     <div class="banner-item">

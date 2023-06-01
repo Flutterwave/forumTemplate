@@ -94,7 +94,7 @@ $tertiary: #ffffff;
 
     .banner-item {
       .banner-image{
-        .item-1 {
+        .link {
           position: relative;
           display: inline-block;
           height: 170px;
@@ -104,51 +104,7 @@ $tertiary: #ffffff;
           color: #000;
         }
         
-        .item-1-background {
-          position: absolute;
-          top: 0;
-          left: 0;
-          height: 100%;
-          width: 100%;
-          background-image: url($card-payments);
-          background-size: cover;
-          background-position: center;
-          background-repeat: no-repeat;
-        }
-
-        .item-2 {
-          position: relative;
-          display: inline-block;
-          height: 170px;
-          width: 300px;
-          text-align: center;
-          text-decoration: none;
-          color: #000;
-        }
-        
-        .item-2-background {
-          position: absolute;
-          top: 0;
-          left: 0;
-          height: 100%;
-          width: 100%;
-          background-image: url($card-payments);
-          background-size: cover;
-          background-position: center;
-          background-repeat: no-repeat;
-        }
-
-        .item-3 {
-          position: relative;
-          display: inline-block;
-          height: 170px;
-          width: 300px;
-          text-align: center;
-          text-decoration: none;
-          color: #000;
-        }
-        
-        .item-3-background {
+        .link-background {
           position: absolute;
           top: 0;
           left: 0;

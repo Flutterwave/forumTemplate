@@ -89,16 +89,13 @@ $tertiary: #ffffff;
   .banner-grid {
     display: flex;
     flex-wrap: wrap;
-    justify-items: center;
     justify-content: center;
 
     .banner-item {
-      flex-basis: calc(33.33% - 20px);
-      margin: 24px;
+      flex-basis: calc(33.33% - 24px);
+      margin: 12px;
 
       .banner-image{
-        margin: 0;
-
         .link {
           position: relative;
           display: inline-block;

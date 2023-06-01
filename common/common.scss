@@ -272,8 +272,8 @@ $tertiary: #ffffff;
           position: relative;
           border: 1px solid #E0E0E0;
 
-          .fa .d-icon .d-icon-search {
-            content: url($search-icon);
+          .d-icon-search {
+            content: url(assets/icons/search.svg);
           }
         }
       }

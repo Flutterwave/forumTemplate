@@ -18,7 +18,7 @@
   "modifiers": {
     "serialize_topic_excerpts": true,
     "svg_icons": [
-      "caret-square-down", "icon-angle-down"
+      "caret-square-down", "angle-down"
     ]
   }
 }

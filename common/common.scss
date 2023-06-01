@@ -88,14 +88,13 @@ $tertiary: #ffffff;
       justify-content: center;
 
       .banner-item {
-
-        .banner-image-1{
-          background: url(../assets/svg/sdks-plugins.svg);
-          height: 173px;
-          width: 300px;
-        }
-
         .banner-item-text-area{
+          .banner-image-1{
+            background-image: url(../assets/svg/sdks-plugins.svg);
+            height: 173px;
+            width: 300px;
+          }
+
           .banner-item-title{
             font-size: 18px;
             font-weight: 500;

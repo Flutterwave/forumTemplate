@@ -262,8 +262,9 @@ $tertiary: #ffffff;
 
 
     .floating-search-input {
-      max-width: 30rem;
-      margin-left: 110px;
+      // max-width: 30rem;
+      // margin-left: 110px;
+      margin: 0;
 
       .search-banner-inner.wrap .search-menu {
         .search-input {

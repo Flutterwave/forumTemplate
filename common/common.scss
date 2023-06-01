@@ -75,14 +75,21 @@ $tertiary: #ffffff;
 .hello-world-banner {
     height: 300px;
     width: 100%;
-    background: red;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 1em;
 
-    .banner-item {
-      background: url(../assets/svg/card-payments.svg);
+    .banner-grid{
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      justify-items: center;
+      justify-content: center;
+
+      .banner-item {
+        background: red;
+      }
     }
 }
 

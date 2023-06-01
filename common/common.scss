@@ -108,18 +108,17 @@ $tertiary: #ffffff;
           color: #000;
           text-decoration: none;
           border-radius: 10px;
+        }
+        .first-item{
+          background-image: url($collections-payments);
+        }
 
-          .first-item{
-            background-image: url($collections-payments);
-          }
+        .second-item{
+          background-image: url($card-payments);
+        }
 
-          .second-item{
-            background-image: url($card-payments);
-          }
-
-          .third-item{
-            background-image: url($sdks-plugins);
-          }
+        .third-item{
+          background-image: url($sdks-plugins);
         }
       }
 

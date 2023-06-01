@@ -253,6 +253,8 @@ $tertiary: #ffffff;
 // CJ's Common styles END
 
 .d-header {
+  --d-max-width: 100%;
+
   .wrap{
     margin-left: 24px;
     margin-right: 17px;
@@ -275,11 +277,6 @@ $tertiary: #ffffff;
       }
     }
   }
-
-  .d-icon-search {
-    content: url(assets/icons/search.svg);
-  }
-
 
   .custom-header-links {
     .top-level-links {
@@ -359,7 +356,7 @@ $tertiary: #ffffff;
 
         &:hover {
           color: $primary;
-          background: #f5f5f5;
+          background: #FFF6E9;
         }
       }
     }

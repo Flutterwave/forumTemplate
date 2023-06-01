@@ -88,7 +88,7 @@ $tertiary: #ffffff;
   .banner-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
+    gap: 24px;
     justify-items: center;
     justify-content: center;
 
@@ -97,17 +97,17 @@ $tertiary: #ffffff;
         .link {
           position: relative;
           display: inline-block;
-          height: 170px;
+          height: 173px;
           width: 300px;
           text-align: center;
           text-decoration: none;
-          color: #000;
           background-image: url($card-payments);
           background-size: cover;
           background-repeat: no-repeat;
           background-position: center;
           color: #000;
           text-decoration: none;
+          border-radius: 10px;
         }
       }
 

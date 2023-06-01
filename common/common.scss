@@ -102,20 +102,21 @@ $tertiary: #ffffff;
           text-align: center;
           text-decoration: none;
           color: #000;
-        }
-        
-        .link-background {
-          position: absolute;
-          top: 0;
-          left: 0;
-          height: 100%;
-          width: 100%;
-          background-image: url($card-payments);
-          background-size: cover;
-          background-position: center;
-          background-repeat: no-repeat;
+
+          &-background{
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background-image: url($card-payments);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+          }
         }
       }
+      
       .banner-item-text-area {
         .banner-item-title {
           font-size: 18px;

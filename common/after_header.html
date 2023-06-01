@@ -1,54 +1,47 @@
-<script>
-  Discourse.Dialect.addPreProcessor(function (text) {
-    if (Discourse.currentRouteName() === 'discovery.latest') {
-      text = text.replace(/<div id="after-header">/g, '<div id="after-header" style="display: block;">');
-    } else {
-      text = text.replace(/<div id="after-header">/g, '<div id="after-header" style="display: none;">');
-    }
-    return text;
-  });
-  </script>
+<script type="text/x-handlebars" data-template-name="after_header">
+  {{#if homePage}}
+    <!-- Your custom content here -->
+    <div id="after-header" class="hello-world-banner">
+      <div class="banner-grid">
+        <div class="banner-item">
+          <div class="banner-image">
+            <a class="link first-item" href="/"></a>
+          </div>
   
-
-
-<div id="after-header" class="hello-world-banner">
-    <div class="banner-grid">
-      <div class="banner-item">
-        <div class="banner-image">
-          <a class="link first-item" href="/"></a>
+          <div class="banner-item-text-area">
+            <div class="banner-item-title">Payment Collection</div>
+            <div class="banner-item-description">Let's get you setup and ready to move money around the globe</div>
+          </div>
+  
         </div>
-
-        <div class="banner-item-text-area">
-          <div class="banner-item-title">Payment Collection</div>
-          <div class="banner-item-description">Let's get you setup and ready to move money around the globe</div>
+  
+        <div class="banner-item">
+          <div class="banner-image">
+            <a class="link second-item" href="/"></a>
+          </div>
+  
+          <div class="banner-item-text-area">
+            <div class="banner-item-title">Card Payments</div>
+            <div class="banner-item-description">Let's get you setup and ready to move money around the globe</div>
+          </div>
+  
         </div>
-
+  
+        <div class="banner-item">
+          <div class="banner-image">
+            <a class="link third-item" href="/"></a>
+          </div>
+  
+          <div class="banner-item-text-area">
+            <div class="banner-item-title">SDKs</div>
+            <div class="banner-item-description">Let's get you setup and ready to move money around the globe</div>
+          </div>
+  
+        </div>
+  
       </div>
-
-      <div class="banner-item">
-        <div class="banner-image">
-          <a class="link second-item" href="/"></a>
-        </div>
-
-        <div class="banner-item-text-area">
-          <div class="banner-item-title">Card Payments</div>
-          <div class="banner-item-description">Let's get you setup and ready to move money around the globe</div>
-        </div>
-
-      </div>
-
-      <div class="banner-item">
-        <div class="banner-image">
-          <a class="link third-item" href="/"></a>
-        </div>
-
-        <div class="banner-item-text-area">
-          <div class="banner-item-title">SDKs</div>
-          <div class="banner-item-description">Let's get you setup and ready to move money around the globe</div>
-        </div>
-
-      </div>
-
+  
     </div>
+  {{/if}}
+</script>
 
-</div>

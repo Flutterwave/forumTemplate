@@ -168,29 +168,34 @@ html {
 #main-outlet-wrapper.wrap {
   max-width: 100%;
   margin: 0;
+  // padding: 0 30vmin;
   padding: 0 1rem;
 
   @media screen and (min-width: 640px) {
     & {
-      padding: 0 12.5vw;
+      grid-template-columns: repeat(8, 1fr);
+      grid-column: 2/-2;
+      padding: 0 6.25vw;
     }
   }
   
   @media screen and (min-width: 960px) {
     & {
-      padding: 0 16.67vw;
+      grid-template-columns: repeat(12, 1fr);
+      grid-column: 3/-3;
+      padding: 0 8.335vw;
     }
   }
   
   @media screen and (min-width: 1280px) {
     & {
-      padding: 18.75vw;
+      padding: 0 9.375vw;
     }
   }
   
   @media screen and (min-width: 1600px) {
     & {
-      padding: 20vw;
+      padding: 0 10vw;
     }
   }
 }

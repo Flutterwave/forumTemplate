@@ -10,7 +10,11 @@
     "eye-icon": "assets/icons/eye-icon.svg",
     "message-icon": "assets/icons/message-icon.svg",
     "more-options-icon": "assets/icons/more-options-icon.svg",
-    "time-icon": "assets/icons/time-icon.svg"
+    "time-icon": "assets/icons/time-icon.svg",
+    "card-payments": "assets/svg/card-payments.svg",
+    "collections-payments": "assets/svg/collections-payments.svg",
+    "sdks-plugins": "assets/svg/sdks-plugins.svg"
+
   },
   "components": [
     "https://github.com/discourse/discourse-header-search.git"

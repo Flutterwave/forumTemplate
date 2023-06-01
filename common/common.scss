@@ -80,6 +80,10 @@ $tertiary: #ffffff;
     align-items: center;
     justify-content: center;
     margin-bottom: 1em;
+
+    .banner-item {
+      background: url($collections-payment);
+    }
 }
 
 // .fa{

@@ -94,12 +94,14 @@ $tertiary: #ffffff;
     justify-content: center;
 
     .banner-item {
-      .banner-item-text-area {
-        img{
+      .banner-image{
+        a{
           height: 170px;
           width: 300px;
+          background: url($card-payments);
         }
-        
+      }
+      .banner-item-text-area {
         .banner-item-title {
           font-size: 18px;
           font-weight: 500;

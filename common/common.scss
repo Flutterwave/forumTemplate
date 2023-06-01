@@ -96,7 +96,7 @@ $tertiary: #ffffff;
     .banner-item {
       .banner-image{
         margin: 0;
-        
+
         .link {
           position: relative;
           display: inline-block;
@@ -138,6 +138,8 @@ $tertiary: #ffffff;
       }
 
       .banner-item-text-area {
+        margin: 0;
+        
         .banner-item-title {
           font-size: 18px;
           font-weight: 500;

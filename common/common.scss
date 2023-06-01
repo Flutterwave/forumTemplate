@@ -84,7 +84,7 @@ $tertiary: #ffffff;
   align-items: center;
   justify-content: center;
   margin-top: 36px;
-  margin-bottom: 1em;
+  margin-bottom: 50px;
 
   .banner-grid {
     display: grid;
@@ -108,17 +108,30 @@ $tertiary: #ffffff;
           color: #000;
           text-decoration: none;
           border-radius: 10px;
+          transition: transform .2s;
         }
         .first-item{
           background-image: url($collections-payments);
+          &:hover{
+            transform: scale(1.2);
+            transition-delay: 0s;
+          }
         }
 
         .second-item{
           background-image: url($card-payments);
+          &:hover{
+            transform: scale(1.2);
+            transition-delay: 0s;
+          }
         }
 
         .third-item{
           background-image: url($sdks-plugins);
+          &:hover{
+            transform: scale(1.2);
+            transition-delay: 0s;
+          }
         }
       }
 

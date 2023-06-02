@@ -139,13 +139,13 @@ html {
   justify-items: center;
   justify-content: center;
 
-  &:hover{
-    .banner-image {
-      transform: scale(1.02);
-    }
-  }
-
   .banner-item {
+    &:hover{
+      .banner-image {
+        transform: scale(1.02);
+      }
+    }
+    
     .banner-image {
       padding: 28.83% 0;
       background-size: cover;

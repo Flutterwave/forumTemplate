@@ -550,12 +550,8 @@ tr {
 
     .custom-header-dropdown {
       @include dropdown;
-      min-width: 200px;
-      max-width: 280px;
-      list-style: none;
+      min-width: 12.5rem;
       transform: scale(0);
-      transition: transform 0.2s ease;
-      transition-delay: 0.3s;
 
       &-link {
         color: $secondary;

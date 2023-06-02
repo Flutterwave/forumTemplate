@@ -430,10 +430,7 @@ tr {
 
       .floating-search-input {
         width: 20rem;
-        margin: {
-          left: auto;
-          right: 2rem;
-        }
+        margin-left: auto;
 
         .search-banner-inner.wrap {
           padding: 0;
@@ -488,20 +485,13 @@ tr {
             }
           }
         }
-
-        // .search-banner-inner.wrap .search-menu {
-        //   .search-input {
-        //     font-weight: 400;
-        //     color: #BDBDBD;
-        //     border: 1px solid $black20;
-        //     // width: 319px;
-        //   }
-        // }
       }
     }
   }
 
   .custom-header-links {
+    margin-left: 2rem;
+
     .top-level-links {
       margin: 0;
       display: flex;

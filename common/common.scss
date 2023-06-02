@@ -86,44 +86,44 @@ $tertiary: #ffffff;
   line-height: 1.2rem; // 19.2px
   font-weight: 500;
 }
-
 @mixin font2 {
   font-size: 0.875rem; // 14px
   line-height: 1.05rem; // 16.8px
   font-weight: 500;
 }
-
 @mixin font3 {
   font-size: 0.75rem; // 12px
   line-height: 0.9rem; // 14.4px
   font-weight: 400;
 }
-
 @mixin font4 {
   font-size: 1.125rem; // 18px
   line-height: 1.35rem; // 21.6px
   font-weight: 700;
 }
-
 @mixin font5 {
   font-size: 0.875rem; // 14px
   line-height: 1.5625rem; // 25px
   font-weight: 400;
 }
-
 @mixin font6 {
   font-size: 0.75rem; // 12px
   line-height: 0.9rem; // 14.4px
   font-weight: 500;
 }
-
 @mixin font7 {
   font-size: 0.875rem; // 14px
   line-height: 1.05rem; // 16.8px
   font-weight: 400;
 }
+@mixin font8 {
+  font-size: 1rem; // 16px
+  line-height: 1.25rem; // 20px
+  font-weight: 400;
+}
 
 * {
+  position: relative;
   font-family: 'Moderat', sans-serif;
   box-sizing: border-box;
 }
@@ -134,30 +134,70 @@ html {
 
 .banner-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  gap: clamp(1rem, 3vw, 1.5rem);
   justify-items: center;
   justify-content: center;
 
   .banner-item {
-    width: 300px;
+    .banner-image {
+      padding: 0 28.83%;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      border-radius: 0.375rem;
+      transition: transform 0.3s ease-in-out;
+
+      &:hover{
+        transform: scale(1.02);
+        transition-delay: 0s;
+      }
+
+      &.first-image {
+        background-image: url($card-icon-1);
+      }
+      &.second-image {
+        background-image: url($card-payments);
+      }
+      &.third-image {
+        background-image: url($sdks-plugins);
+      }
+    }
+
+    .banner-item-text-area {
+      .banner-item-title {
+        @include font4;
+        margin-top: 0.5625rem;
+        color: $secondary;
+      }
+
+      .banner-item-description {
+        @include font8;
+        color: $black40;
+      }
+    }
+  }
+
+  .banner-item {
+    // width: 300px;
 
     .banner-image{
-      margin: 0;
+      // margin: 0;
 
       .link {
-        position: relative;
-        display: inline-block;
-        height: 173px;
-        width: 300px;
-        text-align: center;
-        text-decoration: none;
+        // position: relative;
+        // display: inline-block;
+        // height: 173px;
+        // width: 300px;
+        padding: 0 28.83%;
+        // text-align: center;
+        // text-decoration: none;
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
-        color: #000;
-        text-decoration: none;
-        border-radius: 6px;
+        // color: #000;
+        // text-decoration: none;
+        border-radius: 0.375rem;
         transition: transform 0.3s ease-in-out;
       }
       .first-item{
@@ -437,7 +477,7 @@ tr {
           font-style: normal;
           font-weight: 400;
           color: #BDBDBD;
-          position: relative;
+          // position: relative;
           border: 1px solid #E0E0E0;
           width: 319px;
         }

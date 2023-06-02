@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg">
 <symbol id="add-icon" viewBox="0 0 18 18">
-<path fill="currentColor" d="M3 9H15M9 3V15V3Z" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+<path fill="#000000" d="M3 9H15M9 3V15V3Z" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
 </symbol>
 </svg>

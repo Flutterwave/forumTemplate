@@ -536,7 +536,9 @@ tr {
         }
 
         &:hover {
-          color: $primary;
+          .custom-header-link-title {
+            color: $primary;
+          }
 
           .custom-header-dropdown {
             transform: scale(1);

@@ -135,9 +135,8 @@ html {
 .banner-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
-  gap: clamp(1rem, 3vw, 1.5rem);
-  justify-items: center;
-  justify-content: center;
+  justify-items: stretch;
+  gap: 1.5rem;
 
   .banner-item {
     &:hover{

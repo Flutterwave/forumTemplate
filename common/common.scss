@@ -129,91 +129,83 @@ $tertiary: #ffffff;
 }
 
 html {
-  font-size: 16px;
+  font-size: 16px;// set reference from rem units
 }
 
-.hello-world-banner {
-  width: 100%;
-  display: flex;
-  align-items: center;
+.banner-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  justify-items: center;
   justify-content: center;
-  margin-top: 36px;
-  margin-bottom: 50px;
 
-  .banner-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-    justify-items: center;
-    justify-content: center;
+  .banner-item {
+    width: 300px;
 
-    .banner-item {
-      width: 300px;
+    .banner-image{
+      margin: 0;
 
-      .banner-image{
-        margin: 0;
-
-        .link {
-          position: relative;
-          display: inline-block;
-          height: 173px;
-          width: 300px;
-          text-align: center;
-          text-decoration: none;
-          background-size: cover;
-          background-repeat: no-repeat;
-          background-position: center;
-          color: #000;
-          text-decoration: none;
-          border-radius: 6px;
-          transition: transform 0.3s ease-in-out;
-        }
-        .first-item{
-          background-image: url($card-icon-1);
-          &:hover{
-            transform: scale(1.02);
-            transition-delay: 0s;
-          }
-        }
-
-        .second-item{
-          background-image: url($card-payments);
-          &:hover{
-            transform: scale(1.02);
-            transition-delay: 0s;
-          }
-        }
-
-        .third-item{
-          background-image: url($sdks-plugins);
-          &:hover{
-            transform: scale(1.02);
-            transition-delay: 0s;
-          }
+      .link {
+        position: relative;
+        display: inline-block;
+        height: 173px;
+        width: 300px;
+        text-align: center;
+        text-decoration: none;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        color: #000;
+        text-decoration: none;
+        border-radius: 6px;
+        transition: transform 0.3s ease-in-out;
+      }
+      .first-item{
+        background-image: url($card-icon-1);
+        &:hover{
+          transform: scale(1.02);
+          transition-delay: 0s;
         }
       }
 
-      .banner-item-text-area {
-        margin: 0;
-        
-        .banner-item-title {
-          font-size: 18px;
-          font-weight: 700;
-          color: $secondary;
-          margin-top: 9px;
-          ;
+      .second-item{
+        background-image: url($card-payments);
+        &:hover{
+          transform: scale(1.02);
+          transition-delay: 0s;
         }
+      }
 
-        .banner-item-description {
-          font-size: 15px;
-          font-weight: 400;
-          color: $black40;
-          line-height: 20px;
+      .third-item{
+        background-image: url($sdks-plugins);
+        &:hover{
+          transform: scale(1.02);
+          transition-delay: 0s;
         }
+      }
+    }
+
+    .banner-item-text-area {
+      margin: 0;
+      
+      .banner-item-title {
+        font-size: 18px;
+        font-weight: 700;
+        color: $secondary;
+        margin-top: 9px;
+        ;
+      }
+
+      .banner-item-description {
+        font-size: 15px;
+        font-weight: 400;
+        color: $black40;
+        line-height: 20px;
       }
     }
   }
 }
+
 
 #main-outlet-wrapper.wrap {
   max-width: 100%;

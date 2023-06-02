@@ -82,7 +82,7 @@ $tertiary: #ffffff;
 }
 
 @mixin font2 {
-  font-size: 0.875; // 14px
+  font-size: 0.875rem; // 14px
   line-height: 1.05rem; // 16.8px
   font-weight: 500;
 }
@@ -228,7 +228,7 @@ html {
   
   @media screen and (min-width: 1280px) {
     & {
-      padding: 0 18vw;
+      padding: 0 17vw;
     }
   }
   

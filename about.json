@@ -20,7 +20,7 @@
     "message-icon": "assets/icons/message-icon.svg",
     "more-options-icon": "assets/icons/more-options-icon.svg",
     "time-icon": "assets/icons/time-icon.svg",
-    "add-icon": "assets/icons/eye-icon-copy.svg",
+    "icons-sprite": "assets/icons/eye-icon-copy.svg",
     "card-icon-1": "assets/images/card-icon-1.svg",
     "card-payments": "assets/images/card-payments.svg",
     "collections-payments": "assets/images/collections-payments.svg",

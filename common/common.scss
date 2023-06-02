@@ -122,6 +122,11 @@ $tertiary: #ffffff;
   line-height: 1.25rem; // 20px
   font-weight: 400;
 }
+@mixin font9 {
+  font-size: 1.125rem; // 18px
+  line-height: 2.125rem; // 21.6px
+  font-weight: 700;
+}
 
 * {
   position: relative;

@@ -554,12 +554,10 @@ tr {
       transform: scale(0);
 
       &-link {
+        @include font2;
         color: $secondary;
-        padding: 0.5em;
+        list-style: none;
         cursor: pointer;
-        font-weight: 400;
-        display: flex;
-        flex-flow: row wrap;
 
         .custom-header-link-desc {
           flex-basis: 100%;
@@ -570,7 +568,6 @@ tr {
 
         &:hover {
           color: $primary;
-          background: $primary-light;
         }
       }
     }

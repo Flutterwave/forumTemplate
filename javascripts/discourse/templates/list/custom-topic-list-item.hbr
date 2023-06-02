@@ -40,9 +40,7 @@
   <div class="topic-excerpt-line" id="{{#if topic.hasExcerpt}}link-middle-line-excerpt{{/if}}">
     {{~raw-plugin-outlet name="topic-list-after-title"}}
     {{#if topic.hasExcerpt}}
-      <div class="topic-excerpt">
-        {{raw "list/topic-excerpt" topic=topic}}
-      </div>
+      {{raw "list/topic-excerpt" topic=topic}}
     {{/if}}
     {{#if topic.image_url}}
       <a href="{{topic.lastUnreadUrl}}">

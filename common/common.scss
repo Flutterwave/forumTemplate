@@ -7,72 +7,61 @@
   src: url($Moderat-Thin) format("truetype");
   font-weight: 100;
 }
-
 @font-face {
   font-family: 'Moderat';
   src: url($Moderat-Thin-Italic) format("truetype");
   font-weight: 100;
   font-style: italic;
 }
-
 @font-face {
   font-family: 'Moderat';
   src: url($Moderat-Light) format("truetype");
   font-weight: 300;
 }
-
 @font-face {
   font-family: 'Moderat';
   src: url($Moderat-Light-Italic) format("truetype");
   font-weight: 300;
   font-style: italic;
 }
-
 @font-face {
   font-family: 'Moderat';
   src: url($Moderat-Regular) format("truetype");
   font-weight: 400;
 }
-
 @font-face {
   font-family: 'Moderat';
   src: url($Moderat-Regular-Italic) format("truetype");
   font-weight: 400;
   font-style: italic;
 }
-
 @font-face {
   font-family: 'Moderat';
   src: url($Moderat-Medium) format("truetype");
   font-weight: 500;
 }
-
 @font-face {
   font-family: 'Moderat';
   src: url($Moderat-Medium-Italic) format("truetype");
   font-weight: 500;
   font-style: italic;
 }
-
 @font-face {
   font-family: 'Moderat';
   src: url($Moderat-Bold) format("truetype");
   font-weight: 700;
 }
-
 @font-face {
   font-family: 'Moderat';
   src: url($Moderat-Bold-Italic) format("truetype");
   font-weight: 700;
   font-style: italic;
 }
-
 @font-face {
   font-family: 'Moderat';
   src: url($Moderat-Black) format("truetype");
   font-weight: 900;
 }
-
 @font-face {
   font-family: 'Moderat';
   src: url($Moderat-Black-Italic) format("truetype");
@@ -97,43 +86,36 @@ $tertiary: #ffffff;
   line-height: 1.2rem; // 19.2px
   font-weight: 500;
 }
-
 @mixin font2 {
   font-size: 0.875rem; // 14px
   line-height: 1.05rem; // 16.8px
   font-weight: 500;
 }
-
 @mixin font3 {
   font-size: 0.75rem; // 12px
   line-height: 0.9rem; // 14.4px
   font-weight: 400;
 }
-
 @mixin font4 {
   font-size: 1.125rem; // 18px
   line-height: 1.35rem; // 21.6px
   font-weight: 700;
 }
-
 @mixin font5 {
   font-size: 0.875rem; // 14px
   line-height: 1.5625rem; // 25px
   font-weight: 400;
 }
-
 @mixin font6 {
   font-size: 0.75rem; // 12px
   line-height: 0.9rem; // 14.4px
   font-weight: 500;
 }
-
 @mixin font7 {
   font-size: 0.875rem; // 14px
   line-height: 1.05rem; // 16.8px
   font-weight: 400;
 }
-
 @mixin font8 {
   font-size: 1rem; // 16px
   line-height: 1.25rem; // 20px
@@ -474,15 +456,14 @@ tr {
       margin: 0;
 
       .custom-header-link {
-        font-family: 'Moderat';
-        font-style: normal;
-        font-weight: 500;
-        color: $secondary;
-        padding: 0;
+        display: flex;
+        gap: 0.3125rem;
         cursor: default;
 
         &-icon {
-          margin-right: 0.5rem;
+          margin-left: 0.3125rem;
+          transform: translate(0, -0.125rem);
+          order: 2;
 
           img {
             width: 1.5em;
@@ -490,8 +471,13 @@ tr {
           }
         }
 
+        &-title {
+          @include font1;
+          color: $secondary;
+        }
+
         &-caret {
-          margin-left: 0.5rem;
+          transform: translate(0, -0.125rem);
 
           svg {
             transition: transform 0.25s ease;

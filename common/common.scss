@@ -536,6 +536,10 @@ tr {
         }
 
         &:hover {
+          .custom-header-link-title {
+            color: $primary;
+          }
+          
           .custom-header-dropdown {
             transform: scale(1);
             transition-delay: 0s;

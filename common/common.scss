@@ -525,6 +525,7 @@ tr {
           transform: translate(0, -0.125rem);
 
           svg {
+            transform-origin: 30% 60%;
             transition: transform 0.25s ease;
           }
         }

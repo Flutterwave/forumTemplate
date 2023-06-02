@@ -476,8 +476,9 @@ tr {
               }
               &::placeholder { /* Modern Browser */
                 // @include font2;
-                font-size: 1.5rem;
-                color: red;
+                font-size: 14px;
+                line-height: 16.8px;
+                color: #bdbdbd;
                 // color: $placeholder;
               }
             }

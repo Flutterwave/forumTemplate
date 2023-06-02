@@ -244,19 +244,22 @@ html {
   }
 
   .btn-default {
-    @include font2;
     padding: 0.75rem 1.25rem 0.75rem 1.5rem;
     border-radius: 0.25rem;
     background-color: $primary;
-    color: $tertiary;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.25rem;
 
     svg {
       margin: 0;
       fill: $tertiary;
+    }
+
+    .d-button-label {
+      @include font2;
+      color: $tertiary;
     }
   }
 }

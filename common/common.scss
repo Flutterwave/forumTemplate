@@ -430,7 +430,10 @@ tr {
 
       .floating-search-input {
         width: 20rem;
-        margin-left: auto;
+        margin: {
+          left: auto;
+          right: 0;
+        };
 
         .search-banner-inner.wrap {
           padding: 0;

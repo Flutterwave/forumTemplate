@@ -138,6 +138,17 @@ html {
   font-size: 16px; // set base reference from rem units
 }
 
+// onboarding styling
+.d-modal{
+  .login-modal{
+    background-color: pink;
+  }
+
+  .create-account{
+    background-color: yellow;
+  }
+}
+
 .banner-grid {
   margin-bottom: 3rem;
   display: grid;

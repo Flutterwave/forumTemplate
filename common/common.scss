@@ -138,6 +138,18 @@ html {
   font-size: 16px; // set base reference from rem units
 }
 
+.custom-homepage {
+  background-color: red;
+  color: white;
+  
+  #main-outlet {
+    padding-top: 0;
+   }
+  .below-site-header-outlet {
+    padding-top: 6em;
+  }
+}
+
 .banner-grid {
   margin-bottom: 3rem;
   display: grid;

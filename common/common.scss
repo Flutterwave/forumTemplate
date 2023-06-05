@@ -7,61 +7,72 @@
   src: url($Moderat-Thin) format("truetype");
   font-weight: 100;
 }
+
 @font-face {
   font-family: 'Moderat';
   src: url($Moderat-Thin-Italic) format("truetype");
   font-weight: 100;
   font-style: italic;
 }
+
 @font-face {
   font-family: 'Moderat';
   src: url($Moderat-Light) format("truetype");
   font-weight: 300;
 }
+
 @font-face {
   font-family: 'Moderat';
   src: url($Moderat-Light-Italic) format("truetype");
   font-weight: 300;
   font-style: italic;
 }
+
 @font-face {
   font-family: 'Moderat';
   src: url($Moderat-Regular) format("truetype");
   font-weight: 400;
 }
+
 @font-face {
   font-family: 'Moderat';
   src: url($Moderat-Regular-Italic) format("truetype");
   font-weight: 400;
   font-style: italic;
 }
+
 @font-face {
   font-family: 'Moderat';
   src: url($Moderat-Medium) format("truetype");
   font-weight: 500;
 }
+
 @font-face {
   font-family: 'Moderat';
   src: url($Moderat-Medium-Italic) format("truetype");
   font-weight: 500;
   font-style: italic;
 }
+
 @font-face {
   font-family: 'Moderat';
   src: url($Moderat-Bold) format("truetype");
   font-weight: 700;
 }
+
 @font-face {
   font-family: 'Moderat';
   src: url($Moderat-Bold-Italic) format("truetype");
   font-weight: 700;
   font-style: italic;
 }
+
 @font-face {
   font-family: 'Moderat';
   src: url($Moderat-Black) format("truetype");
   font-weight: 900;
 }
+
 @font-face {
   font-family: 'Moderat';
   src: url($Moderat-Black-Italic) format("truetype");
@@ -87,41 +98,49 @@ $tertiary: #ffffff;
   line-height: 1.2rem; // 19.2px
   font-weight: 500;
 }
+
 @mixin font2 {
   font-size: 0.875rem; // 14px
   line-height: 1.05rem; // 16.8px
   font-weight: 500;
 }
+
 @mixin font3 {
   font-size: 0.75rem; // 12px
   line-height: 0.9rem; // 14.4px
   font-weight: 400;
 }
+
 @mixin font4 {
   font-size: 1.125rem; // 18px
   line-height: 1.35rem; // 21.6px
   font-weight: 700;
 }
+
 @mixin font5 {
   font-size: 0.875rem; // 14px
   line-height: 1.5625rem; // 25px
   font-weight: 400;
 }
+
 @mixin font6 {
   font-size: 0.75rem; // 12px
   line-height: 0.9rem; // 14.4px
   font-weight: 500;
 }
+
 @mixin font7 {
   font-size: 0.875rem; // 14px
   line-height: 1.05rem; // 16.8px
   font-weight: 400;
 }
+
 @mixin font8 {
   font-size: 1rem; // 16px
   line-height: 1.25rem; // 20px
   font-weight: 400;
 }
+
 @mixin font9 {
   font-size: 1.125rem; // 18px
   line-height: 2.125rem; // 21.6px
@@ -428,7 +447,7 @@ tr {
       .title {
         height: auto;
 
-        h1{
+        h1 {
           display: none;
         }
       }
@@ -439,10 +458,13 @@ tr {
 
       .floating-search-input {
         width: 20rem;
+
         margin: {
           left: auto;
           right: 0;
-        };
+        }
+
+        ;
 
         .search-banner-inner.wrap {
           padding: 0;
@@ -464,32 +486,43 @@ tr {
               padding: 0.625rem 0;
               box-shadow: none;
 
-              &::-webkit-input-placeholder { /* WebKit/Chrome/Opera/Safari */
+              &::-webkit-input-placeholder {
+                /* WebKit/Chrome/Opera/Safari */
                 @include font1;
                 color: $placeholder;
                 font-weight: 300;
               }
-              &:-moz-placeholder { /* Firefox 4-18 */
+
+              &:-moz-placeholder {
+                /* Firefox 4-18 */
                 @include font2;
                 color: $placeholder;
                 font-weight: 300;
               }
-              &::-moz-placeholder { /* Firefox 19+ */
+
+              &::-moz-placeholder {
+                /* Firefox 19+ */
                 @include font2;
                 color: $placeholder;
                 font-weight: 300;
               }
-              &:-ms-input-placeholder { /* IE 10-11 */
+
+              &:-ms-input-placeholder {
+                /* IE 10-11 */
                 @include font2;
                 color: $placeholder;
                 font-weight: 300;
               }
-              &::-ms-input-placeholder { /* Edge */
+
+              &::-ms-input-placeholder {
+                /* Edge */
                 @include font2;
                 color: $placeholder;
                 font-weight: 300;
               }
-              &::placeholder { /* Modern Browser */
+
+              &::placeholder {
+                /* Modern Browser */
                 @include font2;
                 color: $placeholder;
                 font-weight: 300;
@@ -540,7 +573,7 @@ tr {
         }
 
         &:hover {
-          & > .custom-header-link-title {
+          &>.custom-header-link-title {
             color: $primary;
           }
 
@@ -606,3 +639,16 @@ tr {
 }
 
 
+#main-outlet>.regular {
+  display: grid;
+  grid-template-columns: auto auto;
+
+  .suggested-topics-wrapper {
+    grid-column: 2;
+    grid-row: 1 / 8;
+
+    .suggested-topics {
+      margin-top: 0;
+    }
+  }
+}

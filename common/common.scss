@@ -427,7 +427,8 @@ tr {
     .contents.clearfix {
       .title {
         height: auto;
-        .d-header-logo-link::before {
+
+        a{
           content: "";
           display: inline-block;
           width: 100px;
@@ -435,6 +436,10 @@ tr {
           background-image: url('$logo'); 
           background-size: cover;
           background-position: center;
+        }
+
+        h1{
+          display: none;
         }
       }
 

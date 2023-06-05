@@ -25,7 +25,8 @@
     "card-payments": "assets/images/card-payments.svg",
     "collections-payments": "assets/images/collections-payments.svg",
     "sdks-plugins": "assets/images/sdks-plugins.svg",
-    "logo": "assets/icons/logo.png"
+    "logo": "assets/icons/logo.png",
+    "flw-logo": "assets/icons/flutterwave_logo.svg"
   },
   "components": [
     "https://github.com/discourse/discourse-header-search.git"

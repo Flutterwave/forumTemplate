@@ -427,10 +427,7 @@ tr {
     .contents.clearfix {
       .title {
         height: auto;
-
-        a{
-          background-image: url($flw-logo);
-        }
+        background-image: url($flw-logo);
 
         h1{
           display: none;

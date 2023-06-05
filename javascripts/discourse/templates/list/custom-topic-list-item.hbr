@@ -1,0 +1,75 @@
+{{!-- this custom template is shared by mobile and desktop and is called for in common/header.html --}}
+
+{{~raw-plugin-outlet name="topic-list-before-columns"}}
+
+{{#if bulkSelectEnabled}}
+  <td class="bulk-select topic-list-data">
+    <label for="bulk-select-{{topic.id}}">
+      <input type="checkbox" class="bulk-select" id="bulk-select-{{topic.id}}">
+    </label>
+  </td>
+{{/if}}
+
+<div class="main-link clearfix">
+  <div class="author-line">
+    {{~raw-plugin-outlet name="topic-list-before-status"}}
+    <a href="{{topic.posters.[0].user.userPath}}" data-user-card="{{topic.posters.[0].user.username}}">
+      <div class="topic-list-avatar">
+        {{avatar topic.posters.[0].user imageSize="large"}}
+      </div>
+      <div class="name-and-date">
+        <span class="full-name-tlist">{{topic.posters.[0].user.name}}</span>
+        <span class="list-date">{{format-date topic.createdAt format="tiny"}}</span>
+      </div>
+    </a>
+
+    <img src="{{theme-setting "theme_uploads.more-options-icon"}}">
+  </div>
+
+  <div class="topic-title-line">
+    {{~raw "topic-status" topic=topic}}
+    {{~topic-link topic class="raw-link raw-topic-link"}}
+    {{~#if topic.featured_link}}
+      {{~topic-featured-link topic}}
+    {{~/if}}
+    {{~#if showTopicPostBadges}}
+      {{~raw "topic-post-badges" unreadPosts=topic.unread_posts unseen=topic.unseen url=topic.lastUnreadUrl newDotText=newDotText}}
+    {{~/if}}
+  </div>
+
+  <div class="topic-excerpt-line" id="{{#if topic.hasExcerpt}}link-middle-line-excerpt{{/if}}">
+    {{~raw-plugin-outlet name="topic-list-after-title"}}
+    {{#if topic.hasExcerpt}}
+      {{raw "list/topic-excerpt" topic=topic}}
+    {{/if}}
+    {{#if topic.image_url}}
+      <a href="{{topic.lastUnreadUrl}}">
+        <div class="topic-image" style="background: url({{topic.image_url}}); background-position: center; background-repeat: no-repeat; background-size: cover;"></div>
+      </a>
+    {{/if}}
+  </div>
+
+  <div class="topic-list-item-extras">
+    <div class="topic-list-item-tags">
+      {{discourse-tags topic mode="list" tagsForUser=tagsForUser}}
+    </div>
+
+    <div class="topic-list-item-info">
+      {{raw "list/action-list" topic=topic postNumbers=topic.liked_post_numbers className="likes" icon="heart"}}
+      <a class="num views {{topic.viewsHeat}}" href="{{topic.summaryUrl}}">
+        <img src="{{theme-setting "theme_uploads.eye-icon"}}">
+        {{number topic.views numberKey="views_long"}}
+      </a>
+
+      <a href class="posts-map badge-posts {{view.likesHeat}}" aria-label="{{view.title}}">
+        <img src="{{theme-setting "theme_uploads.message-icon"}}">
+        {{number topic.replyCount noTitle="true"}}
+      </a>
+
+      <a class="latest-activity-tlist {{view.likesHeat}}" href="{{topic.lastPostUrl}}">
+        <img src="{{theme-setting "theme_uploads.time-icon"}}">
+        {{~format-date topic.bumpedAt format="tiny" noTitle="true"~}}
+      </a>
+    </div>
+  </div>
+</div>

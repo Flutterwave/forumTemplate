@@ -60,7 +60,7 @@ createWidget('custom-header-links', {
             widget="button"
             attrs=(hash
               action="toggleHeaderLinks"
-              icon="caret-square-down"
+              icon="angle-down"
             )
         }}
       </span>

@@ -427,7 +427,6 @@ tr {
     .contents.clearfix {
       .title {
         height: auto;
-        background-image: url($flw-logo);
 
         h1{
           display: none;
@@ -603,5 +602,11 @@ tr {
 
   .avatar {
     border: none;
+  }
+}
+
+#after-header-content{
+  .ember-view{
+    display: none;
   }
 }

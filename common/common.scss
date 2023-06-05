@@ -139,12 +139,6 @@ html {
 }
 
 body {
-  &.discovery-page {
-    #after-header-content {
-      display: block;
-    }
-  }
-
   &:not(.discovery-page) {
     #after-header-content {
       display: none;

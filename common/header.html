@@ -4,14 +4,3 @@
   api.replaceIcon('plus', 'plus-icon');
   api.replaceIcon('caret-down', 'caret-down-icon');
 </script>
-
-<script>
-  Discourse.Dialect.addPreProcessor(function (text) {
-    if (Discourse.currentRouteName() === 'discovery.latest') {
-      text = text.replace(/<div id="after-header-content">/g, '<div id="after-header-content">');
-    } else {
-      text = text.replace(/<div id="after-header-content">/g, '<div id="after-header-content" style="display: none;">');
-    }
-    return text;
-  });
-  </script>

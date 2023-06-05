@@ -427,6 +427,15 @@ tr {
     .contents.clearfix {
       .title {
         height: auto;
+        .d-header-logo-link::before {
+          content: "";
+          display: inline-block;
+          width: 100px;
+          height: 50px; 
+          background-image: url('$logo'); 
+          background-size: cover;
+          background-position: center;
+        }
       }
 
       .header-buttons {

@@ -24,7 +24,8 @@
     "card-icon-1": "assets/images/card-icon-1.svg",
     "card-payments": "assets/images/card-payments.svg",
     "collections-payments": "assets/images/collections-payments.svg",
-    "sdks-plugins": "assets/images/sdks-plugins.svg"
+    "sdks-plugins": "assets/images/sdks-plugins.svg",
+    "logo": "assets/icons/logo.png"
   },
   "components": [
     "https://github.com/discourse/discourse-header-search.git"

@@ -664,8 +664,10 @@ tr {
   }
 
   .title-wrapper{
-    font-family: 'Millik';
-    font-weight: 400;
+    h1,h2,h3,h4,h5{
+      font-family: 'Millik';
+      font-weight: 400;
+    }
   }
 
   .topic-category{

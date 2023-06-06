@@ -4,7 +4,6 @@
   "license_url": null,
   "theme_version": "1.0",
   "assets": {
-    "Millik": "assets/fonts/millik.ttf",
     "Moderat-Thin": "assets/fonts/Moderat-Thin.ttf",
     "Moderat-Thin-Italic": "assets/fonts/Moderat-Thin-Italic.ttf",
     "Moderat-Light": "assets/fonts/Moderat-Light.ttf",
@@ -27,7 +26,8 @@
     "collections-payments": "assets/images/collections-payments.svg",
     "sdks-plugins": "assets/images/sdks-plugins.svg",
     "logo": "assets/icons/logo.png",
-    "flw-logo": "assets/icons/flutterwave_logo.svg"
+    "flw-logo": "assets/icons/flutterwave_logo.svg",
+    "Millik-Regular": "assets/fonts/Millik.ttf"
   },
   "components": [
     "https://github.com/discourse/discourse-header-search.git"

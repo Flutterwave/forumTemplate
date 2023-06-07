@@ -163,7 +163,7 @@ html {
   font-size: 16px; // set base reference from rem units
 }
 
-.title{
+.title {
   background-image: url($logo);
 }
 
@@ -648,40 +648,61 @@ tr {
   }
 }
 
+#main-outlet-wrapper {
+  padding-left: 0;
+  padding-right: 0;
 
-#main-outlet>.regular {
-  display: grid;
-  grid-template-columns: auto auto;
+  #main-outlet {
 
-  .suggested-topics-wrapper {
-    grid-column: 2;
-    grid-row: 1 / 8;
 
-    .suggested-topics {
-      margin-top: 0;
 
-      h1,h2,h3,h4,h5{
-        font-family: 'Millik';
-        font-weight: 400;
-        font-size: 24px;
+    #main-outlet>.regular {
+      display: grid;
+      grid-template-columns: 829px 364px;
+      margin-left: 80px;
+      margin-right: 80px;
+      column-gap: 88px;
+
+
+      .suggested-topics-wrapper {
+        grid-column: 2;
+        grid-row: 1 / 8;
+
+        .suggested-topics {
+          margin-top: 0;
+
+          h1,
+          h2,
+          h3,
+          h4,
+          h5 {
+            font-family: 'Millik';
+            font-weight: 400;
+            font-size: 24px;
+          }
+        }
+      }
+
+      .title-wrapper {
+        // h1,h2,h3,h4,h5{
+        //   font-family: 'Millik';
+        //   font-weight: 400;
+        // }
+
+        a {
+          font-family: 'Millik';
+          font-weight: 400;
+          font-size: 24px;
+        }
+      }
+
+      .topic-category {
+        display: none;
       }
     }
   }
+}
 
-  .title-wrapper{
-    // h1,h2,h3,h4,h5{
-    //   font-family: 'Millik';
-    //   font-weight: 400;
-    // }
-
-    a{
-      font-family: 'Millik';
-      font-weight: 400;
-      font-size: 24px;
-    }
-  }
-
-  .topic-category{
-    display: none;
-  }
+.fancy-title {
+  vertical-align: top;
 }

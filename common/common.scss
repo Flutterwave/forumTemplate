@@ -719,7 +719,18 @@ tr {
 
 .header-buttons {
   display: flex;
-  flex-direction: row-reverse;
+
+  .custom-header-links {
+    order: 1;
+  }
+
+  .sign-up-button {
+    order: 3;
+  }
+
+  .login-button {
+    order: 2;
+  }
 }
 
 .d-header .sign-up-button {

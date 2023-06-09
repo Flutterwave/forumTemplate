@@ -657,7 +657,7 @@ tr {
     margin-right: 80px;
 
     #main-outlet>.regular {
-      display: grid;
+      display: grid !important;
       // grid-template-columns: 829px 364px;
       grid-template-columns: 2.25fr 1fr;
       column-gap: 0.5rem;

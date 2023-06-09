@@ -250,8 +250,8 @@ html {
 
 #main-outlet {
   padding: 2.25rem 0;
-  margin-left: 80px;
-  margin-right: 80px;
+  // margin-left: 80px;
+  // margin-right: 80px;
 
 }
 
@@ -665,7 +665,7 @@ tr {
     column-gap: 0.5rem;
 
     #main-outlet>.container {
-      grid-column: 2;
+      grid-column: 1 / span 2;
       grid-row: 1 / 1;
     }
 
@@ -712,6 +712,37 @@ tr {
   vertical-align: top;
 }
 
-.sidebar-wrapper {
-  display: none;
+// .sidebar-wrapper {
+//   display: none;
+// }
+
+
+.d-header .sign-up-button {
+  padding: 0.56rem 1rem;
+  border-radius: 0.25rem;
+  background-color: $primary;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .d-button-label {
+    @include font2;
+    color: $tertiary;
+  }
+}
+
+.d-header .login-button {
+  padding: 0.56rem 1rem;
+  background-color: transparent;
+  justify-content: center;
+  align-items: center;
+
+  svg {
+    display: none;
+  }
+
+  .d-button-label {
+    @include font2;
+    color: $tertiary;
+  }
 }

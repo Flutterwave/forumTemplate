@@ -248,9 +248,12 @@ html {
   }
 }
 
-// #main-outlet {
-//   padding: 2.25rem 0;
-// }
+#main-outlet {
+  padding: 2.25rem 0;
+  margin-left: 80px;
+  margin-right: 80px;
+
+}
 
 .category-breadcrumb,
 .topic-excerpt-more {
@@ -653,8 +656,7 @@ tr {
   padding-right: 0 !important;
 
 
-  // margin-left: 80px;
-  // margin-right: 80px;
+
 
   #main-outlet>.regular {
     display: grid;

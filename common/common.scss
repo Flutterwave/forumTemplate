@@ -720,6 +720,22 @@ tr {
 //   display: flex;
 // flex-direction: row-reverse;
 
+.d-header .sign-up-button {
+  padding: 0.56rem 1rem;
+  background-color: $primary;
+  border-radius: 0.25rem;
+  justify-content: center;
+  align-items: center;
+  width: 5.3rem;
+  height: 0.9rem;
+  display: flex;
+
+  .d-button-label {
+    @include font2;
+    color: $tertiary;
+  }
+}
+
 .d-header .login-button {
   padding: 0.56rem 1rem;
   background-color: transparent;
@@ -736,20 +752,6 @@ tr {
   }
 }
 
-.d-header .sign-up-button {
-  padding: 0.56rem 1rem;
-  background-color: $primary;
-  border-radius: 0.25rem;
-  justify-content: center;
-  align-items: center;
-  width: 5.3rem;
-  height: 0.9rem;
-  display: flex;
 
-  .d-button-label {
-    @include font2;
-    color: $tertiary;
-  }
-}
 
 // }

@@ -796,3 +796,47 @@ tr {
 //     color: $tertiary;
 //   }
 // }
+
+.login-modal:not(.hidden) .login-modal-body.has-alt-auth .login-left-side {
+  .login-modal-body {
+    .has-alt-auth {
+      .login-left-side {
+        align-self: center;
+      }
+    }
+  }
+}
+
+.modal-inner-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: #FFF;
+
+  .modal-body.login-modal-body.login-left-side {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px;
+    background-color: #FFF;
+
+    .login-welcome-header {
+      padding: 0;
+      margin: 0;
+    }
+
+    .login-welcome-header>.login-title,
+    .login-welcome-header>.waving-hand {
+      display: none;
+    }
+
+  }
+
+  .modal-body .login-modal-body.login-right-side {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: #FFF;
+  }
+}

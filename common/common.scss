@@ -716,42 +716,73 @@ tr {
 // .sidebar-wrapper {
 //   display: none;
 // }
-// .header-buttons {
-//   display: flex;
-// flex-direction: row-reverse;
 
-.d-header .sign-up-button {
-  padding: 0.56rem 1rem;
-  background-color: $primary;
-  border-radius: 0.25rem;
-  justify-content: center;
-  align-items: center;
-  width: 5.3rem;
-  height: 0.9rem;
+.header-buttons {
   display: flex;
+  flex-direction: row-reverse;
 
-  .d-button-label {
-    @include font2;
-    color: $tertiary;
+  .d-header .sign-up-button {
+    padding: 0.56rem 1rem;
+    background-color: $primary;
+    border-radius: 0.25rem;
+    justify-content: center;
+    align-items: center;
+    width: 7.3125rem;
+    height: 1rem;
+    display: flex;
+
+    .d-button-label {
+      @include font2;
+      color: $tertiary;
+    }
   }
+
+  .d-header .login-button {
+    padding: 0.56rem 1rem;
+    background-color: transparent;
+    justify-content: center;
+    align-items: center;
+
+    svg {
+      display: none;
+    }
+
+    .d-button-label {
+      @include font2;
+      color: $tertiary;
+    }
+  }
+
+  // .d-header sign-up-button {
+  //   padding: 0.56rem 1rem;
+  //   background-color: transparent;
+  //   justify-content: center;
+  //   align-items: center;
+
+  //   .d-button-label {
+  //     @include font2;
+  //     color: $tertiary;
+  //   }
+  // }
+
+  // .d-header login-button {
+  //   padding: 0.56rem 1rem;
+  //   background-color: $primary;
+  //   border-radius: 0.25rem;
+  //   justify-content: center;
+  //   align-items: center;
+  // width: 7.3125rem;
+  // height: 1rem;
+  //   display: flex;
+
+  //   svg {
+  //     display: none;
+  //   }
+
+  //   .d-button-label {
+  //     @include font2;
+  //     color: $tertiary;
+  //   }
+  // }
+
 }
-
-.d-header .login-button {
-  padding: 0.56rem 1rem;
-  background-color: transparent;
-  justify-content: center;
-  align-items: center;
-
-  svg {
-    display: none;
-  }
-
-  .d-button-label {
-    @include font2;
-    color: $tertiary;
-  }
-}
-
-
-
-// }

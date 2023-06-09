@@ -653,13 +653,13 @@ tr {
   padding-right: 0 !important;
 
   #main-outlet {
-    margin-left: 80px;
-    margin-right: 80px;
+    // margin-left: 80px;
+    // margin-right: 80px;
 
     #main-outlet>.regular {
       display: grid !important;
-      grid-template-columns: auto auto;
-      // grid-template-columns: 2.25fr 1fr;
+      // grid-template-columns: auto auto;
+      grid-template-columns: 2.25fr 1fr;
       column-gap: 0.5rem;
 
       #main-outlet>.container {

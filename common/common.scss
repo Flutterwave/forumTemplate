@@ -821,6 +821,10 @@ tr {
     width: 100%;
     padding: 0;
     border: 0;
+
+    #login-button .d-icon {
+      display: none;
+    }
   }
 }
 

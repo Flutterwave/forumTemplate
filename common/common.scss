@@ -898,6 +898,10 @@ tr {
     padding: 1em;
   }
 
+  .d-modal.create-account .login-welcome-header .login-title {
+    display: none;
+  }
+
   .login-modal-body {
     .login-left-side {
       display: flex;

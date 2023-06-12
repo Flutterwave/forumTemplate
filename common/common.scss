@@ -882,6 +882,14 @@ tr {
   transition: none;
 }
 
+.d-modal.create-account .has-alt-auth .login-form,
+.d-modal.create-account .login-form {
+  background: #FFF;
+  padding: 1em 0 0 0;
+  grid-area: form;
+  /* overflow-y: scroll; */
+}
+
 .d-modal.create-account .has-alt-auth .create-account-form {
   display: flex;
   flex-direction: column;
@@ -890,6 +898,8 @@ tr {
 }
 
 .d-modal.create-account .login-welcome-header {
+  background-color: #FFF;
+
   .login-title {
     display: none;
   }

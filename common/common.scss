@@ -882,7 +882,7 @@ tr {
   transition: none;
 }
 
-.d-modal.create-account {
+.d-modal.create-account .has-alt-auth .create-account-form {
   display: flex;
   flex-direction: column;
   justify-content: center;

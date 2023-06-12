@@ -820,36 +820,34 @@ tr {
   width: 100%;
   background-color: #FFF;
 
-  div.ember-view {
-    div.modal-body {
-      div.login-modal-body {
-        .login-left-side {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          padding: 100px;
-          background-color: #FFF;
+  div.modal-body {
+    div.login-modal-body {
+      .login-left-side {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 100px;
+        background-color: #FFF;
 
-          .login-welcome-header {
-            padding: 0 !important;
-            margin: 0 !important;
-          }
-
-          .login-welcome-header>.login-title,
-          .login-welcome-header>.waving-hand {
-            display: none !important;
-          }
+        .login-welcome-header {
+          padding: 0 !important;
+          margin: 0 !important;
         }
 
-        .login-right-side {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          width: 100%;
-          background-color: #FFF;
+        .login-welcome-header>.login-title,
+        .login-welcome-header>.waving-hand {
+          display: none !important;
         }
-
       }
+
+      .login-right-side {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        background-color: #FFF;
+      }
+
     }
   }
 

@@ -887,11 +887,11 @@ tr {
     display: none;
   }
 
-  .waving-hand{
+  .waving-hand {
     display: none;
   }
 
-  .login-subheader{
+  .login-subheader {
     background-color: #FFF;
     color: #2A3362
   }
@@ -905,6 +905,13 @@ tr {
 
   .modal-header {
     display: none;
+  }
+
+  .modal-body .create-account-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
   .modal .modal-body {

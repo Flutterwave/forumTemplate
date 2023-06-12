@@ -893,9 +893,14 @@ tr {
 .d-modal.create-account .modal-footer {
   grid-area: footer;
   background-color: #FFF;
-  .btn{
+
+  .btn {
     background-color: $primary;
     color: #FFF;
+  }
+
+  #login-link {
+    display: none;
   }
 }
 

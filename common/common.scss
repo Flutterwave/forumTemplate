@@ -882,8 +882,19 @@ tr {
   transition: none;
 }
 
-.d-modal.create-account .login-welcome-header .login-title {
-  display: none;
+.d-modal.create-account .login-welcome-header {
+  .login-title {
+    display: none;
+  }
+
+  .waving-hand{
+    display: none;
+  }
+
+  .login-subheader{
+    background-color: #FFF;
+    color: #2A3362
+  }
 }
 
 .modal-inner-container {

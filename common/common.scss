@@ -840,6 +840,17 @@ tr {
   margin-left: 0px;
 }
 
+.login-modal:not(.hidden) #login-form .input-group input {
+  padding: 0.75em 0.77em;
+  min-width: 250px;
+  box-shadow: none;
+  margin-bottom: 0.25em;
+  width: 100%;
+
+  background-color: #FFF;
+  color: #2A3362;
+}
+
 .login-modal:not(.hidden) .modal-body,
 .login-modal:not(.hidden) #credentials {
   display: flex;

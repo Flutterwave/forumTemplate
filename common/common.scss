@@ -814,6 +814,11 @@ tr {
   }
 }
 
+.login-modal .modal-body.has-alt-auth,
+.create-account .modal-body.has-alt-auth {
+  background: #FFFFFF;
+}
+
 .modal-inner-container {
   display: flex;
   flex-direction: column;

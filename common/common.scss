@@ -887,7 +887,7 @@ tr {
   background: #FFF;
   padding: 1em 0 0 0;
   grid-area: form;
-  /* overflow-y: scroll; */
+  overflow-y: visible;
 }
 
 .d-modal.create-account .has-alt-auth .create-account-form {

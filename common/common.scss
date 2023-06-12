@@ -805,6 +805,8 @@ tr {
 }
 
 .login-modal:not(.hidden) .login-modal-body.has-alt-auth .login-left-side {
+  width: auto;
+
   .login-modal-body {
     .has-alt-auth {
       .login-left-side {
@@ -812,6 +814,14 @@ tr {
       }
     }
   }
+}
+
+.login-modal:not(.hidden) .login-left-side {
+  /*background: var(--secondary); */
+  /* width: auto; */
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* padding: 3em 3em 2.5em;
 }
 
 .login-modal:not(.hidden) .modal-body,
@@ -840,41 +850,41 @@ tr {
 
   .modal .modal-body {
     /* overflow-y: auto; */
-    max-height: 400px;
-    padding: 1em;
-  }
+  max-height: 400px;
+  padding: 1em;
+}
 
-  .login-modal-body {
-    .login-left-side {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 100px;
-      background-color: #FFF;
+.login-modal-body {
+  .login-left-side {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 100px;
+    background-color: #FFF;
 
-      #new-account-link {
-        display: none;
-      }
-
-      .login-welcome-header {
-        padding: 0 !important;
-        margin: 0 !important;
-      }
-
-      .login-welcome-header>.login-title,
-      .login-welcome-header>.waving-hand {
-        display: none !important;
-      }
+    #new-account-link {
+      display: none;
     }
 
-    .login-right-side {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-      background-color: #FFF;
+    .login-welcome-header {
+      padding: 0 !important;
+      margin: 0 !important;
     }
 
+    .login-welcome-header>.login-title,
+    .login-welcome-header>.waving-hand {
+      display: none !important;
+    }
   }
+
+  .login-right-side {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: #FFF;
+  }
+
+}
 }

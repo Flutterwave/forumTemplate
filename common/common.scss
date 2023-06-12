@@ -820,6 +820,10 @@ tr {
   width: 100%;
   background-color: #FFF;
 
+  .modal-header {
+    display: none;
+  }
+
   div.modal-body {
     div.login-modal-body {
       .login-left-side {

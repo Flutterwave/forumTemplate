@@ -882,6 +882,13 @@ tr {
   transition: none;
 }
 
+.d-modal.create-account {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .d-modal.create-account .login-welcome-header {
   .login-title {
     display: none;
@@ -905,13 +912,6 @@ tr {
 
   .modal-header {
     display: none;
-  }
-
-  .modal-body .create-account-form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
   }
 
   .modal .modal-body {

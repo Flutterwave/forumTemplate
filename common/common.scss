@@ -865,6 +865,18 @@ tr {
   background: #FFFFFF;
 }
 
+.login-modal:not(.hidden) #login-form .input-group label.alt-placeholder {
+  color: #818181;
+  font-size: 16px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 1em;
+  top: 10px;
+  box-shadow: 0 0 0 0px rgba(var(--tertiary-rgb), 0);
+  transition: none;
+}
+
 .modal-inner-container {
   display: flex;
   flex-direction: column;

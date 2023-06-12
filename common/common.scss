@@ -880,6 +880,11 @@ tr {
       .login-welcome-header>.waving-hand {
         display: none !important;
       }
+
+      .login-welcome-header>.login-subheader {
+        background-color: #FFF;
+        color: #0b0b0b
+      }
     }
 
     .login-right-side {

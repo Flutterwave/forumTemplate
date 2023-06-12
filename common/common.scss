@@ -829,6 +829,12 @@ tr {
     display: none;
   }
 
+  .modal .modal-body {
+    /* overflow-y: auto; */
+    max-height: 400px;
+    padding: 1em;
+  }
+
   .login-modal-body {
     .login-left-side {
       display: flex;

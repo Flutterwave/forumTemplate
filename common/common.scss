@@ -814,6 +814,15 @@ tr {
   }
 }
 
+.login-modal:not(.hidden) .modal-body,
+.login-modal:not(.hidden) #credentials {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .login-modal .modal-body.has-alt-auth,
 .create-account .modal-body.has-alt-auth {
   background: #FFFFFF;

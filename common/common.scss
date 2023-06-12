@@ -882,6 +882,10 @@ tr {
   transition: none;
 }
 
+.d-modal.create-account .login-welcome-header .login-title {
+  display: none;
+}
+
 .modal-inner-container {
   display: flex;
   flex-direction: column;
@@ -896,10 +900,6 @@ tr {
     /* overflow-y: auto; */
     max-height: 400px;
     padding: 1em;
-  }
-
-  .d-modal.create-account .login-welcome-header .login-title {
-    display: none;
   }
 
   .login-modal-body {

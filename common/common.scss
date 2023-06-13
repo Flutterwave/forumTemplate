@@ -796,3 +796,223 @@ tr {
 //     color: $tertiary;
 //   }
 // }
+
+.d-modal.create-account .modal-inner-container,
+.d-modal.login-modal .modal-inner-container,
+.invites-show .modal-inner-container,
+.admin-invite-page .modal-inner-container {
+  position: relative;
+}
+
+.login-modal:not(.hidden) .login-modal-body.has-alt-auth .login-left-side {
+  width: auto;
+
+  .login-modal-body {
+    .has-alt-auth {
+      .login-left-side {
+        align-self: center;
+      }
+    }
+  }
+
+  .modal-footer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 0;
+    border: 0;
+
+    #login-button .d-icon {
+      display: none;
+    }
+
+    .btn {
+      margin: 0;
+      background-color: $primary;
+      color: #FFF;
+      width: 249px;
+      height: 40px;
+    }
+  }
+}
+
+.login-modal:not(.hidden) .login-left-side #login-form {
+  margin-top: 24px;
+  margin-right: 0px;
+  margin-bottom: 1.25em;
+  margin-left: 0px;
+}
+
+.login-modal:not(.hidden) #login-form .input-group input {
+  padding: 0.75em 0.77em;
+  min-width: 250px;
+  box-shadow: none;
+  margin-bottom: 0.25em;
+  width: 100%;
+
+  background-color: #FFF;
+  color: #2A3362;
+  border: 1px solid #E0E0E0;
+  border-radius: 4px;
+}
+
+.login-modal:not(.hidden) .modal-body,
+.login-modal:not(.hidden) #credentials {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-modal .modal-body.has-alt-auth,
+.create-account .modal-body.has-alt-auth {
+  background: #FFFFFF;
+}
+
+.login-modal:not(.hidden) #login-form .input-group label.alt-placeholder {
+  color: #818181;
+  font-size: 16px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 1em;
+  top: 10px;
+  box-shadow: 0 0 0 0px rgba(var(--tertiary-rgb), 0);
+  transition: none;
+}
+
+.d-modal.create-account .has-alt-auth .login-form,
+.d-modal.create-account .login-form {
+  background: #FFF;
+  padding: 1em 0 0 0;
+  grid-area: form;
+  overflow-y: visible;
+}
+
+.d-modal.create-account .modal-footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #FFF;
+
+  .btn {
+    background-color: $primary;
+    color: #FFF;
+  }
+
+  #login-link {
+    display: none;
+  }
+}
+
+.d-modal.create-account .has-alt-auth .create-account-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .login-form{
+    .input-group label.alt-placeholder {
+      color: #818181;
+      font-size: 16px;
+      font-weight: normal;
+      position: absolute;
+      pointer-events: none;
+      left: 1em;
+      top: 10px;
+      box-shadow: 0 0 0 0px rgba(var(--tertiary-rgb), 0);
+      transition: none;
+    }
+
+    .input-group input {
+      padding: 0.75em 0.77em;
+      min-width: 250px;
+      box-shadow: none;
+      margin-bottom: 0.25em;
+      width: 100%;
+    
+      background-color: #FFF;
+      color: #2A3362;
+      border: 1px solid #E0E0E0;
+      border-radius: 4px;
+    }
+  }
+}
+
+.d-modal.create-account .login-welcome-header {
+  background-color: #FFF;
+
+  .login-title {
+    display: none;
+  }
+
+  .waving-hand {
+    display: none;
+  }
+
+  .login-subheader {
+    background-color: #FFF;
+    color: #2A3362
+  }
+}
+
+.modal-inner-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: #FFF;
+
+  .modal-header {
+    display: none;
+  }
+
+  .modal .modal-body {
+    /* overflow-y: auto; */
+    max-height: 400px;
+    padding: 1em;
+
+  }
+
+  .login-modal-body {
+    .login-left-side {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 100px;
+      background-color: #FFF;
+
+      #new-account-link {
+        display: none;
+      }
+
+      .login-welcome-header {
+        padding: 0 !important;
+        margin: 0 !important;
+        left: -30px;
+      }
+
+      .login-welcome-header>.login-title,
+      .login-welcome-header>.waving-hand {
+        display: none !important;
+      }
+
+      .login-welcome-header>.login-subheader {
+        background-color: #FFF;
+        color: #2A3362
+      }
+    }
+
+    .login-right-side {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      background-color: #FFF;
+
+    }
+
+  }
+}

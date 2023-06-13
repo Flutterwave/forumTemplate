@@ -804,7 +804,7 @@ tr {
   position: relative;
 }
 
-.login-modal:not(.hidden) .login-modal-body.has-alt-auth .login-right-side  {
+.login-modal:not(.hidden) .login-modal-body.has-alt-auth .login-right-side, .create-account {
   #login-buttons{
     width: 100%;
     text-align: center;

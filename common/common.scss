@@ -804,6 +804,23 @@ tr {
   position: relative;
 }
 
+.login-modal:not(.hidden) .login-modal-body.has-alt-auth .login-right-side  {
+  .login-buttons{
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    .btn{
+      padding-left: 40px;
+      padding-right: 40px;
+      filter: drop-shadow(0px 1px 5px rgba(0, 0, 0, 0.1138));
+      border-radius: 4px; 
+    }
+  }
+}
+
 .login-modal:not(.hidden) .login-modal-body.has-alt-auth .login-left-side {
   width: auto;
 

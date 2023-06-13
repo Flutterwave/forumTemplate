@@ -921,8 +921,11 @@ tr {
   background-color: #FFF;
 
   .btn {
+    margin: 0;
     background-color: $primary;
-    color: #FFF;
+    color: #fff;
+    width: 249px;
+    height: 40px;
     border-radius: 4px;
   }
 

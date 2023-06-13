@@ -805,7 +805,7 @@ tr {
 }
 
 .login-modal:not(.hidden) .login-modal-body.has-alt-auth .login-right-side  {
-  .login-buttons{
+  #login-buttons{
     width: 100%;
     text-align: center;
     display: flex;

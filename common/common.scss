@@ -963,6 +963,7 @@ tr {
   flex-direction: column;
   width: 100%;
   background-color: #FFF;
+  --modal-max-width: 100%;
 
   .modal-header {
     display: none;

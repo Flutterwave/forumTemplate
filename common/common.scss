@@ -975,6 +975,12 @@ tr {
       box-shadow: 0 0 0 0px rgba(var(--tertiary-rgb), 0);
       transition: none;
     }
+    
+    .create-account__password .create-account__password-info{
+      button.toggle-password-mask{
+        display: none;
+      }
+    }
 
     .input-group input {
       padding: 0.75em 0.77em;

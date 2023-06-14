@@ -816,7 +816,13 @@ tr {
       padding-left: 40px;
       padding-right: 40px;
       filter: drop-shadow(0px 1px 5px rgba(0, 0, 0, 0.1138));
+      width: 288px;
+      height: 40px;
       border-radius: 4px; 
+      
+      .d-icon {
+        margin-right: 1.5em;
+      }
     }
   }
 }

@@ -941,6 +941,11 @@ tr {
   align-items: center;
 
   .login-form{
+    .input-group{
+      .more-info{
+        display: none;
+      }
+    }
     .input-group label.alt-placeholder {
       color: #818181;
       font-size: 16px;

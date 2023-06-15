@@ -1006,6 +1006,16 @@ tr {
   }
 }
 
+.d-modal.create-account .create-account-form {
+  .login-form {
+    .create-account__password .create-account__password-info {
+      button.toggle-password-mask {
+        display: none;
+      }
+    }
+  }
+}
+
 .d-modal.create-account .has-alt-auth .create-account-form {
   display: flex;
   flex-direction: column;

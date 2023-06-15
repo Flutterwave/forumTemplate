@@ -804,22 +804,44 @@ tr {
   position: relative;
 }
 
-.login-modal:not(.hidden) .login-modal-body.has-alt-auth .login-right-side, .create-account {
-  #login-buttons{
+.login-modal:not(.hidden) .login-left-side .modal-footer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0;
+  border: 0;
+
+  #login-button .d-icon {
+    display: none;
+  }
+
+  .btn {
+    margin: 0;
+    background-color: $primary;
+    color: #FFF;
+    width: 288px;
+    height: 40px;
+    border-radius: 4px;
+  }
+}
+
+.login-modal:not(.hidden) .login-modal-body.has-alt-auth .login-right-side,
+.create-account {
+  #login-buttons {
     width: 100%;
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
-    
-    .btn{
+
+    .btn {
       padding-left: 40px;
       padding-right: 40px;
       filter: drop-shadow(0px 1px 5px rgba(0, 0, 0, 0.1138));
       width: 288px;
       height: 40px;
-      border-radius: 4px; 
-      
+      border-radius: 4px;
+
       .d-icon {
         margin-right: 1.5em;
       }
@@ -838,26 +860,26 @@ tr {
     }
   }
 
-  .modal-footer {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    padding: 0;
-    border: 0;
+  // .modal-footer {
+  //   display: flex;
+  //   flex-direction: column;
+  //   width: 100%;
+  //   padding: 0;
+  //   border: 0;
 
-    #login-button .d-icon {
-      display: none;
-    }
+  //   #login-button .d-icon {
+  //     display: none;
+  //   }
 
-    .btn {
-      margin: 0;
-      background-color: $primary;
-      color: #FFF;
-      width: 288px;
-      height: 40px;
-      border-radius: 4px;
-    }
-  }
+  //   .btn {
+  //     margin: 0;
+  //     background-color: $primary;
+  //     color: #FFF;
+  //     width: 288px;
+  //     height: 40px;
+  //     border-radius: 4px;
+  //   }
+  // }
 }
 
 .login-modal:not(.hidden) .login-left-side #login-form {
@@ -865,8 +887,8 @@ tr {
   margin-right: 0px;
   margin-bottom: 1.25em;
   margin-left: 0px;
-  
-  .input-group{
+
+  .input-group {
     margin-bottom: 0;
     gap: 0.5px;
   }
@@ -913,16 +935,17 @@ tr {
 }
 
 .d-modal.create-account .modal-footer:before {
-    content: "";
-    display: block;
-    position: absolute;
-    width: 100%;
-    pointer-events: none;
-    top: calc(-2em - 1px);
-    left: 0;
-    height: 2em;
-    background-image: none; 
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  pointer-events: none;
+  top: calc(-2em - 1px);
+  left: 0;
+  height: 2em;
+  background-image: none;
 }
+
 .d-modal.create-account .has-alt-auth .login-form,
 .d-modal.create-account .login-form {
   background: #FFF;
@@ -959,12 +982,13 @@ tr {
   justify-content: center;
   align-items: center;
 
-  .login-form{
-    .input-group{
-      .more-info{
+  .login-form {
+    .input-group {
+      .more-info {
         display: none;
       }
     }
+
     .input-group label.alt-placeholder {
       color: #818181;
       font-size: 16px;
@@ -976,9 +1000,9 @@ tr {
       box-shadow: 0 0 0 0px rgba(var(--tertiary-rgb), 0);
       transition: none;
     }
-    
-    .create-account__password .create-account__password-info{
-      button.toggle-password-mask{
+
+    .create-account__password .create-account__password-info {
+      button.toggle-password-mask {
         display: none;
       }
     }
@@ -990,7 +1014,7 @@ tr {
       margin-bottom: 0.25em;
       width: 288px;
       height: 48px;
-    
+
       background-color: #FFF;
       color: #2A3362;
       border: 1px solid #E0E0E0;

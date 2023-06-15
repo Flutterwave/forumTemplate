@@ -913,6 +913,21 @@ tr {
   margin-bottom: 1em;
 }
 
+.d-modal.create-account .login-form .input-group input {
+  width: 288px;
+  height: 40px;
+  border-radius: 4px;
+  background-color: #FFF;
+}
+
+.create-account .login-form .input-group span.more-info {
+  display: none;
+}
+
+.create-account .login-form .input-group .create-account__password div.create-account__password-info {
+  display: none;
+}
+
 .login-modal:not(.hidden) .modal-body,
 .login-modal:not(.hidden) #credentials {
   display: flex;
@@ -937,6 +952,15 @@ tr {
   top: 10px;
   box-shadow: 0 0 0 0px rgba(var(--tertiary-rgb), 0);
   transition: none;
+}
+
+.d-modal.create-account .create-account-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: relative;
+  justify-content: center;
+  align-items: center;
 }
 
 .d-modal.create-account .modal-footer:before {

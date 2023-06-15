@@ -1054,7 +1054,16 @@ tr {
   --modal-max-width: 100%;
 
   .modal-header {
-    display: none;
+
+    .btn-flat.close {
+      padding: 0;
+      background: rgba(0, 0, 0, 0);
+      font-size: 1.3rem;
+    }
+
+    .btn-flat.close .d-icon {
+      color: #2a3362;
+    }
   }
 
   .modal .modal-body {

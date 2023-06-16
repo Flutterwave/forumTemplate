@@ -10,7 +10,7 @@ export default class CustomHomepageContent extends Component {
 
   get isHomepage() {
     const currentRouteName = this.router.currentRouteName;
-    console.log(`${currentRouteName}, discovery.${defaultHomepage()}`);
+    console.log(`${this.router}, discovery.${defaultHomepage()}`);
     return currentRouteName === `discovery.${defaultHomepage()}`;
   }
 }

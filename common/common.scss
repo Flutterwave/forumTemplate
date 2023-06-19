@@ -962,6 +962,11 @@ tr {
   position: relative;
   justify-content: center;
   align-items: center;
+  padding-bottom: 2em;
+
+  #username-validation{
+    display: none;
+  }
 }
 
 .d-modal.create-account .modal-footer:before {

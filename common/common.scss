@@ -1089,8 +1089,14 @@ tr {
   background-color: #FFF;
   --modal-max-width: 100%;
 
-  .modal-header {
+  #flw-logo-auth {
+    width: 185px;
+    padding: 20px;
+  }
 
+  .modal-header {
+    width: 20px;
+    height: 10px;
     .btn-flat.close {
       padding: 0;
       background: rgba(0, 0, 0, 0);

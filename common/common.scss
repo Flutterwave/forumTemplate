@@ -904,10 +904,10 @@ tr {
   box-shadow: none;
   margin-bottom: 0.25em;
   width: 288px;
-  height: 40px;
+  height: 48px;
 
   background-color: #FFF;
-  color: #2A3362;
+  color: #333333;
   border: 1px solid #E0E0E0;
   border-radius: 4px;
   margin-bottom: 1em;
@@ -915,7 +915,7 @@ tr {
 
 .d-modal.create-account .login-form .input-group input {
   width: 288px;
-  height: 40px;
+  height: 48px;
   border-radius: 4px;
   background-color: #FFF;
 }
@@ -964,7 +964,7 @@ tr {
   align-items: center;
   padding-bottom: 2em;
 
-  #username-validation{
+  #username-validation {
     display: none;
   }
 }
@@ -1062,7 +1062,7 @@ tr {
       height: 48px;
 
       background-color: #FFF;
-      color: #2A3362;
+      color: #333333;
       border: 1px solid #E0E0E0;
       border-radius: 4px;
     }
@@ -1102,6 +1102,7 @@ tr {
   .modal-header {
     width: 20px;
     height: 10px;
+
     .btn-flat.close {
       padding: 0;
       background: rgba(0, 0, 0, 0);
@@ -1110,6 +1111,7 @@ tr {
 
     .btn-flat.close .d-icon {
       color: #2a3362;
+      display: none;
     }
   }
 
@@ -1133,10 +1135,18 @@ tr {
         display: none;
       }
 
+      #login-form {
+        #credentials .input-group {
+          .alt-placeholder {
+            background-color: #FFF;
+          }
+        }
+      }
+
       .login-welcome-header {
         padding: 0 !important;
         margin: 0 !important;
-        left: -30px;
+        left: -50px;
       }
 
       .login-welcome-header>.login-title,
@@ -1159,5 +1169,19 @@ tr {
 
     }
 
+  }
+}
+
+.d-modal.login-modal .modal-inner-container {
+  #flutterwave-auth-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    .flw-header-btn {
+      background: #FF5805;
+      border-radius: 4px;
+    }
   }
 }

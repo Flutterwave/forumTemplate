@@ -5,7 +5,11 @@
   @action={{action "login"}}
 >
   <PluginOutlet @name="login-before-modal-body" @connectorTagName="div" />
-  <img id="flw-logo-auth" class="flutterwave-logo" src="https://flutterwave.com/images/logo/full.svg" alt="flutterwave-logo"/>
+  <div id="flutterwave-auth-header">
+    <img id="flw-logo-auth" class="flutterwave-logo" src="https://flutterwave.com/images/logo/full.svg" alt="flutterwave-logo"/>
+    <button id="flw-login-header-btn" class="flw-header-btn">Create account</button>
+  </div>
+  
   <DModalBody @class={{this.modalBodyClasses}}>
 
     {{#if this.canLoginLocal}}

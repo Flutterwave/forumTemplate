@@ -35,6 +35,7 @@
       const router = api.container.lookup('service:router');
   
       if (router.currentRoute.name != 'discovery.latest') {
+        console.log(router.currentRoute.name)
         document.getElementById('main-outlet-wrapper').style.display = 'none';
       } 
     });

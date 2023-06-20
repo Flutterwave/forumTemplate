@@ -1086,7 +1086,8 @@ tr {
   }
 }
 
-.modal-inner-container {
+.d-modal.login-modal .modal-inner-container,
+.d-modal.create-account .modal-inner-container {
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -1119,7 +1120,6 @@ tr {
     overflow-y: visible;
     max-height: 400px;
     padding: 1em;
-
   }
 
   .login-modal-body {
@@ -1168,7 +1168,6 @@ tr {
       background-color: #FFF;
 
     }
-
   }
 }
 
@@ -1180,8 +1179,21 @@ tr {
     align-items: center;
 
     .flw-header-btn {
+      font-family: 'Moderat';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 14px;
+      text-align: center;
+      letter-spacing: 0.0024px;
       background: #FF5805;
       border-radius: 4px;
+      border: none;
+      padding: 9px;
+
+      span {
+        color: #FFF;
+      }
     }
   }
 }

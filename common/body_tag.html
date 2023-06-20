@@ -3,8 +3,8 @@
       const router = api.container.lookup('service:router');
   
       if (router.currentRoute.name != 'discovery.latest') {
-        document.querySelectorAll('#main-outlet-wrapper').style.padding-left = '0 !important';
-        document.querySelectorAll('#main-outlet-wrapper').style.padding-right = '0 !important';
+        document.getElementById('#main-outlet-wrapper').style.padding-left = '0 !important';
+        document.getElementById('#main-outlet-wrapper').style.padding-right = '0 !important';
       } 
     });
   </script>

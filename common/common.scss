@@ -1095,6 +1095,31 @@ tr {
   background-color: #FFF;
   --modal-max-width: 100%;
 
+  #flutterwave-auth-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    .flw-header-btn {
+      font-family: 'Moderat';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 14px;
+      text-align: center;
+      letter-spacing: 0.0024px;
+      background: #FF5805;
+      border-radius: 4px;
+      border: none;
+      padding: 9px;
+
+      margin-right: 33px span {
+        color: #FFF;
+      }
+    }
+  }
+
   #flw-logo-auth {
     width: 185px;
     padding: 20px;
@@ -1167,33 +1192,6 @@ tr {
       width: 100%;
       background-color: #FFF;
 
-    }
-  }
-}
-
-.d-modal.login-modal .modal-inner-container {
-  #flutterwave-auth-header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-
-    .flw-header-btn {
-      font-family: 'Moderat';
-      font-style: normal;
-      font-weight: 500;
-      font-size: 12px;
-      line-height: 14px;
-      text-align: center;
-      letter-spacing: 0.0024px;
-      background: #FF5805;
-      border-radius: 4px;
-      border: none;
-      padding: 9px;
-
-      span {
-        color: #FFF;
-      }
     }
   }
 }

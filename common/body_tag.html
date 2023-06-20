@@ -1,0 +1,10 @@
+<script type="text/discourse-plugin" version="1.1.0">
+    api.onPageChange(() => {
+      const router = api.container.lookup('service:router');
+  
+      if (router.currentRoute.name != 'discovery.latest') {
+        document.querySelectorAll('#main-outlet-wrapper')[0].style.padding-left = '0 !important';
+        document.querySelectorAll('#main-outlet-wrapper')[0].style.padding-right = '0 !important';
+      } 
+    });
+  </script>

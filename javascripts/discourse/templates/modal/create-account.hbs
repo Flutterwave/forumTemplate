@@ -10,7 +10,14 @@
         @connectorTagName="div"
       />
     </span>
-    <img id="flw-logo-auth" class="flutterwave-logo" src="https://flutterwave.com/images/logo/full.svg" alt="flutterwave-logo"/>
+    <div id="flutterwave-auth-header">
+      <img id="flw-logo-auth" class="flutterwave-logo" src="https://flutterwave.com/images/logo/full.svg" alt="flutterwave-logo"/>
+      <button id="flw-create-account-header-btn" class="flw-header-btn">
+        <span>
+          Already have an account? Login
+        </span>
+      </button>
+    </div>
     <DModalBody
       @class={{this.modalBodyClasses}}
       @preventModalAlertHiding={{true}}
@@ -272,4 +279,14 @@
       </div>
     </DModalBody>
   {{/unless}}
+  <div id="flutterwave-auth-footer">
+    <p>
+      © Flutterwave  2023
+    </p>
+    <div class="flw-auth-footer-helper-links">
+      <p>FAQs</p>
+      <p>Privacy policy</p>
+      <p>Terms and Conditions</p>
+    </div>
+  </div>
 </CreateAccount>

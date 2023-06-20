@@ -1114,10 +1114,27 @@ tr {
       border: none;
       padding: 9px;
       margin-right: 33px;
-      
+
       span {
         color: #FFF;
       }
+    }
+  }
+
+  #flutterwave-auth-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 80px;
+    margin-left: 80px;
+    margin: 32px;
+    color: #333333;
+
+    .flw-auth-footer-helper-links {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5em;
     }
   }
 
@@ -1154,7 +1171,6 @@ tr {
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      padding: 100px;
       background-color: #FFF;
 
       #new-account-link {

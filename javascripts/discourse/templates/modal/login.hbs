@@ -7,7 +7,11 @@
   <PluginOutlet @name="login-before-modal-body" @connectorTagName="div" />
   <div id="flutterwave-auth-header">
     <img id="flw-logo-auth" class="flutterwave-logo" src="https://flutterwave.com/images/logo/full.svg" alt="flutterwave-logo"/>
-    <button id="flw-login-header-btn" class="flw-header-btn">Create account</button>
+    <button id="flw-login-header-btn" class="flw-header-btn">
+      <span>
+        Create account
+      </span>
+    </button>
   </div>
   
   <DModalBody @class={{this.modalBodyClasses}}>

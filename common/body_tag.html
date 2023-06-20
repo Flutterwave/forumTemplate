@@ -2,8 +2,8 @@
     api.onPageChange(() => {
       const router = api.container.lookup('service:router');
   
+      console.log(router.currentRoute.name)
       if (router.currentRoute.name === 'discovery.latest') {
-        console.log(router.currentRoute.name)
         document.getElementById('main-outlet-wrapper').style.display = 'none';
       } 
     });

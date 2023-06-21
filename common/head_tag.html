@@ -2,15 +2,13 @@
     console.log("FlutterwavError:", api);
     api.onPageChange((url) => {
       const router = api.container.lookup('service:router');
-  
+      var element = document.getElementById("main-outlet-wrapper");
       
       console.log(router.currentRoute.name)
 
       if (router.currentRoute.name !== 'discovery.latest') {
-        var element = document.getElementById("main-outlet-wrapper");
         element.classList.add("post");
       } else {
-        console.log(url)
         element.classList.remove("post");
       }
     });

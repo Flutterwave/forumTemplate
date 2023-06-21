@@ -6,7 +6,7 @@
       console.log(url)
       console.log(router.currentRoute.name)
 
-      if (url !== "/" || router.currentRoute.name !== 'discovery.latest') {
+      if (url !== "/" && router.currentRoute.name !== 'discovery.latest') {
         var element = document.getElementById("main-outlet-wrapper");
         element.classList.add("post");
       } 

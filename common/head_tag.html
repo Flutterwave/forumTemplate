@@ -1,8 +1,9 @@
 <script type="text/discourse-plugin" version="1.1.0">
     console.log("FlutterwavError:", api);
-    api.onPageChange(() => {
+    api.onPageChange((url) => {
       const router = api.container.lookup('service:router');
   
+      console.log(url)
       console.log(router.currentRoute.name)
 
       if (router.currentRoute.name !== 'discovery.latest') {

@@ -8,11 +8,12 @@
     <PluginOutlet @name="login-before-modal-body" @connectorTagName="div" />
     <div id="flutterwave-auth-header">
       <img id="flw-logo-auth" class="flutterwave-logo" src="https://flutterwave.com/images/logo/full.svg" alt="flutterwave-logo"/>
-      <button id="flw-login-header-btn" class="flw-header-btn">
-        <span>
-          Create account
-        </span>
-      </button>
+      <DButton
+                @class="flw-header-btn"
+                @id="flw-create-account-header-btn"
+                @action={{route-action "showCreateAccount"}}
+                @label={{(theme-prefix "login.create_account_cta_text")}}
+      />
     </div>
     
     <DModalBody @class={{this.modalBodyClasses}}>
@@ -123,7 +124,7 @@
                   @id="login-button"
                   @form="login-form"
                   @icon="unlock"
-                  @label={{this.loginButtonLabel}}
+                  @label={{(theme-prefix "login.cta_text")}}
                   @disabled={{this.loginDisabled}}
                   @class="btn btn-large btn-primary"
                   @tabindex="2"
@@ -159,6 +160,7 @@
         {{/if}}
 
         <div class="login-right-side">
+          <span>OR</span>
           <LoginButtons @externalLogin={{action "externalLogin"}} />
         </div>
       {{/if}}

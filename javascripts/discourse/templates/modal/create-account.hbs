@@ -12,11 +12,12 @@
     </span>
     <div id="flutterwave-auth-header">
       <img id="flw-logo-auth" class="flutterwave-logo" src="https://flutterwave.com/images/logo/full.svg" alt="flutterwave-logo"/>
-      <button id="flw-create-account-header-btn" class="flw-header-btn">
-        <span>
-          Already have an account? Login
-        </span>
-      </button>
+      <DButton
+        @class="flw-header-btn"
+        @id="flw-create-account-header-btn"
+        @action={{route-action "showLogin"}}
+        @label={{(theme-prefix "create_account.login_cta_text")}}
+      />
     </div>
     <DModalBody
       @class={{this.modalBodyClasses}}
@@ -242,7 +243,7 @@
               @class="btn-large btn-primary"
               @action={{action "createAccount"}}
               @disabled={{this.submitDisabled}}
-              @label="create_account.title"
+              @label={{(theme-prefix "create_account.cta_text")}}
               @isLoading={{this.formSubmitted}}
             />
 

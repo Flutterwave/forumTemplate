@@ -238,35 +238,6 @@
             </form>
           </div>
 
-          <div class="modal-footer">
-            <DButton
-              @class="btn-large btn-primary"
-              @action={{action "createAccount"}}
-              @disabled={{this.submitDisabled}}
-              @label={{(theme-prefix "create_account.cta_text")}}
-              @isLoading={{this.formSubmitted}}
-            />
-
-            {{#unless this.hasAuthOptions}}
-              <DButton
-                @class="btn-large"
-                @id="login-link"
-                @action={{route-action "showLogin"}}
-                @disabled={{this.formSubmitted}}
-                @label="log_in"
-              />
-            {{/unless}}
-
-            <div class="disclaimer">
-              {{html-safe this.disclaimerHtml}}
-            </div>
-          </div>
-
-          <PluginOutlet
-            @name="create-account-after-modal-footer"
-            @connectorTagName="div"
-          />
-
         {{/if}}
         {{#unless this.hasAuthOptions}}
           <div class="create-account-login-buttons">
@@ -276,6 +247,35 @@
             <LoginButtons @externalLogin={{action "externalLogin"}} />
           </div>
         {{/unless}}
+
+        <div class="modal-footer">
+          <DButton
+            @class="btn-large btn-primary"
+            @action={{action "createAccount"}}
+            @disabled={{this.submitDisabled}}
+            @label={{(theme-prefix "create_account.cta_text")}}
+            @isLoading={{this.formSubmitted}}
+          />
+
+          {{#unless this.hasAuthOptions}}
+            <DButton
+              @class="btn-large"
+              @id="login-link"
+              @action={{route-action "showLogin"}}
+              @disabled={{this.formSubmitted}}
+              @label="log_in"
+            />
+          {{/unless}}
+
+          <div class="disclaimer">
+            {{html-safe this.disclaimerHtml}}
+          </div>
+        </div>
+
+        <PluginOutlet
+          @name="create-account-after-modal-footer"
+          @connectorTagName="div"
+        />
 
         <p class="flw-extra-text">
           By clicking “get started”, I acknowledge that I have read and do hereby accept the terms and conditions in the Flutterwave's Terms of Use and Privacy Policy.

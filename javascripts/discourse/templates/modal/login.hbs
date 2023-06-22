@@ -116,36 +116,6 @@
             {{/if}}
           </SecondFactorForm>
         </form>
-        <div class="modal-footer">
-          {{#if this.canLoginLocal}}
-            {{#unless this.showSecurityKey}}
-              <DButton
-                @action={{action "login"}}
-                @id="login-button"
-                @form="login-form"
-                @icon="unlock"
-                @label={{(theme-prefix "login.cta_text")}}
-                @disabled={{this.loginDisabled}}
-                @class="btn btn-large btn-primary"
-                @tabindex="2"
-              />
-            {{/unless}}
-
-            {{#if this.showSignupLink}}
-              <DButton
-                @class="btn-large"
-                @id="new-account-link"
-                @action={{action "createAccount"}}
-                @label="create_account.title"
-                @tabindex="3"
-              />
-            {{/if}}
-          {{/if}}
-          <ConditionalLoadingSpinner
-            @condition={{this.showSpinner}}
-            @size="small"
-          />
-        </div>
       </div>
     {{/if}}
     {{#if this.showLoginButtons}}
@@ -166,6 +136,37 @@
         <LoginButtons @externalLogin={{action "externalLogin"}} />
       </div>
     {{/if}}
+
+    <div class="modal-footer">
+      {{#if this.canLoginLocal}}
+        {{#unless this.showSecurityKey}}
+          <DButton
+            @action={{action "login"}}
+            @id="login-button"
+            @form="login-form"
+            @icon="unlock"
+            @label={{(theme-prefix "login.cta_text")}}
+            @disabled={{this.loginDisabled}}
+            @class="btn btn-large btn-primary"
+            @tabindex="2"
+          />
+        {{/unless}}
+
+        {{#if this.showSignupLink}}
+          <DButton
+            @class="btn-large"
+            @id="new-account-link"
+            @action={{action "createAccount"}}
+            @label="create_account.title"
+            @tabindex="3"
+          />
+        {{/if}}
+      {{/if}}
+      <ConditionalLoadingSpinner
+        @condition={{this.showSpinner}}
+        @size="small"
+      />
+    </div>
   </DModalBody>
 
   <PluginOutlet @name="login-after-modal-footer" @connectorTagName="div" />

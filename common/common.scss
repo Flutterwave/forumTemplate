@@ -656,10 +656,10 @@ tr {
   padding-left: 0 !important;
   padding-right: 0 !important;
 
-  #main-outlet {
-    margin-left: 80px;
-    margin-right: 80px;
-  }
+  // #main-outlet {
+  //   margin-left: 80px;
+  //   margin-right: 80px;
+  // }
 
 
 
@@ -773,34 +773,423 @@ tr {
   }
 }
 
-// .d-header sign-up-button {
-//   padding: 0.56rem 1rem;
-//   background-color: transparent;
-//   justify-content: center;
-//   align-items: center;
+#main-outlet-wrapper.wrap.post>#main-outlet {
+  margin-left: 80px;
+  margin-right: 80px;
+}
 
-//   .d-button-label {
-//     @include font2;
-//     color: $tertiary;
-//   }
-// }
+.d-modal.create-account .modal-inner-container,
+.d-modal.login-modal .modal-inner-container,
+.invites-show .modal-inner-container,
+.admin-invite-page .modal-inner-container {
+  position: relative;
+}
 
-// .d-header login-button {
-//   padding: 0.56rem 1rem;
-//   background-color: $primary;
-//   border-radius: 0.25rem;
-//   justify-content: center;
-//   align-items: center;
-// width: 7.3125rem;
-// height: 1rem;
-//   display: flex;
+.login-modal:not(.hidden) .login-left-side .modal-footer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0;
+  border: 0;
 
-//   svg {
-//     display: none;
-//   }
+  #login-button .d-icon {
+    display: none;
+  }
 
-//   .d-button-label {
-//     @include font2;
-//     color: $tertiary;
-//   }
-// }
+  .btn {
+    margin: 0;
+    background-color: $primary;
+    color: #FFF;
+    width: 288px;
+    height: 40px;
+    border-radius: 4px;
+  }
+}
+
+.login-modal:not(.hidden) .login-modal-body.has-alt-auth .login-right-side,
+.create-account {
+  #login-buttons {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .btn {
+      padding-left: 40px;
+      padding-right: 40px;
+      filter: drop-shadow(0px 1px 5px rgba(0, 0, 0, 0.1138));
+      width: 288px;
+      height: 40px;
+      border-radius: 4px;
+
+      .d-icon {
+        margin-right: 1.5em;
+      }
+    }
+  }
+}
+
+.login-modal:not(.hidden) .login-modal-body.has-alt-auth .login-left-side {
+  width: auto;
+
+  .login-modal-body {
+    .has-alt-auth {
+      .login-left-side {
+        align-self: center;
+      }
+    }
+  }
+
+  // .modal-footer {
+  //   display: flex;
+  //   flex-direction: column;
+  //   width: 100%;
+  //   padding: 0;
+  //   border: 0;
+
+  //   #login-button .d-icon {
+  //     display: none;
+  //   }
+
+  //   .btn {
+  //     margin: 0;
+  //     background-color: $primary;
+  //     color: #FFF;
+  //     width: 288px;
+  //     height: 40px;
+  //     border-radius: 4px;
+  //   }
+  // }
+}
+
+.login-modal:not(.hidden) .login-left-side #login-form {
+  margin-top: 24px;
+  margin-right: 0px;
+  margin-bottom: 1.25em;
+  margin-left: 0px;
+
+  .input-group {
+    margin-bottom: 0;
+    gap: 0.5px;
+
+    #email-login-link {
+      display: none;
+    }
+  }
+}
+
+.login-modal:not(.hidden) #login-form .input-group input {
+  padding: 0.75em 0.77em;
+  min-width: 250px;
+  box-shadow: none;
+  margin-bottom: 0.25em;
+  width: 288px;
+  height: 48px;
+
+  background-color: #FFF;
+  color: #333333;
+  border: 1px solid #E0E0E0;
+  border-radius: 4px;
+  margin-bottom: 1em;
+}
+
+.d-modal.create-account .login-form .input-group input {
+  width: 288px;
+  height: 48px;
+  border-radius: 4px;
+  background-color: #FFF;
+}
+
+.create-account .login-form .input-group span.more-info {
+  display: none;
+}
+
+.create-account .login-form .input-group .create-account__password div.create-account__password-info {
+  display: none;
+}
+
+.login-modal:not(.hidden) .modal-body,
+.login-modal:not(.hidden) #credentials {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow-y: visible;
+}
+
+.login-modal .modal-body.has-alt-auth,
+.create-account .modal-body.has-alt-auth {
+  background: #FFFFFF;
+}
+
+.login-modal:not(.hidden) #login-form .input-group label.alt-placeholder {
+  color: #818181;
+  font-size: 16px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 1em;
+  top: 10px;
+  box-shadow: 0 0 0 0px rgba(var(--tertiary-rgb), 0);
+  transition: none;
+}
+
+.d-modal.create-account .create-account-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 2em;
+
+  #username-validation {
+    display: none;
+  }
+}
+
+.d-modal.create-account .modal-footer:before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  pointer-events: none;
+  top: calc(-2em - 1px);
+  left: 0;
+  height: 2em;
+  background-image: none;
+}
+
+.d-modal.create-account .has-alt-auth .login-form,
+.d-modal.create-account .login-form {
+  background: #FFF;
+  padding: 1em 0 0 0;
+  grid-area: form;
+  overflow-y: visible;
+}
+
+.d-modal.create-account .modal-footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #FFF;
+  padding: 0;
+  border-top: 0;
+
+  .btn {
+    margin: 0;
+    background-color: $primary;
+    color: #fff;
+    width: 288px;
+    height: 40px;
+    border-radius: 4px;
+  }
+
+  #login-link {
+    display: none;
+  }
+}
+
+.d-modal.create-account .create-account-form {
+  .login-form {
+    .create-account__password .create-account__password-info {
+      button.toggle-password-mask {
+        display: none;
+      }
+    }
+  }
+}
+
+.d-modal.create-account .has-alt-auth .create-account-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .login-form {
+    .input-group {
+      .more-info {
+        display: none;
+      }
+    }
+
+    .input-group label.alt-placeholder {
+      color: #818181;
+      font-size: 16px;
+      font-weight: normal;
+      position: absolute;
+      pointer-events: none;
+      left: 1em;
+      top: 10px;
+      box-shadow: 0 0 0 0px rgba(var(--tertiary-rgb), 0);
+      transition: none;
+    }
+
+    .create-account__password .create-account__password-info {
+      button.toggle-password-mask {
+        display: none;
+      }
+    }
+
+    .input-group input {
+      padding: 0.75em 0.77em;
+      min-width: 250px;
+      box-shadow: none;
+      margin-bottom: 0.25em;
+      width: 288px;
+      height: 48px;
+
+      background-color: #FFF;
+      color: #333333;
+      border: 1px solid #E0E0E0;
+      border-radius: 4px;
+    }
+  }
+}
+
+.d-modal.create-account .login-welcome-header {
+  background-color: #FFF;
+
+  .login-title {
+    display: none;
+  }
+
+  .waving-hand {
+    display: none;
+  }
+
+  .login-subheader {
+    background-color: #FFF;
+    color: #2A3362
+  }
+}
+
+.d-modal.login-modal .modal-inner-container,
+.d-modal.create-account .modal-inner-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  background-color: #FFF;
+  --modal-max-width: 100%;
+
+  #flutterwave-auth-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    .flw-header-btn {
+      font-family: 'Moderat';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 14px;
+      text-align: center;
+      letter-spacing: 0.0024px;
+      background: #FF5805;
+      border-radius: 4px;
+      border: none;
+      padding: 9px;
+      margin-right: 33px;
+
+      span {
+        color: #FFF;
+      }
+    }
+  }
+
+  #flutterwave-auth-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 32px;
+    margin-right: 80px;
+    margin-left: 80px;
+    color: #333333;
+
+    .flw-auth-footer-helper-links {
+      display: flex;
+      flex-direction: row;
+      gap: 1.5em;
+    }
+  }
+
+  #flw-logo-auth {
+    width: 185px;
+    padding: 20px;
+  }
+
+  .modal-header {
+    width: 20px;
+    height: 10px;
+
+    .btn-flat.close {
+      padding: 0;
+      background: rgba(0, 0, 0, 0);
+      font-size: 1.3rem;
+    }
+
+    .btn-flat.close .d-icon {
+      color: #2a3362;
+      display: none;
+    }
+  }
+
+  .modal .modal-body {
+    overflow-y: visible;
+    max-height: 400px;
+    padding: 1em;
+  }
+
+  .login-modal-body {
+    .login-left-side {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: #FFF;
+
+      #new-account-link {
+        display: none;
+      }
+
+      #login-form {
+        #credentials .input-group {
+          .alt-placeholder {
+            background-color: #FFF;
+          }
+        }
+      }
+
+      .login-welcome-header {
+        padding: 0 !important;
+        margin: 0 !important;
+        left: -50px;
+      }
+
+      .login-welcome-header>.login-title,
+      .login-welcome-header>.waving-hand {
+        display: none !important;
+      }
+
+      .login-welcome-header>.login-subheader {
+        background-color: #FFF;
+        color: #2A3362
+      }
+    }
+
+    .login-right-side {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      background-color: #FFF;
+
+    }
+  }
+}

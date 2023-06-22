@@ -269,6 +269,7 @@
         {{/if}}
         {{#unless this.hasAuthOptions}}
           <div class="create-account-login-buttons">
+            <span class="or-seperator"> OR </span>
             <LoginButtons @externalLogin={{action "externalLogin"}} />
           </div>
         {{/unless}}

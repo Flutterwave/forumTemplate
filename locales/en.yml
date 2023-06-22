@@ -1,3 +1,9 @@
 en:
   theme_metadata:
     description: "A dropdown header for Discourse"
+  login:
+    create_account_cta_text: "Create account"
+    cta_text: "Login"
+  create_account:
+    login_cta_text: "Already have an account? Login"
+    cta_text: "Get Started"

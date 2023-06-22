@@ -910,12 +910,10 @@ tr {
   background-color: #FFF;
 }
 
-.create-account .login-form .input-group span.more-info {
-  display: none;
-}
-
-.create-account .login-form .input-group .create-account__password div.create-account__password-info {
-  display: none;
+.create-account .login-form .input-group {
+  span.more-info, .create-account__password div.create-account__password-info {
+    display: none;
+  }
 }
 
 .login-modal:not(.hidden) .modal-body,
@@ -1064,23 +1062,6 @@ tr {
   }
 }
 
-.d-modal.create-account .login-welcome-header {
-  background-color: #FFF;
-
-  .login-title {
-    display: none;
-  }
-
-  .waving-hand {
-    display: none;
-  }
-
-  .login-subheader {
-    background-color: #FFF;
-    color: #2A3362
-  }
-}
-
 .d-modal.login-modal .modal-inner-container,
 .d-modal.create-account .modal-inner-container {
   display: flex;
@@ -1148,15 +1129,9 @@ tr {
     }
 
     .btn-flat.close .d-icon {
-      color: #2a3362;
+      color: $secondary;
       display: none;
     }
-  }
-
-  .modal .modal-body {
-    overflow-y: visible;
-    max-height: 400px;
-    padding: 1em;
   }
 
   .login-modal-body {
@@ -1168,31 +1143,34 @@ tr {
       padding: 0;
       background-color: #FFF;
 
-      #new-account-link {
+      .login-welcome-header {
+        left: -50px;
+      }
+    }
+
+    #new-account-link {
+      display: none;
+    }
+
+    #login-form {
+      #credentials .input-group {
+        .alt-placeholder {
+          background-color: #FFF;
+        }
+      }
+    }
+
+    .login-welcome-header {
+      margin-bottom: 12px;
+      padding: 0;
+
+      .login-title, .waving-hand {
         display: none;
       }
 
-      #login-form {
-        #credentials .input-group {
-          .alt-placeholder {
-            background-color: #FFF;
-          }
-        }
-      }
-
-      .login-welcome-header {
-        margin-bottom: 12px;
-        left: -50px;
-      }
-
-      .login-welcome-header>.login-title,
-      .login-welcome-header>.waving-hand {
-        display: none !important;
-      }
-
-      .login-welcome-header>.login-subheader {
+      .login-subheader {
         background-color: #FFF;
-        color: #2A3362
+        color: $secondary;
       }
     }
 

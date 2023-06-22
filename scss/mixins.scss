@@ -1,5 +1,8 @@
 @mixin dropdown() {
   position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
   background-color: $tertiary;
   box-shadow: 0 0.875rem 2rem rgba(0, 0, 0, 0.15);
   z-index: 1000;

@@ -935,13 +935,13 @@ tr {
 }
 
 .login-modal:not(.hidden) #login-form .input-group label.alt-placeholder {
-  color: #818181;
+  color: $black40;
   font-size: 16px;
   font-weight: normal;
   position: absolute;
   pointer-events: none;
-  left: 1em;
-  top: 10px;
+  left: 16px;
+  top: 14px;
   box-shadow: 0 0 0 0px rgba(var(--tertiary-rgb), 0);
   transition: none;
 }
@@ -1031,13 +1031,13 @@ tr {
     }
 
     .input-group label.alt-placeholder {
-      color: #818181;
+      color: $black40;
       font-size: 16px;
       font-weight: normal;
       position: absolute;
       pointer-events: none;
-      left: 1em;
-      top: 10px;
+      left: 16px;
+      top: 14px;
       box-shadow: 0 0 0 0px rgba(var(--tertiary-rgb), 0);
       transition: none;
     }

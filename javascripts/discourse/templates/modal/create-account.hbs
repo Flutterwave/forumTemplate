@@ -270,7 +270,9 @@
         {{/if}}
         {{#unless this.hasAuthOptions}}
           <div class="create-account-login-buttons">
-            <span class="or-seperator"> OR </span>
+            <div class="or-separator">
+              <span>OR</span>
+            </div>
             <LoginButtons @externalLogin={{action "externalLogin"}} />
               <p class="flw-extra-text">
                 By clicking “get started”, I acknowledge that I have read and do hereby accept the terms and conditions in the Flutterwave's Terms of Use and Privacy Policy.

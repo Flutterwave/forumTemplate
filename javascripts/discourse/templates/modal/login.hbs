@@ -1,4 +1,5 @@
 <LoginModal
+  @class="login-body"
   @loginName={{this.loginName}}
   @loginPassword={{this.loginPassword}}
   @secondFactorToken={{this.secondFactorToken}}
@@ -124,7 +125,7 @@
                   @id="login-button"
                   @form="login-form"
                   @icon="unlock"
-                  @label={{(theme-prefix "login.cta_text")}}
+                  @label="Login"
                   @disabled={{this.loginDisabled}}
                   @class="btn btn-large btn-primary"
                   @tabindex="2"

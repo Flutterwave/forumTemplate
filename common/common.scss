@@ -815,7 +815,7 @@ tr {
 .create-account {
   #login-buttons {
     width: 100%;
-    margin: 12px 0;
+    margin-top: 12px;
     text-align: center;
     display: flex;
     justify-content: center;
@@ -823,6 +823,7 @@ tr {
     gap: 24px;
 
     .btn {
+      margin: 0;
       padding: 14px 28px;
       width: 288px;
       border-radius: 4px;
@@ -930,7 +931,7 @@ tr {
 .login-modal .modal-body.has-alt-auth,
 .create-account .modal-body.has-alt-auth {
   background: #FFFFFF;
-  padding: 33px 32px 48px;
+  padding: 32px 32px 48px;
 }
 
 .login-modal:not(.hidden) #login-form .input-group label.alt-placeholder {
@@ -1184,7 +1185,7 @@ tr {
       }
 
       .login-welcome-header {
-        margin: 12px 0;
+        margin-bottom: 12px;
         left: -50px;
       }
 

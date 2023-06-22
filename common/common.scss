@@ -789,7 +789,7 @@ tr {
   height: auto;
 }
 
-.login-modal:not(.hidden) .login-left-side .modal-footer {
+.login-modal:not(.hidden) .modal-footer {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -929,7 +929,7 @@ tr {
 }
 
 .login-modal .modal-body.has-alt-auth,
-.create-account .modal-body.has-alt-auth {
+.create-account .modal-body.has-alt-auth .create-account-form {
   background: #FFFFFF;
   padding: 32px 32px 48px;
 }

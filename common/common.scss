@@ -785,7 +785,7 @@ tr {
 //   position: relative;
 // }
 
-.modal-inner-container {
+.modal-outer-container {
   height: auto;
 }
 
@@ -1012,6 +1012,10 @@ tr {
   }
 }
 
+.login__password-links {
+  margin-top: 16px;
+}
+
 .d-modal.create-account .has-alt-auth .create-account-form {
   display: flex;
   flex-direction: column;
@@ -1022,10 +1026,6 @@ tr {
     .input-group {
       .more-info {
         display: none;
-      }
-
-      .login__password-links {
-        margin-top: 16px;
       }
     }
 

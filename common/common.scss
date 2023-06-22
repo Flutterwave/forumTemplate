@@ -898,7 +898,7 @@ tr {
   width: 288px;
   height: 48px;
   background-color: #FFF;
-  color: #333333;
+  color: $black80;
   border: 1px solid #E0E0E0;
   border-radius: 4px;
 }
@@ -1057,7 +1057,7 @@ tr {
       height: 48px;
 
       background-color: #FFF;
-      color: #333333;
+      color: $black80;
       border: 1px solid #E0E0E0;
       border-radius: 4px;
     }
@@ -1123,7 +1123,7 @@ tr {
     align-items: center;
     margin-top: auto;
     padding: 38px 80px 48px;
-    color: #333333;
+    color: $black80;
     border-top: 1px solid #f2f2f2;
 
     .flw-auth-footer-helper-links {
@@ -1202,7 +1202,28 @@ tr {
       align-items: center;
       width: 100%;
       background-color: #FFF;
-
     }
+  }
+}
+
+.or-separator {
+  width: 288px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 16px 0;
+
+  &:before {
+    content: "";
+    position: absolute;
+    width: 288px;
+    height: 1px;
+    background-color: #f2f2f2;
+  }
+
+  span {
+    background-color: white;
+    padding: 0 16px;
+    color: $black80;
   }
 }

@@ -1169,14 +1169,6 @@ tr {
       display: none;
     }
 
-    #login-form {
-      #credentials .input-group {
-        .alt-placeholder {
-          background-color: #FFF;
-        }
-      }
-    }
-
     .login-welcome-header {
       margin-bottom: 12px;
       padding: 0;
@@ -1194,7 +1186,7 @@ tr {
 
   .modal-body, .create-account-form {
     #login-form, .login-form {
-      #credentials .input-group {
+      .input-group {
         .alt-placeholder {
           background-color: #FFF;
         }

@@ -910,7 +910,9 @@ tr {
   background-color: #FFF;
 }
 
-.create-account .login-form .input-group {
+.d-modal.create-account .login-form .input-group {
+  margin: 12px 0;
+  padding: 0;
   span.more-info, .create-account__password div.create-account__password-info {
     display: none;
   }
@@ -932,16 +934,18 @@ tr {
   padding: 32px 32px 48px;
 }
 
-.login-modal:not(.hidden) #login-form .input-group label.alt-placeholder {
-  color: $black40;
-  font-size: 16px;
-  font-weight: normal;
-  position: absolute;
-  pointer-events: none;
-  left: 16px;
-  top: 14px;
-  box-shadow: 0 0 0 0px rgba(var(--tertiary-rgb), 0);
-  transition: none;
+.login-modal:not(.hidden) #login-form, .login-form {
+  .input-group label.alt-placeholder {
+    color: $black40;
+    font-size: 16px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 16px;
+    top: 14px;
+    box-shadow: 0 0 0 0px rgba(var(--tertiary-rgb), 0);
+    transition: none;
+  }
 }
 
 .d-modal.create-account .create-account-form {
@@ -973,9 +977,13 @@ tr {
 .d-modal.create-account .has-alt-auth .login-form,
 .d-modal.create-account .login-form {
   background: #FFF;
-  padding: 1em 0 0 0;
+  padding: 0;
   grid-area: form;
   overflow-y: visible;
+
+  form {
+    margin: 0;
+  }
 }
 
 .d-modal.create-account .modal-footer {
@@ -1028,17 +1036,17 @@ tr {
       }
     }
 
-    .input-group label.alt-placeholder {
-      color: $black40;
-      font-size: 16px;
-      font-weight: normal;
-      position: absolute;
-      pointer-events: none;
-      left: 16px;
-      top: 14px;
-      box-shadow: 0 0 0 0px rgba(var(--tertiary-rgb), 0);
-      transition: none;
-    }
+    // .input-group label.alt-placeholder {
+    //   color: $black40;
+    //   font-size: 16px;
+    //   font-weight: normal;
+    //   position: absolute;
+    //   pointer-events: none;
+    //   left: 16px;
+    //   top: 14px;
+    //   box-shadow: 0 0 0 0px rgba(var(--tertiary-rgb), 0);
+    //   transition: none;
+    // }
 
     .create-account__password .create-account__password-info {
       button.toggle-password-mask {

@@ -790,7 +790,7 @@ tr {
 }
 
 .fixed-modal:not(.history-modal) .modal-body:not(.reorder-categories):not(.poll-ui-builder):not(.poll-breakdown):not(.sidebar-categories-form-modal) {
-  max-height: 100%;
+  max-height: 100% !important;
 }
 
 .login-modal:not(.hidden) .modal-footer {
@@ -1193,21 +1193,21 @@ tr {
   }
 
   .modal-body, .create-account-form {
-    #login-form {
+    #login-form, .login-form {
       #credentials .input-group {
         .alt-placeholder {
           background-color: #FFF;
         }
       }
 
-      .password-show {
+      .password-show-icon {
         padding-right: 20px;
         position: absolute;
         right: 0;
         top: 17px;
       }
     }
-    
+
     .login-right-side, .create-account-login-buttons {
       display: flex;
       justify-content: center;

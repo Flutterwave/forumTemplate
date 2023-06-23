@@ -802,6 +802,9 @@ tr {
     width: 288px;
     height: 40px;
     border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16.8px;
   }
 }
 
@@ -861,6 +864,13 @@ tr {
 
     #email-login-link {
       display: none;
+    }
+
+    .login__password-links {
+      margin-top: 16px;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 20px;
     }
   }
 }
@@ -1019,10 +1029,6 @@ tr {
       }
     }
   }
-}
-
-.login__password-links {
-  margin-top: 16px;
 }
 
 .d-modal.create-account .has-alt-auth .create-account-form {

@@ -981,8 +981,9 @@ tr {
   form {
     margin: 0;
 
-    .input-group {
+    .input-group, .input-group input:not(.value-entered):not(:focus) {
       margin: 12px 0;
+      padding: 0;
 
       label.alt-placeholder {
         color: $black40;

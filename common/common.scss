@@ -813,7 +813,7 @@ tr {
 
 .login-modal:not(.hidden) .login-modal-body.has-alt-auth .login-right-side,
 .create-account {
-  #login-buttons {
+  #login-buttons, #login-buttons:not(.hidden) {
     width: 100%;
     margin: 12px 0;
     text-align: center;
@@ -985,7 +985,7 @@ tr {
       margin: 12px 0;
       padding: 0;
 
-      label.alt-placeholder, input:not(.value-entered):not(:focus) label.alt-placeholder {
+      label.alt-placeholder, input:not(.value-entered):not(:focus)label.alt-placeholder {
         color: $black40;
         font-size: 16px;
         font-weight: normal;
@@ -1169,6 +1169,13 @@ tr {
           background-color: #FFF;
         }
       }
+
+      .password-show {
+        padding-right: 20px;
+        position: absolute;
+        right: 0;
+        top: 17px;
+      }
     }
 
     .login-welcome-header {
@@ -1193,38 +1200,28 @@ tr {
       align-items: center;
       width: 100%;
       background-color: #FFF;
+
+      .or-separator {
+        width: 288px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 16px 0;
+
+        &:before {
+          content: "";
+          position: absolute;
+          width: 288px;
+          height: 1px;
+          background-color: $black10;
+        }
+
+        span {
+          background-color: white;
+          padding: 0 16px;
+          color: $black80;
+        }
+      }
     }
   }
-}
-
-.or-separator {
-  width: 288px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 16px 0;
-
-  &:before {
-    content: "";
-    position: absolute;
-    width: 288px;
-    height: 1px;
-    background-color: $black10;
-  }
-
-  span {
-    background-color: white;
-    padding: 0 16px;
-    color: $black80;
-  }
-}
-
-
-
-
-.password-show {
-  padding-right: 20px;
-  position: absolute;
-  right: 0;
-  top: 17px;
 }

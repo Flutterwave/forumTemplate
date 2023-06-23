@@ -793,7 +793,7 @@ tr {
   display: flex;
   flex-direction: column;
   width: 100%;
-  margin: 12px 0;
+  margin-top: 12px;
   padding: 0;
   border: 0;
 
@@ -815,7 +815,7 @@ tr {
 .create-account {
   #login-buttons {
     width: 100%;
-    margin-top: 12px;
+    margin: 12px 0;
     text-align: center;
     display: flex;
     justify-content: center;
@@ -981,11 +981,11 @@ tr {
   form {
     margin: 0;
 
-    .input-group, .input-group input:not(.value-entered):not(:focus) {
+    .input-group {
       margin: 12px 0;
       padding: 0;
 
-      label.alt-placeholder {
+      label.alt-placeholder, input:not(.value-entered):not(:focus) label.alt-placeholder {
         color: $black40;
         font-size: 16px;
         font-weight: normal;
@@ -1001,6 +1001,7 @@ tr {
 }
 
 .d-modal.create-account .modal-footer {
+  margin-top: 12px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1183,8 +1184,10 @@ tr {
         color: $secondary;
       }
     }
+  }
 
-    .login-right-side {
+  .modal-body, .create-account-form {
+    .login-right-side, .create-account-login-buttons {
       display: flex;
       justify-content: center;
       align-items: center;

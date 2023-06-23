@@ -882,7 +882,6 @@ tr {
 
   .input-group {
     margin: 12px 0;
-    gap: 0.5px;
 
     #email-login-link {
       display: none;
@@ -911,8 +910,6 @@ tr {
 }
 
 .d-modal.create-account .login-form .input-group {
-  margin: 12px 0;
-  padding: 0;
   span.more-info, .create-account__password div.create-account__password-info {
     display: none;
   }
@@ -983,6 +980,22 @@ tr {
 
   form {
     margin: 0;
+
+    .input-group {
+      margin: 12px 0;
+
+      label.alt-placeholder {
+        color: $black40;
+        font-size: 16px;
+        font-weight: normal;
+        position: absolute;
+        pointer-events: none;
+        left: 16px;
+        top: 14px;
+        box-shadow: 0 0 0 0px rgba(var(--tertiary-rgb), 0);
+        transition: none;
+      }
+    }
   }
 }
 
@@ -1035,18 +1048,6 @@ tr {
         display: none;
       }
     }
-
-    // .input-group label.alt-placeholder {
-    //   color: $black40;
-    //   font-size: 16px;
-    //   font-weight: normal;
-    //   position: absolute;
-    //   pointer-events: none;
-    //   left: 16px;
-    //   top: 14px;
-    //   box-shadow: 0 0 0 0px rgba(var(--tertiary-rgb), 0);
-    //   transition: none;
-    // }
 
     .create-account__password .create-account__password-info {
       button.toggle-password-mask {

@@ -778,13 +778,6 @@ tr {
   margin-right: 80px;
 }
 
-// .d-modal.create-account .modal-inner-container,
-// .d-modal.login-modal .modal-inner-container,
-// .invites-show .modal-inner-container,
-// .admin-invite-page .modal-inner-container {
-//   position: relative;
-// }
-
 .modal-outer-container {
   height: auto;
 }
@@ -794,9 +787,6 @@ tr {
 }
 
 .login-modal:not(.hidden) .modal-footer {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
   margin-top: 12px;
   padding: 0;
   border: 0;
@@ -832,6 +822,9 @@ tr {
       width: 288px;
       border-radius: 4px;
       box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1138);
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 20px;
 
       .d-icon {
         width: 20px;
@@ -852,27 +845,6 @@ tr {
       }
     }
   }
-
-  // .modal-footer {
-  //   display: flex;
-  //   flex-direction: column;
-  //   width: 100%;
-  //   padding: 0;
-  //   border: 0;
-
-  //   #login-button .d-icon {
-  //     display: none;
-  //   }
-
-  //   .btn {
-  //     margin: 0;
-  //     background-color: $primary;
-  //     color: #FFF;
-  //     width: 288px;
-  //     height: 40px;
-  //     border-radius: 4px;
-  //   }
-  // }
 }
 
 .login-body, .create-account-body {
@@ -935,18 +907,25 @@ tr {
   padding: 32px 32px 48px;
 }
 
-.login-modal:not(.hidden) #login-form, .login-form {
+.login-modal:not(.hidden) #login-form {
   .input-group {
     label.alt-placeholder, input:not(.value-entered):not(:focus)+label.alt-placeholder {
       color: $black40;
-      font-size: 16px;
-      font-weight: normal;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 20px;
       position: absolute;
       pointer-events: none;
       left: 16px;
       top: 14px;
       box-shadow: 0 0 0 0px rgba(var(--tertiary-rgb), 0);
       transition: none;
+    }
+
+    .input:focus, input.value-entered {
+      &+label.alt-placeholder {
+        display: none;
+      }
     }
   }
 }
@@ -966,15 +945,7 @@ tr {
 }
 
 .d-modal.create-account .modal-footer:before {
-  content: "";
-  display: block;
-  position: absolute;
-  width: 100%;
-  pointer-events: none;
-  top: calc(-2em - 1px);
-  left: 0;
-  height: 2em;
-  background-image: none;
+  display: none;
 }
 
 .d-modal.create-account .has-alt-auth .login-form,
@@ -993,8 +964,9 @@ tr {
 
       label.alt-placeholder, input:not(.value-entered):not(:focus)+label.alt-placeholder {
         color: $black40;
-        font-size: 16px;
-        font-weight: normal;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 20px;
         position: absolute;
         pointer-events: none;
         left: 16px;
@@ -1002,18 +974,20 @@ tr {
         box-shadow: 0 0 0 0px rgba(var(--tertiary-rgb), 0);
         transition: none;
       }
+
+      .input:focus, input.value-entered {
+        &+label.alt-placeholder {
+          display: none;
+        }
+      }
     }
   }
 }
 
 .d-modal.create-account .modal-footer {
   margin-top: 12px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: #FFF;
   padding: 0;
+  background-color: #ffffff;
   border-top: 0;
 
   .btn {
@@ -1028,6 +1002,13 @@ tr {
   #login-link {
     display: none;
   }
+}
+
+.d-modal.create-account .flw-extra-text {
+  width: 288px;
+  margin: 16px 0 0;
+  font-size: 12px;
+  color: #828282;
 }
 
 .d-modal.create-account .create-account-form {
@@ -1178,6 +1159,8 @@ tr {
       }
 
       .login-subheader {
+        font-size: 18px;
+        font-weight: 500;
         background-color: #FFF;
         color: $secondary;
       }
@@ -1224,9 +1207,12 @@ tr {
         }
 
         span {
-          background-color: white;
+          background-color: #ffffff;
           padding: 0 16px;
           color: $black80;
+          font-size: 14px;
+          font-weight: 400;
+          line-height: 14px;
         }
       }
     }

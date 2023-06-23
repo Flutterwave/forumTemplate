@@ -1105,7 +1105,7 @@ tr {
     margin-top: auto;
     padding: 38px 80px 48px;
     color: $black80;
-    border-top: 1px solid #f2f2f2;
+    border-top: 1px solid $black10;
 
     .flw-auth-footer-helper-links {
       display: flex;
@@ -1134,7 +1134,7 @@ tr {
     }
   }
 
-  .login-modal-body {
+  .modal-body {
     .login-left-side {
       display: flex;
       flex-direction: column;
@@ -1196,7 +1196,7 @@ tr {
     position: absolute;
     width: 288px;
     height: 1px;
-    background-color: #f2f2f2;
+    background-color: $black10;
   }
 
   span {
@@ -1204,4 +1204,14 @@ tr {
     padding: 0 16px;
     color: $black80;
   }
+}
+
+
+
+
+.password-show {
+  padding-right: 20px;
+  position: absolute;
+  right: 0;
+  top: 17px;
 }

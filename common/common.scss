@@ -932,7 +932,7 @@ tr {
       transition: none;
     }
 
-    .input:focus, input.value-entered {
+    input:focus, input.value-entered {
       &+label.alt-placeholder {
         display: none;
       }
@@ -985,7 +985,7 @@ tr {
         transition: none;
       }
 
-      .input:focus, input.value-entered {
+      input:focus, input.value-entered {
         &+label.alt-placeholder {
           display: none;
         }

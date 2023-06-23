@@ -789,6 +789,10 @@ tr {
   height: auto;
 }
 
+.fixed-modal:not(.history-modal) .modal-body:not(.reorder-categories):not(.poll-ui-builder):not(.poll-breakdown):not(.sidebar-categories-form-modal) {
+  max-height: 100%;
+}
+
 .login-modal:not(.hidden) .modal-footer {
   display: flex;
   flex-direction: column;
@@ -932,16 +936,18 @@ tr {
 }
 
 .login-modal:not(.hidden) #login-form, .login-form {
-  .input-group label.alt-placeholder {
-    color: $black40;
-    font-size: 16px;
-    font-weight: normal;
-    position: absolute;
-    pointer-events: none;
-    left: 16px;
-    top: 14px;
-    box-shadow: 0 0 0 0px rgba(var(--tertiary-rgb), 0);
-    transition: none;
+  .input-group {
+    label.alt-placeholder, input:not(.value-entered):not(:focus)+label.alt-placeholder {
+      color: $black40;
+      font-size: 16px;
+      font-weight: normal;
+      position: absolute;
+      pointer-events: none;
+      left: 16px;
+      top: 14px;
+      box-shadow: 0 0 0 0px rgba(var(--tertiary-rgb), 0);
+      transition: none;
+    }
   }
 }
 
@@ -985,7 +991,7 @@ tr {
       margin: 12px 0;
       padding: 0;
 
-      label.alt-placeholder, input:not(.value-entered):not(:focus)label.alt-placeholder {
+      label.alt-placeholder, input:not(.value-entered):not(:focus)+label.alt-placeholder {
         color: $black40;
         font-size: 16px;
         font-weight: normal;
@@ -1169,13 +1175,6 @@ tr {
           background-color: #FFF;
         }
       }
-
-      .password-show {
-        padding-right: 20px;
-        position: absolute;
-        right: 0;
-        top: 17px;
-      }
     }
 
     .login-welcome-header {
@@ -1194,6 +1193,21 @@ tr {
   }
 
   .modal-body, .create-account-form {
+    #login-form {
+      #credentials .input-group {
+        .alt-placeholder {
+          background-color: #FFF;
+        }
+      }
+
+      .password-show {
+        padding-right: 20px;
+        position: absolute;
+        right: 0;
+        top: 17px;
+      }
+    }
+    
     .login-right-side, .create-account-login-buttons {
       display: flex;
       justify-content: center;

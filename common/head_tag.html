@@ -11,10 +11,10 @@
     });
   </script>
 
-<script type="text/x-handlebars" data-template-name="/connectors/topic-above-post-stream/custom-post-page">
+<script type="text/x-handlebars" data-template-name="/connectors/topic-above-post-stream/custom-post-page" args=(hash
+    model=this.model)>
     <div class="post-detail header">
-      {{mount-widget widget="post-avatar" args=(hash
-    model=this.model user_id=model.user.id avatar_template=model.user.avatar_template)}}
+      {{mount-widget widget="post-avatar" args=(hash user_id=model.user.id avatar_template=model.user.avatar_template)}}
     </div>
 </script>
 

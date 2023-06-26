@@ -11,71 +11,9 @@
     });
   </script>
 
-<script type="text/discourse-plugin" version="1.1.0">
-    const { iconNode } = require("discourse-common/lib/icon-library");
-    const h = require("virtual-dom").h;
-  
-    createWidget("modified-post-avatar", {
-        tagName: "div.topic-avatar",
-      
-        settings: {
-          size: "large",
-          displayPosterName: true, // Change this to true if you want to display the poster's name
-        },
-      
-        html(attrs) {
-          let body;
-          let hideFromAnonUser =
-            this.siteSettings.hide_user_profiles_from_public && !this.currentUser;
-          if (!attrs.user_id) {
-            body = iconNode("far-trash-alt", { class: "deleted-user-avatar" });
-          } else {
-            body = avatarFor.call(
-              this,
-              this.settings.size,
-              {
-                template: attrs.avatar_template,
-                username: attrs.username,
-                name: attrs.name,
-                url: attrs.usernameUrl,
-                className: `main-avatar ${hideFromAnonUser ? "non-clickable" : ""}`,
-                hideTitle: true,
-              },
-              {
-                tabindex: "-1",
-              }
-            );
-          }
-      
-          const postAvatarBody = [body];
-      
-          if (attrs.flair_group_id) {
-            if (attrs.flair_url || attrs.flair_bg_color) {
-              postAvatarBody.push(this.attach("avatar-flair", attrs));
-            } else {
-              const autoFlairAttrs = autoGroupFlairForUser(this.site, attrs);
-      
-              if (autoFlairAttrs) {
-                postAvatarBody.push(this.attach("avatar-flair", autoFlairAttrs));
-              }
-            }
-          }
-      
-          const result = [h("div.post-avatar", postAvatarBody)];
-      
-          if (this.settings.displayPosterName) {
-            result.push(this.attach("post-avatar-user-info", attrs));
-          }
-      
-          return result;
-        },
-      });
-  
-
-  </script>
 
 <script type="text/x-handlebars" data-template-name="/connectors/topic-above-post-stream/custom-post-page">
     <div class="post-detail header">
-    {{mount-widget widget="modified-post-avatar" args=(hash attrs=attrs)}}
+    {{mount-widget widget="post-avatar" args=(hash attrs=attrs)}}
     </div>
   </script>

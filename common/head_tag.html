@@ -15,61 +15,61 @@
     const { iconNode } = require("discourse-common/lib/icon-library");
     const h = require("virtual-dom").h;
   
-    api.createWidget("modified-post-avatar", {
-      tagName: "div.topic-avatar",
-  
-      settings: {
-        size: "large",
-        displayPosterName: true,
-      },
-  
-      html(attrs) {
-        let body;
-        let hideFromAnonUser =
-          this.siteSettings.hide_user_profiles_from_public && !this.currentUser;
-        if (!attrs.user_id) {
-          body = iconNode("far-trash-alt", { class: "deleted-user-avatar" });
-        } else {
-          body = avatarFor.call(
-            this,
-            this.settings.size,
-            {
-              template: attrs.avatar_template,
-              username: attrs.username,
-              name: attrs.name,
-              url: attrs.usernameUrl,
-              className: `main-avatar ${hideFromAnonUser ? "non-clickable" : ""}`,
-              hideTitle: true,
-            },
-            {
-              tabindex: "-1",
-            }
-          );
-        }
-  
-        const postAvatarBody = [body];
-  
-        if (attrs.flair_group_id) {
-          if (attrs.flair_url || attrs.flair_bg_color) {
-            postAvatarBody.push(this.attach("avatar-flair", attrs));
+    createWidget("modified-post-avatar", {
+        tagName: "div.topic-avatar",
+      
+        settings: {
+          size: "large",
+          displayPosterName: true, // Change this to true if you want to display the poster's name
+        },
+      
+        html(attrs) {
+          let body;
+          let hideFromAnonUser =
+            this.siteSettings.hide_user_profiles_from_public && !this.currentUser;
+          if (!attrs.user_id) {
+            body = iconNode("far-trash-alt", { class: "deleted-user-avatar" });
           } else {
-            const autoFlairAttrs = autoGroupFlairForUser(this.site, attrs);
-  
-            if (autoFlairAttrs) {
-              postAvatarBody.push(this.attach("avatar-flair", autoFlairAttrs));
+            body = avatarFor.call(
+              this,
+              this.settings.size,
+              {
+                template: attrs.avatar_template,
+                username: attrs.username,
+                name: attrs.name,
+                url: attrs.usernameUrl,
+                className: `main-avatar ${hideFromAnonUser ? "non-clickable" : ""}`,
+                hideTitle: true,
+              },
+              {
+                tabindex: "-1",
+              }
+            );
+          }
+      
+          const postAvatarBody = [body];
+      
+          if (attrs.flair_group_id) {
+            if (attrs.flair_url || attrs.flair_bg_color) {
+              postAvatarBody.push(this.attach("avatar-flair", attrs));
+            } else {
+              const autoFlairAttrs = autoGroupFlairForUser(this.site, attrs);
+      
+              if (autoFlairAttrs) {
+                postAvatarBody.push(this.attach("avatar-flair", autoFlairAttrs));
+              }
             }
           }
-        }
-  
-        const result = [h("div.post-avatar", postAvatarBody)];
-  
-        if (this.settings.displayPosterName) {
-          result.push(this.attach("post-avatar-user-info", attrs));
-        }
-  
-        return result;
-      },
-    });
+      
+          const result = [h("div.post-avatar", postAvatarBody)];
+      
+          if (this.settings.displayPosterName) {
+            result.push(this.attach("post-avatar-user-info", attrs));
+          }
+      
+          return result;
+        },
+      });
   
     api.decorateWidget("modified-post-avatar:after", helper => {
       const attrs = {
@@ -78,9 +78,6 @@
         username: helper.attrs.username,
         name: helper.attrs.name,
         usernameUrl: helper.attrs.usernameUrl,
-        flair_group_id: helper.attrs.flair_group_id,
-        flair_url: helper.attrs.flair_url,
-        flair_bg_color: helper.attrs.flair_bg_color,
       };
   
       return helper.widget.attach("modified-post-avatar", attrs);

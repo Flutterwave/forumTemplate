@@ -11,9 +11,16 @@
     });
   </script>
 
-<script type="text/x-handlebars" data-template-name="/connectors/topic-above-post-stream/custom-post-page" args=(hash
+<!-- <script type="text/x-handlebars" data-template-name="/connectors/topic-above-post-stream/custom-post-page" args=(hash
     model=this.model)>
     <div class="post-detail header">
       {{mount-widget widget="post-avatar" args=(hash username=this.username)}}
     </div>
-</script>
+</script> -->
+
+<script type="text/x-handlebars" data-template-name="/connectors/topic-above-post-stream/custom-post-page" args=(hash
+    model=this.model)>
+    <div class="post-detail header">
+      {{plugin-outlet "topic-above-post-stream" componentName="post-avatar" user_id=model.user.id avatar_template=model.user.avatar_template}}
+    </div>
+  </script>

@@ -11,7 +11,8 @@
     });
   </script>
 
-<script type="text/x-handlebars" data-template-name="/connectors/topic-above-post-stream/custom-post-page">
+<script type="text/x-handlebars" data-template-name="/connectors/topic-above-post-stream/custom-post-page" args=(hash
+    model=this.model)>
     <div class="post-detail header">
       {{mount-widget widget="post-avatar" args=(hash username=this.username)}}
     </div>

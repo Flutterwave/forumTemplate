@@ -15,12 +15,12 @@
     const { iconNode } = require("discourse-common/lib/icon-library");
     const h = require("virtual-dom").h;
   
-    api.createWidget("post-avatar", {
+    api.createWidget("modified-post-avatar", {
       tagName: "div.topic-avatar",
   
       settings: {
         size: "large",
-        displayPosterName: false,
+        displayPosterName: true,
       },
   
       html(attrs) {
@@ -71,7 +71,7 @@
       },
     });
   
-    api.decorateWidget("post-avatar:after", helper => {
+    api.decorateWidget("modified-post-avatar:after", helper => {
       const attrs = {
         user_id: helper.attrs.user_id,
         avatar_template: helper.attrs.avatar_template,
@@ -94,3 +94,6 @@
       {{mount-widget widget="post-avatar" args=(hash user_id=this.user.id avatar_template=this.user.avatar_template username=this.user.username)}}
     </div>
 </script> -->
+<script type="text/x-handlebars" data-template-name="/connectors/topic-above-post-stream">
+    {{mount-widget widget="post-avatar" args=(hash attrs=attrs)}}
+  </script>

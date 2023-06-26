@@ -71,17 +71,7 @@
         },
       });
   
-    api.decorateWidget("modified-post-avatar:after", helper => {
-      const attrs = {
-        user_id: helper.attrs.user_id,
-        avatar_template: helper.attrs.avatar_template,
-        username: helper.attrs.username,
-        name: helper.attrs.name,
-        usernameUrl: helper.attrs.usernameUrl,
-      };
-  
-      return helper.widget.attach("modified-post-avatar", attrs);
-    });
+
   </script>
 
 <script type="text/x-handlebars" data-template-name="/connectors/topic-above-post-stream/custom-post-page">

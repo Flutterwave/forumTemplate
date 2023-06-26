@@ -673,7 +673,7 @@ tr {
     //   --below-topic-margin: 9.5em;
     // }
 
-    #main-outlet>.container {
+    .regular>.container {
       grid-column: 1 / span 2;
       grid-row: 1 / 1;
     }
@@ -810,7 +810,9 @@ tr {
 
 .login-modal:not(.hidden) .login-modal-body.has-alt-auth .login-right-side,
 .create-account {
-  #login-buttons, #login-buttons:not(.hidden) {
+
+  #login-buttons,
+  #login-buttons:not(.hidden) {
     width: 100%;
     margin: 12px 0;
     text-align: center;
@@ -850,7 +852,8 @@ tr {
   }
 }
 
-.login-body, .create-account-body {
+.login-body,
+.create-account-body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -896,7 +899,9 @@ tr {
 }
 
 .d-modal.create-account .login-form .input-group {
-  span.more-info, .create-account__password div.create-account__password-info {
+
+  span.more-info,
+  .create-account__password div.create-account__password-info {
     display: none;
   }
 }
@@ -919,7 +924,9 @@ tr {
 
 .login-modal:not(.hidden) #login-form {
   .input-group {
-    label.alt-placeholder, input:not(.value-entered):not(:focus)+label.alt-placeholder {
+
+    label.alt-placeholder,
+    input:not(.value-entered):not(:focus)+label.alt-placeholder {
       color: $black40;
       font-size: 14px;
       font-weight: 400;
@@ -932,7 +939,8 @@ tr {
       transition: none;
     }
 
-    input:focus, input.value-entered {
+    input:focus,
+    input.value-entered {
       &+label.alt-placeholder {
         display: none;
       }
@@ -972,7 +980,8 @@ tr {
       margin: 12px 0;
       padding: 0;
 
-      label.alt-placeholder, input:not(.value-entered):not(:focus)+label.alt-placeholder {
+      label.alt-placeholder,
+      input:not(.value-entered):not(:focus)+label.alt-placeholder {
         color: $black40;
         font-size: 14px;
         font-weight: 400;
@@ -985,7 +994,8 @@ tr {
         transition: none;
       }
 
-      input:focus, input.value-entered {
+      input:focus,
+      input.value-entered {
         &+label.alt-placeholder {
           display: none;
         }
@@ -1163,7 +1173,8 @@ tr {
       margin-bottom: 12px;
       padding: 0;
 
-      .login-title, .waving-hand {
+      .login-title,
+      .waving-hand {
         display: none;
       }
 
@@ -1176,8 +1187,11 @@ tr {
     }
   }
 
-  .modal-body, .create-account-form {
-    #login-form, .login-form {
+  .modal-body,
+  .create-account-form {
+
+    #login-form,
+    .login-form {
       .input-group {
         .alt-placeholder {
           background-color: #FFF;
@@ -1192,7 +1206,8 @@ tr {
       }
     }
 
-    .login-right-side, .create-account-login-buttons {
+    .login-right-side,
+    .create-account-login-buttons {
       padding: 0;
       display: flex;
       justify-content: center;

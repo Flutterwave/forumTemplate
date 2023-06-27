@@ -152,7 +152,12 @@
                       <span class="required">*</span>
                     {{/if}}
                   </label>
-                  <FlwPasswordMask @action={{ this.togglePasswordMask }} />
+<!--                   <FlwPasswordMask @action={{ this.togglePasswordMask }} /> -->
+                    <img 
+                        class="password-show-icon" 
+                        src="{{theme-setting "theme_uploads.eye-icon"}}"
+                        {{on "click" @action}}
+                    />
                   <div class="create-account__password-info">
                     <div class="create-account__password-tip-validation">
                       <InputTip

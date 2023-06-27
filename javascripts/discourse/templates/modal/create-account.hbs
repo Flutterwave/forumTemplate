@@ -152,7 +152,12 @@
                       <span class="required">*</span>
                     {{/if}}
                   </label>
-                  <img class="password-show-icon" src="{{theme-setting "theme_uploads.eye-icon"}}">
+<!--                   <FlwPasswordMask @action={{ this.togglePasswordMask }} /> -->
+                    <img 
+                        class="password-show-icon" 
+                        src="{{theme-setting "theme_uploads.eye-icon"}}"
+                        {{on "click" this.togglePasswordMask}}
+                    />
                   <div class="create-account__password-info">
                     <div class="create-account__password-tip-validation">
                       <InputTip
@@ -170,10 +175,6 @@
                         {{i18n "login.caps_lock_warning"}}
                       </div>
                     </div>
-                    <TogglePasswordMask
-                      @maskPassword={{this.maskPassword}}
-                      @togglePasswordMask={{this.togglePasswordMask}}
-                    />
                   </div>
                 {{/if}}
 

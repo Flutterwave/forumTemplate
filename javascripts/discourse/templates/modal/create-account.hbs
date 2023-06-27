@@ -152,12 +152,7 @@
                       <span class="required">*</span>
                     {{/if}}
                   </label>
-<!--                   <FlwPasswordMask @action={{ this.togglePasswordMask }} /> -->
-                    <img 
-                        class="password-show-icon" 
-                        src="{{theme-setting "theme_uploads.eye-icon"}}"
-                        {{on "click" this.togglePasswordMask}}
-                    />
+                  <FlwPasswordMask @action={{ this.togglePasswordMask }} />
                   <div class="create-account__password-info">
                     <div class="create-account__password-tip-validation">
                       <InputTip
@@ -294,9 +289,9 @@
       © Flutterwave  2023
     </p>
     <div class="flw-auth-footer-helper-links">
-      <p>FAQs</p>
-      <p>Privacy policy</p>
-      <p>Terms and Conditions</p>
+      <a href="#">FAQs</a>
+      <a href="https://flutterwave.com/ng/privacy-policy">Privacy policy</a>
+      <a href="https://flutterwave.com/ng/terms">Terms and Conditions</a>
     </div>
   </div>
 </CreateAccount>

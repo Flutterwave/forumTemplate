@@ -519,12 +519,17 @@ createWidget("post-menu-buttons", {
       HBS`
       <button>
         <img src="{{theme-setting "theme_uploads.time-icon"}}">
+        <span>{{@data.likeCount}}</span>
+      </button>
+      
+      <button>
+        <img src="{{theme-setting "theme_uploads.time-icon"}}">
         <span>Share</span>
       </button>
       
       <button>
         <img src="{{theme-setting "theme_uploads.time-icon"}}">
-        <span>B0okmark</span>
+        <span>Bookmark</span>
       </button>
       
       <button>
@@ -532,8 +537,7 @@ createWidget("post-menu-buttons", {
         <span>Add a comment</span>
       </button>`,
       {
-        notification_level: model.topic.details.notification_level,
-        topic: model.topic
+        likeCount: attrs.likeCount
       }
     );
   }

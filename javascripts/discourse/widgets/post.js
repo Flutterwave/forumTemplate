@@ -510,17 +510,13 @@ createWidget("post-group-request", {
 createWidget("post-menu-buttons", {
   html(attrs) {
     let model = this.findAncestorModel();
-    console.log("attrs", attrs);
-    console.log("model", model);
+    // console.log("attrs", attrs);
+    // console.log("model", model);
 
     return new RenderGlimmer(
       this,
       "div.test-area",
-      HBS`<button>
-        <img src="{{theme-setting "theme_uploads.time-icon"}}">
-        <span>${attrs.likeCount}</span>
-      </button>
-      
+      HBS`
       <button>
         <img src="{{theme-setting "theme_uploads.time-icon"}}">
         <span>Share</span>

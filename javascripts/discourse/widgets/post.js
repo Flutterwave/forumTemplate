@@ -509,9 +509,9 @@ createWidget("post-group-request", {
 
 createWidget("post-menu-buttons", {
   html(attrs) {
-    h("div.test-area", [
+    return h("div.test-area", [
       "<div>Hello World</div>"
-    ])
+    ]);
   }
 })
 
@@ -575,6 +575,9 @@ createWidget("post-contents", {
     };
     // result.push(this.attach("post-menu", attrs, extraState));
     result.push(this.attach("post-menu-buttons", attrs));
+    result.push(h("div.test-area", [
+      "<div>A New Day</div>"
+    ]));
 
     const repliesBelow = state.repliesBelow;
     if (repliesBelow.length) {

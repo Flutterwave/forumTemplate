@@ -509,11 +509,20 @@ createWidget("post-group-request", {
 
 createWidget("post-menu-buttons", {
   html(attrs) {
-    return h("div.test-area", [
-      "<div>Hello World</div>"
-    ]);
+    return new RenderGlimmer(
+      this,
+      "div.test-area",
+      HBS`<TopicNotificationsButton
+        @notificationLevel={{@data.notification_level}}
+        @topic={{@data.topic}}
+      />`,
+      {
+        notification_level: model.topic.details.notification_level,
+        topic: model.topic
+      }
+    );
   }
-})
+});
 
 createWidget("post-contents", {
   buildKey: (attrs) => `post-contents-${attrs.id}`,
@@ -575,9 +584,6 @@ createWidget("post-contents", {
     };
     // result.push(this.attach("post-menu", attrs, extraState));
     result.push(this.attach("post-menu-buttons", attrs));
-    result.push(h("div.test-area", [
-      "<div>A New Day</div>"
-    ]));
 
     const repliesBelow = state.repliesBelow;
     if (repliesBelow.length) {

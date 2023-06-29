@@ -510,7 +510,8 @@ createWidget("post-group-request", {
 createWidget("post-menu-buttons", {
   html(attrs) {
     let model = this.findAncestorModel();
-    console.log(model);
+    console.log("attrs", attrs);
+    console.log("model", model);
 
     return new RenderGlimmer(
       this,

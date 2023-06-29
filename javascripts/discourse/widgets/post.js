@@ -516,10 +516,25 @@ createWidget("post-menu-buttons", {
     return new RenderGlimmer(
       this,
       "div.test-area",
-      HBS`<TopicNotificationsButton
-        @notificationLevel={{@data.notification_level}}
-        @topic={{@data.topic}}
-      />`,
+      HBS`<button>
+        <img src="{{theme-setting "theme_uploads.time-icon"}}">
+        <span>${attrs.likeCount}</span>
+      </button>
+      
+      <button>
+        <img src="{{theme-setting "theme_uploads.time-icon"}}">
+        <span>Share</span>
+      </button>
+      
+      <button>
+        <img src="{{theme-setting "theme_uploads.time-icon"}}">
+        <span>B0okmark</span>
+      </button>
+      
+      <button>
+        <img src="{{theme-setting "theme_uploads.time-icon"}}">
+        <span>Add a comment</span>
+      </button>`,
       {
         notification_level: model.topic.details.notification_level,
         topic: model.topic

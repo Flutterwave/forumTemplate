@@ -565,7 +565,7 @@ createWidget("post-contents", {
         filteredRepliesShown: state.filteredRepliesShown,
       },
     };
-    result.push(this.attach("post-menu", attrs, extraState));
+    // result.push(this.attach("post-menu", attrs, extraState));
 
     const repliesBelow = state.repliesBelow;
     if (repliesBelow.length) {

@@ -101,7 +101,7 @@ export default createWidget("poster-name", {
     );
   },
 
-  html(attrs) {console.log(attrs)
+  html(attrs) {
     const username = attrs.username;
     const name = attrs.name;
     const classNames = ["first", "full-name"];

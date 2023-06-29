@@ -27,6 +27,9 @@ import showModal from "discourse/lib/show-modal";
 import { nativeShare } from "discourse/lib/pwa-utils";
 import { hideUserTip } from "discourse/lib/user-tips";
 
+import RenderGlimmer from "discourse/widgets/render-glimmer";
+import { hbs as HBS } from "ember-cli-htmlbars";
+
 function transformWithCallbacks(post) {
   let transformed = transformBasicPost(post);
   postTransformCallbacks(transformed);
@@ -287,6 +290,40 @@ function showReplyTab(attrs, siteSettings) {
   );
 }
 
+// createWidget("test-widget", {
+//   tagName: "div.contents.clearfix",
+//   transform() {
+//     return {};
+//   },
+//   template: hbs`
+//     {{d-button icon="i" label="Test"}}
+//   `,
+// });
+
+// export const TestWidget = {
+//   name: "test-widget",
+
+//   initialize() {
+//     withPluginApi("0.1", (api) => {
+//       api.decorateWidget(`post-body:after`, (decorate) => {
+//         const attrs = decorate.attrs;
+//         return decorate.widget.attach("test-widget", { attrs });
+//       });
+
+//       registerWidgetShim(
+//         "test-widget",
+//         "div.test-widget",
+//         HBS`<DButton
+//         @class="flw-header-btn"
+//         @id="flw-create-account-header-btn"
+//         @action={{route-action "showLogin"}}
+//         @label={{(theme-prefix "create_account.login_cta_text")}}
+//       />`
+//       );
+//     });
+//   },
+// };
+
 createWidget("post-meta-data", {
   tagName: "div.topic-meta-data",
 
@@ -366,8 +403,24 @@ createWidget("post-meta-data", {
       )
     );
 
+    let model = this.findAncestorModel();
+
     let result = [this.attach("post-avatar", attrs)];
     result.push(h("div.post-infos", postInfo));
+    if (attrs.firstPost) {
+      result.push(new RenderGlimmer(
+        this,
+        "div.notification-button",
+        HBS`<TopicNotificationsButton
+          @notificationLevel={{@data.notification_level}}
+          @topic={{@data.topic}}
+        />`,
+        {
+          notification_level: model.topic.details.notification_level,
+          topic: model.topic
+        }
+      ));
+    }
 
     return result;
   },
@@ -694,7 +747,20 @@ createWidget("post-body", {
 
   html(attrs, state) {
     const postContents = this.attach("post-contents", attrs);
-    let result = [this.attach("post-meta-data", attrs)];
+    let result = [
+      this.attach("post-meta-data", attrs),
+      attrs.firstPost ? h("div.topic-title-area", {},
+      [
+        h("a.fancy-title", {
+          attributes: {
+            href: attrs.topicUrl
+          }
+        }, [
+          this.findAncestorModel().topic.title
+        ])
+      ]) : null,
+    ];
+
     result = result.concat(
       applyDecorators(this, "after-meta-data", attrs, state)
     );
@@ -783,12 +849,8 @@ createWidget("post-article", {
       rows.push(h("div.row", [this.attach("post-notice", attrs)]));
     }
 
-    console.log("attrs", attrs);
-    console.log("post", this.findAncestorModel());
-
     rows.push(
       h("div.row", [
-        // h("a.fancy-title"),
         this.attach("post-body", {
           ...attrs,
           repliesAbove: state.repliesAbove,

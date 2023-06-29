@@ -515,24 +515,24 @@ createWidget("post-menu-buttons", {
 
     return new RenderGlimmer(
       this,
-      "div.test-area",
+      "div.post-menu-buttons",
       HBS`
-      <button>
+      <button class="menu-button-item">
         <img src="{{theme-setting "theme_uploads.time-icon"}}">
         <span>{{@data.likeCount}}</span>
       </button>
       
-      <button>
+      <button class="menu-button-item">
         <img src="{{theme-setting "theme_uploads.time-icon"}}">
         <span>Share</span>
       </button>
       
-      <button>
+      <button class="menu-button-item">
         <img src="{{theme-setting "theme_uploads.time-icon"}}">
         <span>Bookmark</span>
       </button>
       
-      <button>
+      <button class="menu-button-item">
         <img src="{{theme-setting "theme_uploads.time-icon"}}">
         <span>Add a comment</span>
       </button>`,

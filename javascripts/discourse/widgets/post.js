@@ -554,9 +554,48 @@ createWidget("post-reply-button", {
   }
 });
 
+// createWidget("post-menu-buttons", {
+//   html(attrs) {
+//     let result;
+
+//     result.push(this.attach("post-like-button", attrs));
+
+//     return new RenderGlimmer(
+//       this,
+//       "div.post-menu-buttons",
+//       HBS`
+//       {{#if @data.firstPost}}
+//         <button class="menu-button-item like-count">
+//           <img src="{{theme-setting "theme_uploads.like-icon"}}">
+//           <span>{{if @data.likeCount @data.likeCount "0"}}</span>
+//         </button>
+//       {{/if}}
+      
+//       <button class="menu-button-item share-post">
+//         <img src="{{theme-setting "theme_uploads.share-icon"}}">
+//         <span>Share</span>
+//       </button>
+      
+//       <button class="menu-button-item add-bookmark">
+//         <img src="{{theme-setting "theme_uploads.bookmark-icon"}}">
+//         <span>Bookmark</span>
+//       </button>
+      
+//       <button class="menu-button-item {{if @data.firstPost "add-comment" "add-reply"}}">
+//         <img src="{{theme-setting "theme_uploads.add-plus-icon"}}">
+//         <span>{{if @data.firstPost "Add a comment" "Reply"}}</span>
+//       </button>`,
+//       {
+//         likeCount: attrs.likeCount,
+//         firstPost: attrs.firstPost
+//       }
+//     );
+//   }
+// });
+
 createWidget("post-menu-buttons", {
   html(attrs) {
-    let result;
+    let result = [];
 
     // if (attrs.firstPost) {
     //   result.push(this.attach("post-like-button", attrs));

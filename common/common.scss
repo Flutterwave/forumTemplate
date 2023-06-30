@@ -1216,7 +1216,6 @@ article:not(#post_1) {
 }
 
 body:not(.ios-safari-composer-hacks) #reply-control.open, #reply-control {
-  margin: 0 17vw 1rem;
   padding: 0.25rem;
   min-height: 0%;
   max-height: 100%;
@@ -1225,6 +1224,12 @@ body:not(.ios-safari-composer-hacks) #reply-control.open, #reply-control {
 }
 
 #reply-control {
+  margin: 0;
+  
+  &.open {
+    margin: 0 17vw 1rem;
+  }
+
   max-width: 100%;
   width: auto;
   .grippie, .reply-to, .d-editor-preview-wrapper, .btn-mini-toggle {

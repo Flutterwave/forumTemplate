@@ -1679,5 +1679,12 @@ article:not(#post_1) {
         color: $black80;
       }
     }
+
+    p, a {
+      font-family: 'Moderat';
+      font-size: 0.875rem;
+      font-weight: 500;
+      line-height: 1.05rem;
+    }
   }
 }

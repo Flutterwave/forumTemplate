@@ -897,8 +897,75 @@ div.topic-navigation.with-timeline {
       }
     }
 
+    .post-menu-buttons {
+      display: flex;
+      gap: 1rem;
+
+      .menu-button-item {
+        padding: 0.5rem 1rem;
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+        border: 0.0625rem solid #2A3362;
+        background-color: #ffffff;
+        border-radius: 0.1875rem;
+
+        &.add-comment {
+          margin-left: auto;
+        }
+      }
+    }
+
     .post-actions, .topic-map, .small-user-list.who-liked {
       display: none;
+    }
+  }
+}
+
+article#post_1 {
+  .topic-body {
+    .topic-meta-data {
+      padding: 0 0.625rem 2.125rem;
+      border-bottom: 0.0625rem solid #f2f2f2;
+
+      .topic-avatar {
+        .post-avatar img {
+          width: 3rem;
+          height: 3rem;
+        }
+      }
+
+      .post-infos {
+        .names {
+          font-size: 1.5rem;
+          line-height: 1.8rem;
+
+          span {
+            gap: 0.75rem;
+          }
+        }
+
+        .post-info.post-date {
+          font-size: 1rem;
+          line-height: 1.2rem;
+        }
+      }
+    }
+
+    .cooked {
+      border-bottom: 0.0625rem solid #f2f2f2;
+    }
+  }
+}
+
+article:not(#post_1) {
+  .cooked {
+    padding-left: 2.75rem;
+  }
+
+  .post-menu-buttons {
+    .menu-button-item.share-post {
+      margin-left: auto;
     }
   }
 }
@@ -975,46 +1042,6 @@ div.topic-navigation.with-timeline {
 
 #main-outlet-wrapper.wrap.post>#main-outlet {
   padding: 2.75rem 5vw 0;
-}
-
-article#post_1 {
-  .topic-body {
-    .topic-meta-data {
-      padding: 0 0.625rem 2.125rem;
-      border-bottom: 0.0625rem solid #f2f2f2;
-
-      .topic-avatar {
-        .post-avatar img {
-          width: 3rem;
-          height: 3rem;
-        }
-      }
-
-      .post-infos {
-        .names {
-          font-size: 1.5rem;
-          line-height: 1.8rem;
-
-          span {
-            gap: 0.75rem;
-          }
-        }
-
-        .post-info.post-date {
-          font-size: 1rem;
-          line-height: 1.2rem;
-        }
-      }
-    }
-
-    .cooked {
-      border-bottom: 0.0625rem solid #f2f2f2;
-    }
-  }
-}
-
-article:not(#post_1) .cooked {
-  padding-left: 2.75rem;
 }
 
 .modal-outer-container {

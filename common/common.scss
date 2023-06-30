@@ -327,6 +327,12 @@ tr {
   flex-direction: column;
 }
 
+.anon .topic-list .main-link a.title:visited:not(.badge-notification) {
+  @include font4;
+  color: $secondary;
+  padding: 0;
+}
+
 .topic-list-item {
   .main-link {
     margin: 0.75rem 0;
@@ -1230,8 +1236,11 @@ body:not(.ios-safari-composer-hacks) #reply-control.open, #reply-control.hide-pr
   max-height: 100%;
   max-width: 100%;
   height: auto;
-  border-bottom-left-radius: 0.5rem;
-  border-bottom-right-radius: 0.5rem;
+
+  background-color: black;
+  border-top-right-radius: 2rem;
+  border-top-left-radius: 2rem;
+  overflow: hidden;
 }
 
 #reply-control {
@@ -1255,8 +1264,6 @@ body:not(.ios-safari-composer-hacks) #reply-control.open, #reply-control.hide-pr
     .d-editor-textarea-column {
       gap: 0.0625rem;
       border: 0.0625rem solid #C4CDD5;
-      border-radius: 0.1875rem;
-      background-color: #f2f2f2;
 
       .title-and-category {
         gap: 1rem;
@@ -1379,7 +1386,7 @@ body:not(.ios-safari-composer-hacks) #reply-control.open, #reply-control.hide-pr
 }
 
 #reply-control.open, body:not(.ios-safari-composer-hacks) #reply-control.open {
-  margin: 0 17vw 1rem;
+  margin: 0 17vw 0;
 }
 
 .login-modal:not(.hidden) .login-modal-body.has-alt-auth .login-right-side,

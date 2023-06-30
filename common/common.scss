@@ -1264,10 +1264,9 @@ body:not(.ios-safari-composer-hacks) #reply-control.open,
   max-height: 100%;
   max-width: 100%;
   height: auto;
-
-  background-color: black;
-  border-top-right-radius: 2rem;
-  border-top-left-radius: 2rem;
+  background-color: #4f4f4f;
+  border-top-right-radius: 0.1875rem;
+  border-top-left-radius: 0.1875rem;
   overflow: hidden;
 }
 
@@ -1649,7 +1648,7 @@ body:not(.ios-safari-composer-hacks) #reply-control.open,
     line-height: 16.8px;
   }
 
-  #login-link {
+  #login-link, .disclaimer {
     display: none;
   }
 }

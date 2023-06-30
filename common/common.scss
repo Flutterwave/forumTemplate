@@ -455,6 +455,10 @@ tr {
     gap: 1rem;
     background-color: #ffffff;
 
+    &:before, &::after {
+      display: none;
+    }
+
     .card-row:not(.first-row) {
       margin: 0;
     }

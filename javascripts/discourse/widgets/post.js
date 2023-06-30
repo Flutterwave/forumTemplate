@@ -474,10 +474,12 @@ createWidget("post-group-request", {
 });
 
 createWidget("post-like-button", {
+  tagName: "div.like-count",
+
   html(attrs) {
     return new RenderGlimmer(
       this,
-      "button.menu-button-item.like-count",
+      "button.menu-button-item",
       HBS`
       <img src="{{theme-setting "theme_uploads.like-icon"}}">
       <span>{{if @data.likeCount @data.likeCount "0"}}</span>`,
@@ -489,6 +491,8 @@ createWidget("post-like-button", {
 });
 
 createWidget("post-share-button", {
+  tagName: "div.share-post",
+
   html() {
     return new RenderGlimmer(
       this,
@@ -502,6 +506,8 @@ createWidget("post-share-button", {
 });
 
 createWidget("post-bookmark-button", {
+  tagName: "div.add-bookmark",
+
   html() {
     return new RenderGlimmer(
       this,
@@ -515,6 +521,8 @@ createWidget("post-bookmark-button", {
 });
 
 createWidget("post-comment-button", {
+  tagName: "div.add-comment",
+
   html() {
     return new RenderGlimmer(
       this,
@@ -528,6 +536,8 @@ createWidget("post-comment-button", {
 });
 
 createWidget("post-reply-button", {
+  tagName: "div.add-reply",
+
   html() {
     return new RenderGlimmer(
       this,

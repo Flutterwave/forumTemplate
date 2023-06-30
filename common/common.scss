@@ -1023,6 +1023,10 @@ div.topic-navigation.with-timeline {
       display: flex;
       gap: 1rem;
 
+      .add-comment {
+        margin-left: auto;
+      }
+
       .menu-button-item {
         padding: 0.5rem 1rem;
         display: flex;
@@ -1031,10 +1035,6 @@ div.topic-navigation.with-timeline {
         border: 0.0625rem solid #2A3362;
         background-color: #ffffff;
         border-radius: 0.1875rem;
-
-        &.add-comment {
-          margin-left: auto;
-        }
 
         span {
           font-family: 'Moderat';
@@ -1110,7 +1110,7 @@ article:not(#post_1) {
   }
 
   .post-menu-buttons {
-    .menu-button-item.share-post {
+    .share-post {
       margin-left: auto;
     }
   }

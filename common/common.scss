@@ -219,7 +219,6 @@ html {
   }
 }
 
-
 #main-outlet-wrapper.wrap {
   max-width: 100%;
   margin: 0;
@@ -1213,6 +1212,12 @@ article:not(#post_1) {
     font-size: 14px;
     font-weight: 500;
     line-height: 16.8px;
+  }
+}
+
+#reply-control {
+  .grippie, .reply-to, .d-editor-preview-wrapper {
+    display: none;
   }
 }
 

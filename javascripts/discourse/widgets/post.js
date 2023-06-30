@@ -502,6 +502,17 @@ createWidget("post-share-button", {
       <span>Share</span>`,
       {}
     );
+  },
+
+  showShareModal() {
+    const post = this.findAncestorModel();
+    const topic = post.topic;
+    const controller = showModal("share-topic", { model: topic.category });
+    controller.setProperties({ topic, post });
+  },
+
+  click() {
+    this.showShareModal()
   }
 });
 

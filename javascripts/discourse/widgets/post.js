@@ -477,9 +477,6 @@ createWidget("post-menu-buttons", {
   html(attrs) {
     let model = this.findAncestorModel();
 
-    console.log("attrs", attrs);
-    console.log("model", model);
-
     return new RenderGlimmer(
       this,
       "div.post-menu-buttons",

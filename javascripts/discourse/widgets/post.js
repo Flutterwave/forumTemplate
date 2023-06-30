@@ -574,9 +574,9 @@ createWidget("post-contents", {
     // result.push(this.attach("post-menu", attrs, extraState));
     result.push(this.attach("post-menu-buttons", attrs));
     
-    // if (attrs.firstPost) {
-    //   result.push(h("h1.post-commentHeader", attrs));
-    // }
+    if (attrs.firstPost && attrs.topicPostsCount > 1) {
+      result.push(h("h1.post-commentHeader", {}, 'Comments'));
+    }
 
     const repliesBelow = state.repliesBelow;
     if (repliesBelow.length) {

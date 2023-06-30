@@ -553,7 +553,7 @@ createWidget("post-comment-button", {
   },
 
   click() {
-    his.state.loading = true;
+    this.state.loading = true;
     this.sendWidgetAction("toggleReplyAbove").then(
       () => (this.state.loading = false)
     );

@@ -485,7 +485,7 @@ createWidget("post-menu-buttons", {
         <button class="menu-button-item like-count">
           <img src="{{theme-setting "theme_uploads.like-icon"}}">
           <span>{{@data.likeCount}}</span>
-          <span>{{if @data.likeCount @data.likeCount "0"}}</span>
+          <span>{{if @data.likeCount "@data.likeCount" "0"}}</span>
         </button>
       {{/if}}
       

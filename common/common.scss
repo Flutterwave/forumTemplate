@@ -1257,6 +1257,10 @@ body:not(.ios-safari-composer-hacks) #reply-control.open, #reply-control.hide-pr
     #reply-title, .title-and-category .select-kit-header, .d-editor-textarea-wrapper, .title-and-category .select-kit, .loading-container {
       border: none;
       background-color: #ffffff00;
+
+      &:focus {
+        border-color: #ffffff00;
+      }
     }
     
     #reply-title, .title-and-category .select-kit-header {
@@ -1267,6 +1271,10 @@ body:not(.ios-safari-composer-hacks) #reply-control.open, #reply-control.hide-pr
       font-size: 0.875rem;
       font-weight: 400;
       line-height: 1.05rem;
+
+      &:focus {
+        border-color: #ffffff00;
+      }
     }
 
     .d-editor-input {
@@ -1298,6 +1306,10 @@ body:not(.ios-safari-composer-hacks) #reply-control.open, #reply-control.hide-pr
     }
 
     #reply-title, .d-editor-input {
+      &:focus {
+        border-color: #ffffff00;
+      }
+
       &::-webkit-input-placeholder {
         /* WebKit/Chrome/Opera/Safari */
         color: #B5B8BA;

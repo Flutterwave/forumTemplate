@@ -163,6 +163,10 @@ html {
   font-size: 16px; // set base reference from rem units
 }
 
+body, .d-header, .search-banner #search-term {
+  background-color: #ffffff;
+}
+
 .title {
   background-image: url($logo);
 }
@@ -1516,22 +1520,22 @@ article:not(#post_1) {
     }
   }
 
-  #flutterwave-auth-footer {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: auto;
-    padding: 38px 80px 48px;
-    color: $black80;
-    border-top: 1px solid $black10;
+  // #flutterwave-auth-footer {
+  //   display: flex;
+  //   flex-direction: row;
+  //   justify-content: space-between;
+  //   align-items: center;
+  //   margin-top: auto;
+  //   padding: 38px 80px 48px;
+  //   color: $black80;
+  //   border-top: 1px solid $black10;
 
-    .flw-auth-footer-helper-links {
-      display: flex;
-      flex-direction: row;
-      gap: 1.5em;
-    }
-  }
+  //   .flw-auth-footer-helper-links {
+  //     display: flex;
+  //     flex-direction: row;
+  //     gap: 1.5em;
+  //   }
+  // }
 
   #flw-logo-auth {
     width: 185px;
@@ -1637,5 +1641,22 @@ article:not(#post_1) {
         }
       }
     }
+  }
+}
+
+.flutterwave-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  padding: 38px 80px 48px;
+  color: $black80;
+  border-top: 1px solid $black10;
+
+  .flw-auth-footer-helper-links {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5em;
   }
 }

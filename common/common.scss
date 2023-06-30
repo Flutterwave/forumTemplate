@@ -793,10 +793,7 @@ div.topic-navigation.with-timeline {
       display: none;
     }
 
-    #main-outlet>.container {
-      grid-column: 1 / span 2;
-      grid-row: 1 / 1;
-
+    &>.container {
       &.posts {
         margin: 0;
       }
@@ -804,7 +801,7 @@ div.topic-navigation.with-timeline {
 
     .suggested-topics-wrapper {
       grid-column: 2;
-      grid-row: 2 / 7;
+      grid-row: 2/7;
 
       .suggested-topics {
         margin-top: 0;
@@ -1041,6 +1038,14 @@ div.topic-navigation.with-timeline {
 
         img {
           width: 1.25rem;
+        }
+
+        span {
+          font-family: 'Moderat';
+          font-size: 0.7rem;
+          font-weight: 500;
+          line-height: 0.85rem;
+          color: #2A3362;
         }
       }
     }

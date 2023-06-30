@@ -531,6 +531,10 @@ createWidget("post-bookmark-button", {
       <span>Bookmark</span>`,
       {}
     );
+  },
+
+  click() {
+    this.sendWidgetAction('toggleBookmark');
   }
 });
 

@@ -489,7 +489,7 @@ createWidget("post-like-button", {
     );
   },
   click() {
-    this.sendWidgetAction('likeAction');
+    this.sendWidgetAction('toggleLike');
   }
 });
 

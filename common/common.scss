@@ -1018,6 +1018,8 @@ div.topic-navigation.with-timeline {
       }
     }
 
+    // remove this
+    .menu-button-area {display: flex; gap: 1rem;}
     .post-menu-buttons {
       padding: 1rem 0 2rem;
       display: flex;

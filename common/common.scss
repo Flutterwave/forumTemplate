@@ -1657,16 +1657,22 @@ article:not(#post_1) {
 
   .flutterwave-footer {
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin-top: auto;
     color: $black80;
+
+    p {
+      margin: 0;
+    }
 
     .flw-auth-footer-helper-links {
       display: flex;
       flex-direction: row;
       gap: 1.5em;
+
+      a {
+        color: $black80;
+      }
     }
   }
 }

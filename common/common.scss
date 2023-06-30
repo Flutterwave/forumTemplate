@@ -1245,19 +1245,37 @@ body:not(.ios-safari-composer-hacks) #reply-control.open, #reply-control.hide-pr
 
     .d-editor-textarea-column {
       gap: 1rem;
+      border: 0.0625rem solid #C4CDD5;
+      border-radius: 0.1875rem;
+      background-color: #f2f2f2;
 
       .title-and-category {
         gap: 1rem;
       }
     }
 
-    #reply-title, .select-kit-header, .d-editor-textarea-wrapper {
+    #reply-title, .single-select-header, .multi-select-header, .d-editor-textarea-wrapper {
       border: none;
+      background-color: #ffffff00;
     }
     
-    #reply-title,.select-kit-header {
+    #reply-title, .single-select-header, .multi-select-header {
       padding: 0.5rem 0.625rem;
       border-bottom: 0.0625rem solid #e0e0e0;
+      background-color: #ffffff00;
+      font-family: 'Moderat';
+      font-size: 0.874rem;
+      font-weight: 400;
+      line-height: 1.05rem;
+    }
+
+    .d-editor-input {
+      padding: 0.75rem;
+      min-height: 8rem;
+      font-family: 'Moderat';
+      font-size: 0.874rem;
+      font-weight: 400;
+      line-height: 1.05rem;
     }
   }
 

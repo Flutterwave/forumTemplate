@@ -514,6 +514,8 @@ createWidget("post-share-button", {
 //   }
 // });
 createWidget("post-bookmark-button", {
+  buildKey: (attrs) => `post-bookmark-button-${attrs.id}`,
+
   html() {
     return new RenderGlimmer(
       this,

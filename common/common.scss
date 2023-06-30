@@ -1259,7 +1259,7 @@ body:not(.ios-safari-composer-hacks) #reply-control.open, #reply-control.hide-pr
       background-color: #ffffff00;
     }
     
-    #reply-title, .title-and-category .select-kit-header {
+    #reply-title, .title-and-category .select-kit-header, .title-and-category .select-kit {
       padding: 0.5rem 0.625rem;
       border-bottom: 0.0625rem solid #e0e0e0;
       background-color: #ffffff00;
@@ -1276,6 +1276,37 @@ body:not(.ios-safari-composer-hacks) #reply-control.open, #reply-control.hide-pr
       font-size: 0.874rem;
       font-weight: 400;
       line-height: 1.05rem;
+    }
+
+    .formatted-selection, .name {
+      color: #B5B8BA;
+    }
+
+    #reply-title, .d-editor-input {
+      &::-webkit-input-placeholder {
+        /* WebKit/Chrome/Opera/Safari */
+        color: #B5B8BA;
+      }
+      &:-moz-placeholder {
+        /* Firefox 4-18 */
+        color: #B5B8BA;
+      }
+      &::-moz-placeholder {
+        /* Firefox 19+ */
+        color: #B5B8BA;
+      }
+      &:-ms-input-placeholder {
+        /* IE 10-11 */
+        color: #B5B8BA;
+      }
+      &::-ms-input-placeholder {
+        /* Edge */
+        color: #B5B8BA;
+      }
+      &::placeholder {
+        /* Modern Browser */
+        color: #B5B8BA;
+      }
     }
   }
 

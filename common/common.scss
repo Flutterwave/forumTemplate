@@ -1215,9 +1215,20 @@ article:not(#post_1) {
   }
 }
 
+body:not(.ios-safari-composer-hacks) #reply-control.open, #reply-control {
+  padding: 0;
+  min-height: 0%;
+  max-height: 100%;
+  height: auto;
+}
+
 #reply-control {
   .grippie, .reply-to, .d-editor-preview-wrapper {
     display: none;
+  }
+
+  .reply-area {
+    padding: 0;
   }
 }
 

@@ -501,28 +501,14 @@ createWidget("post-share-button", {
   }
 });
 
-// createWidget("post-bookmark-button", {
-//   html() {
-//     return new RenderGlimmer(
-//       this,
-//       "button.menu-button-item.add-bookmark",
-//       HBS`
-//       <img src="{{theme-setting "theme_uploads.bookmark-icon"}}">
-//       <span>Bookmark</span>`,
-//       {}
-//     );
-//   }
-// });
 createWidget("post-bookmark-button", {
-  tagName: "button.post-bookmark-button",
-  buildKey: (attrs) => `post-bookmark-button-${attrs.id}`,
-
   html() {
     return new RenderGlimmer(
       this,
       "button.menu-button-item.add-bookmark",
       HBS`
-      Hello World`,
+      <img src="{{theme-setting "theme_uploads.bookmark-icon"}}">
+      <span>Bookmark</span>`,
       {}
     );
   }

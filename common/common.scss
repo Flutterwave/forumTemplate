@@ -1221,7 +1221,8 @@ body:not(.ios-safari-composer-hacks) #reply-control.open, #reply-control.hide-pr
   max-height: 100%;
   max-width: 100%;
   height: auto;
-  border-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
 }
 
 #reply-control {
@@ -1248,6 +1249,15 @@ body:not(.ios-safari-composer-hacks) #reply-control.open, #reply-control.hide-pr
       .title-and-category {
         gap: 1rem;
       }
+    }
+
+    #reply-title, .select-kit-header, .d-editor-textarea-wrapper {
+      border: none;
+      // border-bottom: 0.0625rem solid #e0e0e0;
+    }
+
+    #reply-title,.select-kit-header {
+      padding: 0.5rem 0.0625rem;
     }
   }
 

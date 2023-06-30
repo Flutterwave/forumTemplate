@@ -684,17 +684,6 @@ div.topic-navigation.with-timeline {
       .suggested-topics {
         margin-top: 0;
 
-        // h1,
-        // h2,
-        // h3,
-        // h4,
-        // h5 {
-        //   font-family: 'Millik';
-        //   font-weight: 400;
-        //   font-size: 24px;
-        //   margin-bottom: 0.75rem
-        // }
-
         .suggested-topics-title {
           margin-bottom: 0.75rem;
           font-family: 'Millik';
@@ -744,6 +733,7 @@ div.topic-navigation.with-timeline {
   border: none;
 
   article {
+    padding: 0;
     border: none;
   }
 
@@ -926,6 +916,15 @@ div.topic-navigation.with-timeline {
       }
     }
 
+    .post-comment-header {
+      padding: 0.5rem 0 1rem;
+      font-family: 'Millik';
+      font-weight: 400;
+      font-size: 1.5rem;
+      line-height: 1.45rem;
+      color: #333333;
+    }
+
     .post-actions, .topic-map, .small-user-list.who-liked {
       display: none;
     }
@@ -973,6 +972,8 @@ article#post_1 {
 }
 
 article:not(#post_1) {
+  margin-top: 2rem;
+  
   .cooked {
     padding-left: 2.75rem;
   }

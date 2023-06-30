@@ -371,9 +371,6 @@ createWidget("post-meta-data", {
 
     let model = this.findAncestorModel();
 
-    console.log("attrs", attrs);
-    console.log("model", model);
-
     let result = [this.attach("post-avatar", attrs)];
     result.push(h("div.post-infos", postInfo));
     if (attrs.firstPost) {
@@ -571,11 +568,10 @@ createWidget("post-contents", {
         filteredRepliesShown: state.filteredRepliesShown,
       },
     };
-    // result.push(this.attach("post-menu", attrs, extraState));
     result.push(this.attach("post-menu-buttons", attrs));
     
     if (attrs.firstPost && attrs.topicPostsCount > 1) {
-      result.push(h("h1.post-commentHeader", {}, 'Comments'));
+      result.push(h("h1.post-comment-header", {}, 'Comments'));
     }
 
     const repliesBelow = state.repliesBelow;

@@ -1644,13 +1644,23 @@ article:not(#post_1) {
   }
 }
 
+#main-outlet-wrapper.wrap {
+  &~.flutterwave-footer-area {
+    padding: 2.375rem 17vw 2.5rem;
+  }
+
+  &.post~.flutterwave-footer-area {
+    padding: 2.375rem 5vw 2.5rem;
+  }
+}
+
 .flutterwave-footer {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   margin-top: auto;
-  padding: 38px 80px 48px;
+  padding: 38px 80px 40px;
   color: $black80;
   border-top: 1px solid $black10;
 

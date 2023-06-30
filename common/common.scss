@@ -1238,7 +1238,7 @@ body:not(.ios-safari-composer-hacks) #reply-control.open, #reply-control.hide-pr
   }
 }
 
-&.open, body:not(.ios-safari-composer-hacks) #reply-control.open {
+#reply-control.open, body:not(.ios-safari-composer-hacks) #reply-control.open {
   margin: 0 17vw 1rem;// change this rule to apply dynamically to the page
   padding: 1.5rem 1rem;
 }

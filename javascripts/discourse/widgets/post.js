@@ -517,7 +517,7 @@ createWidget("post-menu-buttons", {
       this,
       "div.post-menu-buttons",
       HBS`
-      {{#if this.passwordRequired}}
+      {{#if @data.passwordRequired}}
         <button class="menu-button-item like-count">
           <img src="{{theme-setting "theme_uploads.time-icon"}}">
           <span>{{@data.likeCount}}</span>

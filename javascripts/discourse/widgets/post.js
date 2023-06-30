@@ -514,6 +514,7 @@ createWidget("post-share-button", {
 //   }
 // });
 createWidget("post-bookmark-button", {
+  tagName: "button.post-bookmark-button",
   buildKey: (attrs) => `post-bookmark-button-${attrs.id}`,
 
   html() {

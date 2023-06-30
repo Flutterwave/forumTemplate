@@ -568,6 +568,7 @@ createWidget("post-contents", {
         filteredRepliesShown: state.filteredRepliesShown,
       },
     };
+    
     result.push(this.attach("post-menu-buttons", attrs));
     
     if (attrs.firstPost && attrs.topicPostsCount > 1) {

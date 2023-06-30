@@ -587,13 +587,17 @@ tr {
       }
 
       .panel {
-        display: block;
+        display: flex;
         
         .icons.d-header-icons {
           margin: 0;
 
           li:not(#current-user) {
             display: none;
+          }
+
+          li#current-user {
+            margin-left: 2rem;
           }
         }
       }
@@ -604,10 +608,6 @@ tr {
           left: auto;
           right: 0;
         };
-
-        &+.panel {
-          margin-left: 2rem;
-        }
 
         .search-banner-inner.wrap {
           padding: 0;
@@ -1188,10 +1188,6 @@ article:not(#post_1) {
 .cooked>*:first-child, .d-editor-preview>*:first-child {
   // to remove margin on initial article elements
   margin: 0
-}
-.cooked img:not(.thumbnail):not(.ytp-thumbnail-image):not(.emoji), .d-editor-preview img:not(.thumbnail):not(.ytp-thumbnail-image):not(.emoji) {
-  // to make it as large as possible, then size is automatically limited by max-width: 100%
-  width: 100vw;
 }
 
 #main-outlet-wrapper.wrap.post>#main-outlet {

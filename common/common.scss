@@ -1286,8 +1286,8 @@ body:not(.ios-safari-composer-hacks) #reply-control.open, #reply-control.hide-pr
       line-height: 1.05rem;
     }
 
-    .d-editor-textarea-wrapper .d-editor-button-bar {
-      display: flex;
+    .d-editor-textarea-wrapper {
+       display: flex;
       gap: 1rem;
       font-size: 0.875rem;
       padding: 0 0.75rem 0.5rem;
@@ -1297,11 +1297,19 @@ body:not(.ios-safari-composer-hacks) #reply-control.open, #reply-control.hide-pr
         border-color: #ffffff00;
       }
 
-      .btn {
-        padding: 0;
-        width: 0.875rem;
-        height: 0.875rem;
-        color: #4F4F4F;
+      .d-editor-button-bar {
+        display: flex;
+        gap: 1rem;
+        font-size: 0.875rem;
+        padding: 0 0.75rem 0.5rem;
+        border-bottom: 1px solid #e0e0e0;
+
+        .btn {
+          padding: 0;
+          width: 0.875rem;
+          height: 0.875rem;
+          color: #4F4F4F;
+        }
       }
     }
 

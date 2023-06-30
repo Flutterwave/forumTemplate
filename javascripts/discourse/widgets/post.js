@@ -473,20 +473,6 @@ createWidget("post-group-request", {
   },
 });
 
-// createWidget("post-like-button", {
-//   html(attrs) {
-//     return new RenderGlimmer(
-//       this,
-//       "button.menu-button-item.like-count",
-//       HBS`
-//       <img src="{{theme-setting "theme_uploads.like-icon"}}">
-//       <span>{{if @data.likeCount @data.likeCount "0"}}</span>`,
-//       {
-//         likeCount: attrs.likeCount
-//       }
-//     );
-//   }
-// });
 createWidget("post-like-button", {
   html(attrs) {
     return new RenderGlimmer(
@@ -594,8 +580,8 @@ createWidget("post-reply-button", {
 // });
 
 createWidget("post-menu-buttons", {
-  tagName: "div.menu-button-area",
-  
+  tagName: "div.post-menu-buttons",
+
   html(attrs) {
     let result = [];
 

@@ -473,20 +473,20 @@ createWidget("post-group-request", {
   },
 });
 
-// createWidget("post-like-button", {
-//   html(attrs) {
-//     return new RenderGlimmer(
-//       this,
-//       "button.menu-button-item.like-count",
-//       HBS`
-//       <img src="{{theme-setting "theme_uploads.like-icon"}}">
-//       <span>{{if @data.likeCount @data.likeCount "0"}}</span>`,
-//       {
-//         likeCount: attrs.likeCount
-//       }
-//     );
-//   }
-// });
+createWidget("post-like-button", {
+  html(attrs) {
+    return new RenderGlimmer(
+      this,
+      "button.menu-button-item.like-count",
+      HBS`
+      <img src="{{theme-setting "theme_uploads.like-icon"}}">
+      <span>{{if @data.likeCount @data.likeCount "0"}}</span>`,
+      {
+        likeCount: attrs.likeCount
+      }
+    );
+  }
+});
 
 createWidget("post-share-button", {
   html() {
@@ -501,14 +501,25 @@ createWidget("post-share-button", {
   }
 });
 
+// createWidget("post-bookmark-button", {
+//   html() {
+//     return new RenderGlimmer(
+//       this,
+//       "button.menu-button-item.add-bookmark",
+//       HBS`
+//       <img src="{{theme-setting "theme_uploads.bookmark-icon"}}">
+//       <span>Bookmark</span>`,
+//       {}
+//     );
+//   }
+// });
 createWidget("post-bookmark-button", {
   html() {
     return new RenderGlimmer(
       this,
       "button.menu-button-item.add-bookmark",
       HBS`
-      <img src="{{theme-setting "theme_uploads.bookmark-icon"}}">
-      <span>Bookmark</span>`,
+      Hello World`,
       {}
     );
   }
@@ -549,7 +560,7 @@ createWidget("post-menu-buttons", {
     // }
 
     // result.push(this.attach("post-share-button", attrs));
-    // result.push(this.attach("post-bookmark-button", attrs));
+    result.push(this.attach("post-bookmark-button", attrs));
     
     // if (attrs.firstPost) {
     //   result.push(this.attach("post-comment-button", attrs));

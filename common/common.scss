@@ -1216,7 +1216,7 @@ article:not(#post_1) {
   background-color: transparent;
 }
 
-.d-button-label:hover {
+.login-button>.d-button-label:hover {
   color: $primary;
 }
 
@@ -1531,6 +1531,7 @@ body:not(.ios-safari-composer-hacks) #reply-control.open {
 }
 
 .d-modal.create-account .login-form .input-group {
+
   span.more-info,
   .create-account__password div.create-account__password-info {
     display: none;
@@ -1555,6 +1556,7 @@ body:not(.ios-safari-composer-hacks) #reply-control.open {
 
 .login-modal:not(.hidden) #login-form {
   .input-group {
+
     label.alt-placeholder,
     input:not(.value-entered):not(:focus)+label.alt-placeholder {
       color: $black40;

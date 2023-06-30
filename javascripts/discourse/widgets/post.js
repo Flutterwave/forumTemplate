@@ -522,7 +522,7 @@ createWidget("post-menu-buttons", {
           <img src="{{theme-setting "theme_uploads.time-icon"}}">
           <span>{{@data.likeCount}}</span>
         </button>
-      {{/#if}}
+      {{/if}}
       
       <button class="menu-button-item share-post">
         <img src="{{theme-setting "theme_uploads.time-icon"}}">

@@ -1293,6 +1293,10 @@ body:not(.ios-safari-composer-hacks) #reply-control.open, #reply-control.hide-pr
       padding: 0 0.75rem 0.5rem;
       border-bottom: 1px solid #e0e0e0;
 
+      &.in-focus {
+        border-color: #ffffff00;
+      }
+
       .btn {
         padding: 0;
         width: 0.875rem;

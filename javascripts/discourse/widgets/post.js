@@ -550,6 +550,13 @@ createWidget("post-comment-button", {
       <span>Add a comment</span>`,
       {}
     );
+  },
+
+  click() {
+    his.state.loading = true;
+    this.sendWidgetAction("toggleReplyAbove").then(
+      () => (this.state.loading = false)
+    );
   }
 });
 

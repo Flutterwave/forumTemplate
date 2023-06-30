@@ -1646,29 +1646,31 @@ article:not(#post_1) {
 
 #main-outlet-wrapper.wrap {
   &~* .flutterwave-footer-area {
-    margin: 0 17vw;
+    margin: 1.5rem 17vw 0;
     padding: 2.375rem 0 2.5rem;
   }
 
   &.post~* .flutterwave-footer-area {
-    margin: 0 5vw;
+    margin: 1.5rem 5vw 0;
     padding: 2.375rem 0 2.5rem;
   }
 }
 
-.flutterwave-footer {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: auto;
-  padding: 38px 80px 40px;
-  color: $black80;
+.flutterwave-footer-area {
   border-top: 1px solid $black10;
-
-  .flw-auth-footer-helper-links {
+  
+  .flutterwave-footer {
     display: flex;
     flex-direction: row;
-    gap: 1.5em;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    color: $black80;
+
+    .flw-auth-footer-helper-links {
+      display: flex;
+      flex-direction: row;
+      gap: 1.5em;
+    }
   }
 }

@@ -535,7 +535,7 @@ createWidget("post-menu-buttons", {
       </button>
       
       <button class="menu-button-item {{if @data.firstPost "add-comment" "add-reply"}}">
-        {{d-icon "plus"}}
+        {{d-icon "plus-icon"}}
         <span>{{if @data.firstPost "Add a comment" "Reply"}}</span>
       </button>`,
       {

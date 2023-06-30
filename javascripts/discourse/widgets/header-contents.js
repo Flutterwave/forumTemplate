@@ -17,9 +17,7 @@ createWidget("header-contents", {
 
     {{home-logo attrs=attrs}}
 
-    {{#if attrs.topic}}
-      {{floating-search-input attrs=attrs}}
-    {{else if this.siteSettings.bootstrap_mode_enabled}}
+    {{if this.siteSettings.bootstrap_mode_enabled}}
       {{#if transformed.showBootstrapMode}}
         {{header-bootstrap-mode attrs=attrs}}
       {{/if}}

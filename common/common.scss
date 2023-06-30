@@ -1525,7 +1525,6 @@ body:not(.ios-safari-composer-hacks) #reply-control.open,
 }
 
 .d-modal.create-account .login-form .input-group {
-
   span.more-info,
   .create-account__password div.create-account__password-info {
     display: none;
@@ -1550,7 +1549,6 @@ body:not(.ios-safari-composer-hacks) #reply-control.open,
 
 .login-modal:not(.hidden) #login-form {
   .input-group {
-
     label.alt-placeholder,
     input:not(.value-entered):not(:focus)+label.alt-placeholder {
       color: $black40;
@@ -1605,6 +1603,7 @@ body:not(.ios-safari-composer-hacks) #reply-control.open,
     .input-group {
       margin: 12px 0;
       padding: 0;
+      align-items: center;
 
       label.alt-placeholder,
       input:not(.value-entered):not(:focus)+label.alt-placeholder {

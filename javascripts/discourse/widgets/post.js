@@ -554,7 +554,7 @@ createWidget("post-comment-button", {
 
   click() {
     this.state.loading = true;
-    this.sendWidgetAction("toggleReplyAbove").then(
+    this.sendWidgetAction("replyToPost").then(
       () => (this.state.loading = false)
     );
   }
@@ -572,6 +572,10 @@ createWidget("post-reply-button", {
       <span>Reply</span>`,
       {}
     );
+  },
+
+  click() {
+    this.sendWidgetAction('replyToPost')
   }
 });
 

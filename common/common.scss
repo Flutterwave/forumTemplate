@@ -1213,10 +1213,10 @@ article:not(#post_1) {
 }
 
 .login-button:hover {
-  background-color: transparent;
+  background-color: white;
 }
 
-.login-button>.d-button-label:hover {
+.login-button:hover>.d-button-label {
   color: $primary;
 }
 
@@ -1428,7 +1428,7 @@ body:not(.ios-safari-composer-hacks) #reply-control.open,
   }
 
   #reply-title,
-  .with-category .category-input,
+  .with-tags.with-category .category-input,
   .category-input+.mini-tag-chooser,
   .submit-panel {
     margin: 0;

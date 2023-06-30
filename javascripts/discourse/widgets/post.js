@@ -473,40 +473,91 @@ createWidget("post-group-request", {
   },
 });
 
-createWidget("post-menu-buttons", {
+createWidget("post-like-button", {
   html(attrs) {
-    let model = this.findAncestorModel();
-
     return new RenderGlimmer(
       this,
-      "div.post-menu-buttons",
+      "button.menu-button-item.like-count",
       HBS`
-      {{#if @data.firstPost}}
-        <button class="menu-button-item like-count">
-          <img src="{{theme-setting "theme_uploads.like-icon"}}">
-          <span>{{if @data.likeCount @data.likeCount "0"}}</span>
-        </button>
-      {{/if}}
-      
-      <button class="menu-button-item share-post">
-        <img src="{{theme-setting "theme_uploads.share-icon"}}">
-        <span>Share</span>
-      </button>
-      
-      <button class="menu-button-item add-bookmark">
-        <img src="{{theme-setting "theme_uploads.bookmark-icon"}}">
-        <span>Bookmark</span>
-      </button>
-      
-      <button class="menu-button-item {{if @data.firstPost "add-comment" "add-reply"}}">
-        <img src="{{theme-setting "theme_uploads.add-plus-icon"}}">
-        <span>{{if @data.firstPost "Add a comment" "Reply"}}</span>
-      </button>`,
+      <img src="{{theme-setting "theme_uploads.like-icon"}}">
+      <span>{{if @data.likeCount @data.likeCount "0"}}</span>`,
       {
-        likeCount: attrs.likeCount,
-        firstPost: attrs.firstPost
+        likeCount: attrs.likeCount
       }
     );
+  }
+});
+
+createWidget("post-share-button", {
+  html() {
+    return new RenderGlimmer(
+      this,
+      "button.menu-button-item.share-post",
+      HBS`
+      <img src="{{theme-setting "theme_uploads.share-icon"}}">
+      <span>Share</span>`,
+      {}
+    );
+  }
+});
+
+createWidget("post-bookmark-button", {
+  html() {
+    return new RenderGlimmer(
+      this,
+      "button.menu-button-item.add-bookmark",
+      HBS`
+      <img src="{{theme-setting "theme_uploads.bookmark-icon"}}">
+      <span>Bookmark</span>`,
+      {}
+    );
+  }
+});
+
+createWidget("post-comment-button", {
+  html() {
+    return new RenderGlimmer(
+      this,
+      "button.menu-button-item.add-comment",
+      HBS`
+      <img src="{{theme-setting "theme_uploads.add-plus-icon"}}">
+      <span>Add a comment</span>`,
+      {}
+    );
+  }
+});
+
+createWidget("post-reply-button", {
+  html() {
+    return new RenderGlimmer(
+      this,
+      "button.menu-button-item.add-reply",
+      HBS`
+      <img src="{{theme-setting "theme_uploads.add-plus-icon"}}">
+      <span>Reply</span>`,
+      {}
+    );
+  }
+});
+
+createWidget("post-menu-buttons", {
+  html(attrs) {
+    let result;
+
+    if (attrs.firstPost) {
+      result.push(this.attach("post-like-button", attrs));
+    }
+
+    result.push(this.attach("post-share-button", attrs));
+    result.push(this.attach("post-bookmark-button", attrs));
+    
+    if (attrs.firstPost) {
+      result.push(this.attach("post-comment-button", attrs));
+    } else {
+      result.push(this.attach("post-reply-button", attrs));
+    }
+
+    return result;
   }
 });
 

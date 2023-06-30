@@ -1645,7 +1645,7 @@ article:not(#post_1) {
   }
 }
 
-#main-outlet-wrapper.wrap {
+.wrap {
   &~* .flutterwave-footer-area {
     margin: 1.5rem 17vw 0;
     padding: 2.375rem 0 2.5rem;

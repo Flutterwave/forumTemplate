@@ -1254,7 +1254,7 @@ body:not(.ios-safari-composer-hacks) #reply-control.open, #reply-control.hide-pr
       }
     }
 
-    #reply-title, .title-and-category .select-kit-header, .d-editor-textarea-wrapper, .title-and-category .select-kit {
+    #reply-title, .title-and-category .select-kit-header, .d-editor-textarea-wrapper, .title-and-category .select-kit, .loading-container {
       border: none;
       background-color: #ffffff00;
     }
@@ -1278,7 +1278,7 @@ body:not(.ios-safari-composer-hacks) #reply-control.open, #reply-control.hide-pr
       line-height: 1.05rem;
     }
 
-    .d-editor-textarea-wrapper {
+    .d-editor-textarea-wrapper .d-editor-button-bar {
       display: flex;
       gap: 1rem;
       font-size: 0.875rem;

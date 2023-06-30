@@ -487,6 +487,9 @@ createWidget("post-like-button", {
         likeCount: attrs.likeCount
       }
     );
+  },
+  click() {
+    this.sendWidgetAction('toggleLike');
   }
 });
 
@@ -502,6 +505,17 @@ createWidget("post-share-button", {
       <span>Share</span>`,
       {}
     );
+  },
+
+  showShareModal() {
+    const post = this.findAncestorModel();
+    const topic = post.topic;
+    const controller = showModal("share-topic", { model: topic.category });
+    controller.setProperties({ topic, post });
+  },
+
+  click() {
+    this.showShareModal()
   }
 });
 
@@ -517,6 +531,10 @@ createWidget("post-bookmark-button", {
       <span>Bookmark</span>`,
       {}
     );
+  },
+
+  click() {
+    this.sendWidgetAction('toggleBookmark');
   }
 });
 
@@ -531,6 +549,13 @@ createWidget("post-comment-button", {
       <img src="{{theme-setting "theme_uploads.add-plus-icon"}}">
       <span>Add a comment</span>`,
       {}
+    );
+  },
+
+  click() {
+    this.state.loading = true;
+    this.sendWidgetAction("replyToPost").then(
+      () => (this.state.loading = false)
     );
   }
 });
@@ -547,6 +572,10 @@ createWidget("post-reply-button", {
       <span>Reply</span>`,
       {}
     );
+  },
+
+  click() {
+    this.sendWidgetAction('replyToPost')
   }
 });
 

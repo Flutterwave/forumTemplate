@@ -675,6 +675,10 @@ div.topic-navigation.with-timeline {
     #main-outlet>.container {
       grid-column: 1 / span 2;
       grid-row: 1 / 1;
+
+      &.posts {
+        margin: 0;
+      }
     }
 
     .suggested-topics-wrapper {
@@ -917,6 +921,7 @@ div.topic-navigation.with-timeline {
     }
 
     .post-comment-header {
+      margin: 0;
       padding: 0.5rem 0 1rem;
       font-family: 'Millik';
       font-weight: 400;
@@ -973,7 +978,11 @@ article#post_1 {
 
 article:not(#post_1) {
   margin-top: 2rem;
-  
+
+  &:not(:last-child) {
+    margin-bottom: 0.0625rem solid #f2f2f2;
+  }
+
   .cooked {
     padding-left: 2.75rem;
   }

@@ -290,40 +290,6 @@ function showReplyTab(attrs, siteSettings) {
   );
 }
 
-// createWidget("test-widget", {
-//   tagName: "div.contents.clearfix",
-//   transform() {
-//     return {};
-//   },
-//   template: hbs`
-//     {{d-button icon="i" label="Test"}}
-//   `,
-// });
-
-// export const TestWidget = {
-//   name: "test-widget",
-
-//   initialize() {
-//     withPluginApi("0.1", (api) => {
-//       api.decorateWidget(`post-body:after`, (decorate) => {
-//         const attrs = decorate.attrs;
-//         return decorate.widget.attach("test-widget", { attrs });
-//       });
-
-//       registerWidgetShim(
-//         "test-widget",
-//         "div.test-widget",
-//         HBS`<DButton
-//         @class="flw-header-btn"
-//         @id="flw-create-account-header-btn"
-//         @action={{route-action "showLogin"}}
-//         @label={{(theme-prefix "create_account.login_cta_text")}}
-//       />`
-//       );
-//     });
-//   },
-// };
-
 createWidget("post-meta-data", {
   tagName: "div.topic-meta-data",
 
@@ -404,6 +370,9 @@ createWidget("post-meta-data", {
     );
 
     let model = this.findAncestorModel();
+
+    console.log("attrs", attrs);
+    console.log("model", model);
 
     let result = [this.attach("post-avatar", attrs)];
     result.push(h("div.post-infos", postInfo));
@@ -510,8 +479,6 @@ createWidget("post-group-request", {
 createWidget("post-menu-buttons", {
   html(attrs) {
     let model = this.findAncestorModel();
-    console.log("attrs", attrs);
-    // console.log("model", model);
 
     return new RenderGlimmer(
       this,
@@ -606,6 +573,10 @@ createWidget("post-contents", {
     };
     // result.push(this.attach("post-menu", attrs, extraState));
     result.push(this.attach("post-menu-buttons", attrs));
+    
+    // if (attrs.firstPost) {
+    //   result.push(h("h1.post-commentHeader", attrs));
+    // }
 
     const repliesBelow = state.repliesBelow;
     if (repliesBelow.length) {

@@ -1216,6 +1216,7 @@ article:not(#post_1) {
 }
 
 body:not(.ios-safari-composer-hacks) #reply-control.open, #reply-control.hide-preview, #reply-control {
+  padding: 0;
   min-height: 0%;
   max-height: 100%;
   max-width: 100%;
@@ -1235,6 +1236,19 @@ body:not(.ios-safari-composer-hacks) #reply-control.open, #reply-control.hide-pr
 
   .reply-area {
     padding: 0;
+    gap: 1.5rem;
+
+    &>span {
+      display: none;
+    }
+
+    .d-editor-textarea-column {
+      gap: 1rem;
+
+      .title-and-category {
+        gap: 1rem;
+      }
+    }
   }
 
   #reply-title, .with-tags.with-category .category-input, .category-input+.mini-tag-chooser, .submit-panel  {
@@ -1244,7 +1258,6 @@ body:not(.ios-safari-composer-hacks) #reply-control.open, #reply-control.hide-pr
 
 #reply-control.open, body:not(.ios-safari-composer-hacks) #reply-control.open {
   margin: 0 17vw 1rem;// change this rule to apply dynamically to the page
-  padding: 1.5rem 1rem;
 }
 
 .login-modal:not(.hidden) .login-modal-body.has-alt-auth .login-right-side,

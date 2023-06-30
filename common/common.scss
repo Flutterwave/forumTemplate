@@ -1208,12 +1208,10 @@ article:not(#post_1) {
     @include font2;
     color: $secondary;
   }
-
-
 }
 
 .login-button:hover {
-  background-color: white;
+  background-color: #ffffff;
 }
 
 .login-button:hover>.d-button-label {

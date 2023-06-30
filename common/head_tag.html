@@ -1,0 +1,19 @@
+<script type="text/discourse-plugin" version="1.1.0">
+    api.onPageChange((url) => {
+      const router = api.container.lookup('service:router');
+      var element = document.getElementById("main-outlet-wrapper");
+
+      if (router.currentRoute.name !== 'discovery.latest') {
+        element.classList.add("post");
+      } else {
+        element.classList.remove("post");
+      }
+    });
+  </script>
+
+
+<!-- <script type="text/x-handlebars" data-template-name="/connectors/topic-above-post-stream/custom-post-page">
+    <div class="post-detail header">
+    {{mount-widget widget="post-avatar" args=(hash attrs=attrs)}}
+    </div>
+  </script> -->

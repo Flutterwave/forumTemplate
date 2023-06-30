@@ -517,10 +517,12 @@ createWidget("post-menu-buttons", {
       this,
       "div.post-menu-buttons",
       HBS`
-      <button class="menu-button-item like-count">
-        <img src="{{theme-setting "theme_uploads.time-icon"}}">
-        <span>{{@data.likeCount}}</span>
-      </button>
+      {{#if this.passwordRequired}}
+        <button class="menu-button-item like-count">
+          <img src="{{theme-setting "theme_uploads.time-icon"}}">
+          <span>{{@data.likeCount}}</span>
+        </button>
+      {{/#if}}
       
       <button class="menu-button-item share-post">
         <img src="{{theme-setting "theme_uploads.time-icon"}}">
@@ -534,11 +536,11 @@ createWidget("post-menu-buttons", {
       
       <button class="menu-button-item add-comment">
         <img src="{{theme-setting "theme_uploads.time-icon"}}">
-        <span>Add a comment</span>
+        <span>{{if @data.firstPost "Add a comment" "Reply"}}</span>
       </button>`,
       {
         likeCount: attrs.likeCount,
-        isFirst: true
+        firstPost: attrs.firstPost
       }
     );
   }

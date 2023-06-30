@@ -736,6 +736,10 @@ div.topic-navigation.with-timeline {
 .topic-post {
   border: none;
 
+  &:not(:last-child) article:not(#post_1) {
+    border-bottom: 0.0625rem solid #f2f2f2;
+  }
+
   article {
     padding: 0;
     border: none;
@@ -978,10 +982,6 @@ article#post_1 {
 
 article:not(#post_1) {
   margin-top: 2rem;
-
-  &:not(:last-child) {
-    border-bottom: 0.0625rem solid #f2f2f2;
-  }
 
   .cooked {
     padding-left: 2.75rem;

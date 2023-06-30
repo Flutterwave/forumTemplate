@@ -27,6 +27,9 @@ import showModal from "discourse/lib/show-modal";
 import { nativeShare } from "discourse/lib/pwa-utils";
 import { hideUserTip } from "discourse/lib/user-tips";
 
+import RenderGlimmer from "discourse/widgets/render-glimmer";
+import { hbs as HBS } from "ember-cli-htmlbars";
+
 function transformWithCallbacks(post) {
   let transformed = transformBasicPost(post);
   postTransformCallbacks(transformed);
@@ -366,8 +369,24 @@ createWidget("post-meta-data", {
       )
     );
 
+    let model = this.findAncestorModel();
+
     let result = [this.attach("post-avatar", attrs)];
     result.push(h("div.post-infos", postInfo));
+    if (attrs.firstPost) {
+      result.push(new RenderGlimmer(
+        this,
+        "div.notification-button",
+        HBS`<TopicNotificationsButton
+          @notificationLevel={{@data.notification_level}}
+          @topic={{@data.topic}}
+        />`,
+        {
+          notification_level: model.topic.details.notification_level,
+          topic: model.topic
+        }
+      ));
+    }
 
     return result;
   },
@@ -454,6 +473,43 @@ createWidget("post-group-request", {
   },
 });
 
+createWidget("post-menu-buttons", {
+  html(attrs) {
+    let model = this.findAncestorModel();
+
+    return new RenderGlimmer(
+      this,
+      "div.post-menu-buttons",
+      HBS`
+      {{#if @data.firstPost}}
+        <button class="menu-button-item like-count">
+          <img src="{{theme-setting "theme_uploads.like-icon"}}">
+          <span>{{@data.likeCount}}</span>
+        </button>
+      {{/if}}
+      
+      <button class="menu-button-item share-post">
+        <img src="{{theme-setting "theme_uploads.share-icon"}}">
+        <span>Share</span>
+      </button>
+      
+      <button class="menu-button-item add-bookmark">
+        <img src="{{theme-setting "theme_uploads.bookmark-icon"}}">
+        <span>Bookmark</span>
+      </button>
+      
+      <button class="menu-button-item {{if @data.firstPost "add-comment" "add-reply"}}">
+        <img src="{{theme-setting "theme_uploads.add-plus-icon"}}">
+        <span>{{if @data.firstPost "Add a comment" "Reply"}}</span>
+      </button>`,
+      {
+        likeCount: attrs.likeCount,
+        firstPost: attrs.firstPost
+      }
+    );
+  }
+});
+
 createWidget("post-contents", {
   buildKey: (attrs) => `post-contents-${attrs.id}`,
 
@@ -512,7 +568,11 @@ createWidget("post-contents", {
         filteredRepliesShown: state.filteredRepliesShown,
       },
     };
-    result.push(this.attach("post-menu", attrs, extraState));
+    result.push(this.attach("post-menu-buttons", attrs));
+    
+    if (attrs.firstPost && attrs.topicPostsCount > 1) {
+      result.push(h("h1.post-comment-header", {}, 'Comments'));
+    }
 
     const repliesBelow = state.repliesBelow;
     if (repliesBelow.length) {
@@ -694,7 +754,20 @@ createWidget("post-body", {
 
   html(attrs, state) {
     const postContents = this.attach("post-contents", attrs);
-    let result = [this.attach("post-meta-data", attrs)];
+    let result = [
+      this.attach("post-meta-data", attrs),
+      attrs.firstPost ? h("div.topic-title-area", {},
+      [
+        h("a.fancy-title", {
+          attributes: {
+            href: attrs.topicUrl
+          }
+        }, [
+          this.findAncestorModel().topic.title
+        ])
+      ]) : null,
+    ];
+
     result = result.concat(
       applyDecorators(this, "after-meta-data", attrs, state)
     );
@@ -783,12 +856,8 @@ createWidget("post-article", {
       rows.push(h("div.row", [this.attach("post-notice", attrs)]));
     }
 
-    console.log("attrs", attrs);
-    console.log("post", this.findAncestorModel());
-
     rows.push(
       h("div.row", [
-        // h("a.fancy-title"),
         this.attach("post-body", {
           ...attrs,
           repliesAbove: state.repliesAbove,

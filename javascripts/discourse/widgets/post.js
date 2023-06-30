@@ -510,7 +510,7 @@ createWidget("post-group-request", {
 createWidget("post-menu-buttons", {
   html(attrs) {
     let model = this.findAncestorModel();
-    // console.log("attrs", attrs);
+    console.log("attrs", attrs);
     // console.log("model", model);
 
     return new RenderGlimmer(
@@ -537,7 +537,8 @@ createWidget("post-menu-buttons", {
         <span>Add a comment</span>
       </button>`,
       {
-        likeCount: attrs.likeCount
+        likeCount: attrs.likeCount,
+        isFirst: true
       }
     );
   }

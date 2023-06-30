@@ -1645,11 +1645,11 @@ article:not(#post_1) {
 }
 
 #main-outlet-wrapper.wrap {
-  &~.flutterwave-footer-area {
+  &~* .flutterwave-footer-area {
     padding: 2.375rem 17vw 2.5rem;
   }
 
-  &.post~.flutterwave-footer-area {
+  &.pos* t~.flutterwave-footer-area {
     padding: 2.375rem 5vw 2.5rem;
   }
 }

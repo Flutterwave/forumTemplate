@@ -519,7 +519,7 @@ createWidget("post-menu-buttons", {
       HBS`
       {{#if @data.firstPost}}
         <button class="menu-button-item like-count">
-          <img src="{{theme-setting "theme_uploads.like-icon"}}">
+          {{dd-icon "plus"}}
           <span>{{@data.likeCount}}</span>
         </button>
       {{/if}}

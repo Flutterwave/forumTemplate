@@ -519,7 +519,7 @@ createWidget("post-menu-buttons", {
       HBS`
       {{#if @data.firstPost}}
         <button class="menu-button-item like-count">
-          {{d-icon "plus"}}
+          {<img src="{{theme-setting "theme_uploads.like-icon"}}">}
           <span>{{@data.likeCount}}</span>
         </button>
       {{/if}}
@@ -535,7 +535,7 @@ createWidget("post-menu-buttons", {
       </button>
       
       <button class="menu-button-item {{if @data.firstPost "add-comment" "add-reply"}}">
-        <img src="{{theme-setting "theme_uploads.time-icon"}}">
+        {{d-icon "chevron-up"}}
         <span>{{if @data.firstPost "Add a comment" "Reply"}}</span>
       </button>`,
       {

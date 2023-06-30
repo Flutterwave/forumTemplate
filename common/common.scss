@@ -1649,7 +1649,7 @@ article:not(#post_1) {
     padding: 2.375rem 17vw 2.5rem;
   }
 
-  &.pos* t~.flutterwave-footer-area {
+  &.post~* .flutterwave-footer-area {
     padding: 2.375rem 5vw 2.5rem;
   }
 }

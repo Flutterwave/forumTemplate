@@ -487,6 +487,9 @@ createWidget("post-like-button", {
         likeCount: attrs.likeCount
       }
     );
+  },
+  click() {
+    this.sendWidgetAction('likeAction');
   }
 });
 

@@ -1216,7 +1216,7 @@ article:not(#post_1) {
 }
 
 body:not(.ios-safari-composer-hacks) #reply-control.open, #reply-control {
-  padding: 0.25rem;
+  // padding: 0.25rem;
   min-height: 0%;
   max-height: 100%;
   height: auto;
@@ -1225,9 +1225,11 @@ body:not(.ios-safari-composer-hacks) #reply-control.open, #reply-control {
 
 #reply-control {
   margin: 0;
-  
+  padding: 0;
+
   &.open {
     margin: 0 17vw 1rem;
+    padding: 0.25rem;
   }
 
   max-width: 100%;

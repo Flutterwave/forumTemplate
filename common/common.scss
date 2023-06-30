@@ -1215,7 +1215,7 @@ article:not(#post_1) {
   }
 }
 
-body:not(.ios-safari-composer-hacks) #reply-control.open, #reply-control {
+body:not(.ios-safari-composer-hacks) #reply-control.open, #reply-control.hide-preview, #reply-control {
   // padding: 0.25rem;
   min-height: 0%;
   max-height: 100%;

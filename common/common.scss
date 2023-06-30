@@ -1216,7 +1216,6 @@ article:not(#post_1) {
 }
 
 body:not(.ios-safari-composer-hacks) #reply-control.open, #reply-control.hide-preview, #reply-control {
-  // padding: 0.25rem;
   min-height: 0%;
   max-height: 100%;
   max-width: 100%;
@@ -1229,8 +1228,8 @@ body:not(.ios-safari-composer-hacks) #reply-control.open, #reply-control.hide-pr
   padding: 0;
 
   &.open {
-    margin: 0 17vw 1rem;
-    padding: 0.25rem;
+    margin: 0 17vw 1rem;// change this rule to apply dynamically to the page
+    padding: 1.5rem 1rem;
   }
 
   max-width: 100%;

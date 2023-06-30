@@ -534,7 +534,7 @@ createWidget("post-menu-buttons", {
         <span>Bookmark</span>
       </button>
       
-      <button class="menu-button-item add-comment">
+      <button class="menu-button-item {{if @data.firstPost "add-comment" "add-reply"}}">
         <img src="{{theme-setting "theme_uploads.time-icon"}}">
         <span>{{if @data.firstPost "Add a comment" "Reply"}}</span>
       </button>`,

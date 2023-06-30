@@ -580,10 +580,6 @@ tr {
     .contents.clearfix {
       .title {
         height: auto;
-
-        // h1 {
-        //   display: none;
-        // }
       }
 
       .header-buttons {
@@ -1515,23 +1511,6 @@ article:not(#post_1) {
       }
     }
   }
-
-  // #flutterwave-auth-footer {
-  //   display: flex;
-  //   flex-direction: row;
-  //   justify-content: space-between;
-  //   align-items: center;
-  //   margin-top: auto;
-  //   padding: 38px 80px 48px;
-  //   color: $black80;
-  //   border-top: 1px solid $black10;
-
-  //   .flw-auth-footer-helper-links {
-  //     display: flex;
-  //     flex-direction: row;
-  //     gap: 1.5em;
-  //   }
-  // }
 
   .flutterwave-footer-area {
     margin: auto 5rem 0;

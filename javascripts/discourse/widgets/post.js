@@ -548,14 +548,14 @@ createWidget("post-menu-buttons", {
     //   result.push(this.attach("post-like-button", attrs));
     // }
 
-    result.push(this.attach("post-share-button", attrs));
-    result.push(this.attach("post-bookmark-button", attrs));
+    // result.push(this.attach("post-share-button", attrs));
+    // result.push(this.attach("post-bookmark-button", attrs));
     
-    if (attrs.firstPost) {
-      result.push(this.attach("post-comment-button", attrs));
-    } else {
-      result.push(this.attach("post-reply-button", attrs));
-    }
+    // if (attrs.firstPost) {
+    //   result.push(this.attach("post-comment-button", attrs));
+    // } else {
+    //   result.push(this.attach("post-reply-button", attrs));
+    // }
 
     return result;
   }

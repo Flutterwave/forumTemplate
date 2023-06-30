@@ -16,7 +16,11 @@
     "Moderat-Bold-Italic": "assets/fonts/Moderat-Bold-Italic.ttf",
     "Moderat-Black": "assets/fonts/Moderat-Black.ttf",
     "Moderat-Black-Italic": "assets/fonts/Moderat-Black-Italic.ttf",
+    "Millik-Regular": "assets/fonts/Millik.ttf",
     "eye-icon": "assets/icons/eye-icon.svg",
+    "like-icon": "assets/icons/like-icon.svg",
+    "share-icon": "assets/icons/share-icon.svg",
+    "bookmark-icon": "assets/icons/bookmark-icon.svg",
     "message-icon": "assets/icons/message-icon.svg",
     "more-options-icon": "assets/icons/more-options-icon.svg",
     "time-icon": "assets/icons/time-icon.svg",
@@ -26,8 +30,7 @@
     "collections-payments": "assets/images/collections-payments.svg",
     "sdks-plugins": "assets/images/sdks-plugins.svg",
     "logo": "assets/icons/logo.png",
-    "flw-logo": "assets/icons/flutterwave_logo.svg",
-    "Millik-Regular": "assets/fonts/Millik.ttf"
+    "flw-logo": "assets/icons/flutterwave_logo.svg"
   },
   "components": [
     "https://github.com/discourse/discourse-header-search.git"

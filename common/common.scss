@@ -668,6 +668,10 @@ div.topic-navigation.with-timeline {
     grid-template-columns: 2.25fr 1fr;
     column-gap: 5vw;
 
+    #topic-title {
+      display: none;
+    }
+
     #main-outlet>.container {
       grid-column: 1 / span 2;
       grid-row: 1 / 1;

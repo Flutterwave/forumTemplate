@@ -519,18 +519,18 @@ createWidget("post-menu-buttons", {
       HBS`
       {{#if @data.firstPost}}
         <button class="menu-button-item like-count">
-          <img src="{{theme-setting "theme_uploads.time-icon"}}">
+          <img src="{{theme-setting "theme_uploads.like-icon"}}">
           <span>{{@data.likeCount}}</span>
         </button>
       {{/if}}
       
       <button class="menu-button-item share-post">
-        <img src="{{theme-setting "theme_uploads.time-icon"}}">
+        <img src="{{theme-setting "theme_uploads.share-icon"}}">
         <span>Share</span>
       </button>
       
       <button class="menu-button-item add-bookmark">
-        <img src="{{theme-setting "theme_uploads.time-icon"}}">
+        <img src="{{theme-setting "theme_uploads.bookmark-icon"}}">
         <span>Bookmark</span>
       </button>
       

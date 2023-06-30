@@ -586,15 +586,26 @@ tr {
         margin-top: 0;
       }
 
+      .panel {
+        .icons.d-header-icons {
+          margin: 0;
+
+          li:not(#current-user) {
+            display: none;
+          }
+        }
+      }
+
       .floating-search-input {
         width: 20rem;
-
         margin: {
           left: auto;
           right: 0;
-        }
+        };
 
-        ;
+        &+.panel {
+          margin-left: 2rem;
+        }
 
         .search-banner-inner.wrap {
           padding: 0;
@@ -1279,7 +1290,7 @@ body:not(.ios-safari-composer-hacks) #reply-control.open, #reply-control.hide-pr
     }
 
     .d-editor-textarea-wrapper .d-editor-button-bar {
-       display: flex;
+      display: flex;
       gap: 1rem;
       font-size: 0.875rem;
       padding: 1rem 0.75rem 0.5rem;
@@ -1370,7 +1381,7 @@ body:not(.ios-safari-composer-hacks) #reply-control.open, #reply-control.hide-pr
 }
 
 #reply-control.open, body:not(.ios-safari-composer-hacks) #reply-control.open {
-  margin: 0 17vw 1rem;// change this rule to apply dynamically to the page
+  margin: 0 17vw 1rem;
 }
 
 .login-modal:not(.hidden) .login-modal-body.has-alt-auth .login-right-side,

@@ -7,84 +7,73 @@
   src: url($Moderat-Thin) format("truetype");
   font-weight: 100;
 }
-
 @font-face {
   font-family: 'Moderat';
   src: url($Moderat-Thin-Italic) format("truetype");
   font-weight: 100;
   font-style: italic;
 }
-
 @font-face {
   font-family: 'Moderat';
   src: url($Moderat-Light) format("truetype");
   font-weight: 300;
 }
-
 @font-face {
   font-family: 'Moderat';
   src: url($Moderat-Light-Italic) format("truetype");
   font-weight: 300;
   font-style: italic;
 }
-
 @font-face {
   font-family: 'Moderat';
   src: url($Moderat-Regular) format("truetype");
   font-weight: 400;
 }
-
 @font-face {
   font-family: 'Moderat';
   src: url($Moderat-Regular-Italic) format("truetype");
   font-weight: 400;
   font-style: italic;
 }
-
 @font-face {
   font-family: 'Moderat';
   src: url($Moderat-Medium) format("truetype");
   font-weight: 500;
 }
-
 @font-face {
   font-family: 'Moderat';
   src: url($Moderat-Medium-Italic) format("truetype");
   font-weight: 500;
   font-style: italic;
 }
-
 @font-face {
   font-family: 'Moderat';
   src: url($Moderat-Bold) format("truetype");
   font-weight: 700;
 }
-
 @font-face {
   font-family: 'Moderat';
   src: url($Moderat-Bold-Italic) format("truetype");
   font-weight: 700;
   font-style: italic;
 }
-
 @font-face {
   font-family: 'Moderat';
   src: url($Moderat-Black) format("truetype");
   font-weight: 900;
 }
-
 @font-face {
   font-family: 'Moderat';
   src: url($Moderat-Black-Italic) format("truetype");
   font-weight: 900;
   font-style: italic;
 }
-
 @font-face {
   font-family: 'Millik';
   src: url($Millik-Regular) format("truetype");
   font-weight: 400;
 }
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
 
 // CJ's Common styles START
 
@@ -251,7 +240,6 @@ html {
 
 #main-outlet {
   padding: 2.25rem 0;
-
 }
 
 .category-breadcrumb,
@@ -301,8 +289,8 @@ html {
 
       svg {
         margin: 0;
-        fill: $tertiary;
         padding: 0.0625rem;
+        color: $tertiary
       }
 
       .d-button-label {
@@ -527,7 +515,7 @@ tr {
           gap: 0.375rem;
 
           .desc {
-            color: #828282;
+            color: $black40;
           }
 
           .relative-date {
@@ -590,7 +578,7 @@ tr {
       }
 
       .header-buttons {
-        margin-left: 2.13rem;
+        margin-left: 2rem;
         margin-top: 0;
       }
 
@@ -612,13 +600,10 @@ tr {
 
       .floating-search-input {
         width: 20rem;
-
         margin: {
           left: auto;
           right: 0;
-        }
-
-        ;
+        };
 
         .search-banner-inner.wrap {
           padding: 0;
@@ -634,6 +619,11 @@ tr {
               position: relative;
               left: 0;
               top: 0;
+
+              svg {
+                color: $black40;
+                fill: none;
+              }
             }
 
             #search-term {
@@ -689,8 +679,6 @@ tr {
   }
 
   .custom-header-links {
-    margin-left: 2rem;
-
     .top-level-links {
       margin: 0;
       display: flex;
@@ -804,30 +792,46 @@ div.topic-navigation.with-timeline {
 }
 
 #main-outlet-wrapper.wrap.post {
-  padding-left: 0 !important;
-  padding-right: 0 !important;
+  padding: 0 5vw;
+
+  @media screen and (max-width: 960px) {
+    & {
+      padding: 0 6vw;
+    }
+  }
+
+  @media screen and (max-width: 640px) {
+    & {
+      padding: 0 1rem;
+    }
+  }
 
   #main-outlet>.regular {
     display: grid;
     grid-template-columns: 2.25fr 1fr;
     column-gap: 5vw;
+    
+    &>.container {
+      &.posts {
+        margin: 0;
+        grid-column: 1/2;
+      }
+    }
+    
+    &>span {
+      display: none;
+    }
 
     #topic-title {
       display: none;
     }
 
-    &>.container {
-      &.posts {
-        margin: 0;
-      }
-    }
-
     .suggested-topics-wrapper {
-      grid-column: 2;
+      grid-column: 2/-1;
       grid-row: 2/7;
 
       .suggested-topics {
-        margin-top: 0;
+        padding: 0;
 
         .suggested-topics-title {
           margin-bottom: 0.75rem;
@@ -846,7 +850,7 @@ div.topic-navigation.with-timeline {
           font-family: 'Moderat';
           font-size: 0.875rem;
           font-weight: 500;
-          color: #828282;
+          color: $black40;
 
           .badge-category-bg {
             display: none;
@@ -856,6 +860,23 @@ div.topic-navigation.with-timeline {
           a.badge-wrapper.bullet span.badge-category {
             color: #ff5805;
           }
+        }
+      }
+    }
+
+    @media screen and (max-width: 960px) {
+      & {
+        grid-template-columns: 1fr;
+
+        &>.container {
+          &.posts, &.posts+* {
+            grid-column: 1/-1;
+          }
+        }
+
+        &>.suggested-topics-wrapper {
+          grid-column: 1/-1;
+          grid-row: auto/auto;
         }
       }
     }
@@ -900,6 +921,10 @@ div.topic-navigation.with-timeline {
       display: flex;
       flex-direction: column;
 
+      p {
+        font-family: 'Inter';
+      }
+
       &>* {
         &:empty {
           display: none;
@@ -908,7 +933,7 @@ div.topic-navigation.with-timeline {
         &:not(:empty) {
           margin: 0.75rem 0 1.25rem;
 
-          &~*:not(:empty) {
+          &~:not(:empty) {
             margin: 1.125rem 0 !important;
           }
         }
@@ -920,7 +945,7 @@ div.topic-navigation.with-timeline {
             margin-top: 0.75rem !important;
           }
 
-          &:not(:empty)~*:not(:has(img)) {
+          &:not(:empty)~:not(:has(img)) {
             margin: 1.125rem 0 1.125rem !important;
           }
         }
@@ -982,7 +1007,7 @@ div.topic-navigation.with-timeline {
           font-weight: 400;
 
           a {
-            color: #828282;
+            color: $black40;
           }
         }
       }
@@ -1002,6 +1027,14 @@ div.topic-navigation.with-timeline {
             background-color: #ffffff;
             border-radius: 0.25rem;
             border: 0.075rem solid #2A3362;
+
+            &.btn:hover {
+              background-color: #c9cfe8;
+            }
+
+            &.btn:active {
+              background-color: #97a1d3;
+            }
           }
 
           .select-kit .select-kit-header {
@@ -1068,12 +1101,36 @@ div.topic-navigation.with-timeline {
         background-color: #ffffff;
         border-radius: 0.1875rem;
 
+        &:hover {
+          background-color: #c9cfe8;
+        }
+
+        &:active {
+          background-color: #97a1d3;
+        }
+
+        svg {
+          font-size: 0.9rem;
+
+          &:not(.d-icon-link) {
+            fill: none;
+          }
+        }
+
         span {
           font-family: 'Moderat';
           font-size: 0.7rem;
           font-weight: 500;
           line-height: 0.85rem;
           color: #2A3362;
+        }
+      }
+
+      .clicked {
+        .menu-button-item {
+          svg {
+            fill: currentColor;
+          }
         }
       }
     }
@@ -1128,6 +1185,30 @@ article#post_1 {
 
     .cooked {
       border-bottom: 0.0625rem solid #f2f2f2;
+
+      p, li {
+        font-size: 1rem;
+        line-height: 1.625rem;
+      }
+
+      h1 {
+        font-size: 1.5rem;
+      }
+      h2 {
+        font-size: 1.375rem;
+      }
+      h3 {
+        font-size: 1.25rem;
+      }
+      h4 {
+        font-size: 1.125rem;
+      }
+      h5 {
+        font-size: 1rem;
+      }
+      h6 {
+        font-size: 0.875rem;
+      }
     }
 
     .post-menu-buttons {
@@ -1141,6 +1222,30 @@ article:not(#post_1) {
 
   .cooked {
     padding-left: 2.75rem;
+
+    p, li {
+      font-size: 0.875rem;
+      line-height: 1.43rem;
+    }
+
+    h1 {
+        font-size: 1.3125rem;
+    }
+    h2 {
+      font-size: 1.2rem;
+    }
+    h3 {
+      font-size: 1.095rem;
+    }
+    h4 {
+      font-size: 1rem;
+    }
+    h5 {
+      font-size: 0.875rem;
+    }
+    h6 {
+      font-size: 0.765rem;
+    }
   }
 
   .post-menu-buttons {
@@ -1162,71 +1267,58 @@ article:not(#post_1) {
   vertical-align: top;
 }
 
-.header-buttons {
-  display: flex;
+.d-header {
+  .header-buttons {
+    display: flex;
 
-  .custom-header-links {
-    order: 1;
-  }
+    .custom-header-links {
+      order: 1;
+    }
 
-  .sign-up-button {
-    order: 3;
-  }
+    .sign-up-button {
+      margin-left: 1.5rem;
+      padding: 0.5rem 1rem;
+      background-color: $primary;
+      border-radius: 0.25rem;
+      order: 3;
 
-  .login-button {
-    order: 2;
+      .d-button-label {
+        @include font6;
+        color: $tertiary;
+      }
+    }
+
+    .login-button {
+      margin-left: 2rem;
+      padding: 0;
+      background-color: $tertiary;
+      border: none;
+      order: 2;
+
+      &:hover {
+        background-color: #ffffff;
+
+        &>.d-button-label {
+          color: $primary;
+        }
+      }
+
+      svg {
+        display: none;
+      }
+
+      .d-button-label {
+        @include font1;
+        color: $secondary;
+      }
+    }
   }
 }
 
-.d-header .sign-up-button {
-  padding: 0.56rem 1rem;
-  background-color: $primary;
-  border-radius: 0.25rem;
-  justify-content: center;
-  align-items: center;
-  width: 117px;
-  height: 32px;
-  display: flex;
-
-  .d-button-label {
-    @include font2;
-    color: $tertiary;
-  }
-}
-
-.d-header .login-button {
-  padding: 0.56rem 1rem;
-  background-color: transparent;
-  justify-content: center;
-  align-items: center;
-
-  svg {
-    display: none;
-  }
-
-  .d-button-label {
-    @include font2;
-    color: $secondary;
-  }
-}
-
-.login-button:hover {
-  background-color: #ffffff !important;
-}
-
-.login-button:hover>.d-button-label {
-  color: $primary;
-}
-
-
-.cooked>*:first-child,
-.d-editor-preview>*:first-child {
+.cooked>:first-child,
+.d-editor-preview>:first-child {
   // to remove margin on initial article elements
-  margin: 0
-}
-
-#main-outlet-wrapper.wrap.post>#main-outlet {
-  padding: 2.75rem 5vw 0;
+  margin: 0;
 }
 
 .modal-outer-container {
@@ -1663,7 +1755,7 @@ body:not(.ios-safari-composer-hacks) #reply-control.open {
   width: 288px;
   margin: 16px 0 0;
   font-size: 12px;
-  color: #828282;
+  color: $black40;
 }
 
 .d-modal.create-account .create-account-form {

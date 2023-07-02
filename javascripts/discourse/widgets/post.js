@@ -476,18 +476,23 @@ createWidget("post-group-request", {
 createWidget("post-like-button", {
   tagName: "div.like-count",
 
+  buildClasses(attrs) {
+    return attrs.liked ? "clicked" : "";
+  },
+
   html(attrs) {
     return new RenderGlimmer(
       this,
       "button.menu-button-item",
       HBS`
-      <img src="{{theme-setting "theme_uploads.like-icon"}}">
+      {{d-icon "d-unliked"}}
       <span>{{if @data.likeCount @data.likeCount "0"}}</span>`,
       {
         likeCount: attrs.likeCount
       }
     );
   },
+
   click() {
     this.sendWidgetAction('toggleLike');
   }
@@ -501,7 +506,7 @@ createWidget("post-share-button", {
       this,
       "button.menu-button-item.share-post",
       HBS`
-      <img src="{{theme-setting "theme_uploads.share-icon"}}">
+      {{d-icon "link"}}
       <span>Share</span>`,
       {}
     );
@@ -522,12 +527,16 @@ createWidget("post-share-button", {
 createWidget("post-bookmark-button", {
   tagName: "div.add-bookmark",
 
+  buildClasses(attrs) {
+    return attrs.bookmarked ? "clicked" : "";
+  },
+
   html() {
     return new RenderGlimmer(
       this,
       "button.menu-button-item.add-bookmark",
       HBS`
-      <img src="{{theme-setting "theme_uploads.bookmark-icon"}}">
+      {{d-icon "bookmark"}}
       <span>Bookmark</span>`,
       {}
     );
@@ -546,7 +555,7 @@ createWidget("post-comment-button", {
       this,
       "button.menu-button-item.add-comment",
       HBS`
-      <img src="{{theme-setting "theme_uploads.add-plus-icon"}}">
+      {{d-icon "plus"}}
       <span>Add a comment</span>`,
       {}
     );
@@ -568,7 +577,7 @@ createWidget("post-reply-button", {
       this,
       "button.menu-button-item.add-reply",
       HBS`
-      <img src="{{theme-setting "theme_uploads.add-plus-icon"}}">
+      {{d-icon "plus"}}
       <span>Reply</span>`,
       {}
     );

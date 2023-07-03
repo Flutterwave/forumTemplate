@@ -675,7 +675,7 @@ tr {
 
             .searching {
               svg {
-                fill: #2A3362;
+                fill: $black40;;
               }
             }
           }
@@ -1115,12 +1115,6 @@ div.topic-navigation.with-timeline {
 
         &:hover {
           background-color: #c9cfe8;
-
-          :not(.add-comment), :not(.add-reply) {
-            svg {
-              color: $primary;
-            }
-          }
         }
 
         &:active {
@@ -1147,7 +1141,16 @@ div.topic-navigation.with-timeline {
       .clicked {
         .menu-button-item {
           svg {
+            color: $primary;
             fill: $primary;
+          }
+        }
+      }
+
+      :not(.add-comment), :not(.add-reply) {
+        &:hover {
+          svg {
+            color: $primary;
           }
         }
       }

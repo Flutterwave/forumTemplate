@@ -1115,6 +1115,10 @@ div.topic-navigation.with-timeline {
 
         &:hover {
           background-color: #c9cfe8;
+
+          svg {
+            color: $primary;
+          }
         }
 
         &:active {
@@ -1143,14 +1147,6 @@ div.topic-navigation.with-timeline {
           svg {
             color: $primary;
             fill: $primary;
-          }
-        }
-      }
-
-      :not(.add-comment), :not(.add-reply) {
-        &:hover {
-          svg {
-            color: $primary;
           }
         }
       }

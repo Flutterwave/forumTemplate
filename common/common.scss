@@ -672,6 +672,12 @@ tr {
                 font-weight: 300;
               }
             }
+
+            .searching {
+              svg {
+                fill: #2A3362;
+              }
+            }
           }
         }
       }
@@ -693,6 +699,11 @@ tr {
           margin-left: 0.3125rem;
           transform: translate(0, -0.125rem);
           order: 2;
+
+          svg {
+            fill: none;
+            color: #2A3362;
+          }
 
           img {
             width: 1.5em;

@@ -7,12 +7,13 @@
 >
   <PluginOutlet @name="login-before-modal-body" @connectorTagName="div" />
   <div id="flutterwave-auth-header">
-    <img id="flw-logo-auth" class="flutterwave-logo" src="https://flutterwave.com/images/logo/full.svg" alt="flutterwave-logo"/>
+    <FlwLogoButton @action={{ route-action "closeModal" }} />
+
     <DButton
-              @class="flw-header-btn"
-              @id="flw-create-account-header-btn"
-              @action={{route-action "showCreateAccount"}}
-              @label={{(theme-prefix "login.create_account_cta_text")}}
+      @class="flw-header-btn"
+      @id="flw-create-account-header-btn"
+      @action={{route-action "showCreateAccount"}}
+      @label={{(theme-prefix "login.create_account_cta_text")}}
     />
   </div>
   

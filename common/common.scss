@@ -152,6 +152,10 @@ html {
   font-size: 16px; // set base reference from rem units
 }
 
+body {
+  width: min(100%, 100vw);
+}
+
 .title {
   background-image: url($logo);
 }
@@ -213,25 +217,25 @@ html {
   margin: 0;
   padding: 0 1rem;
 
-  @media screen and (min-width: 640px) {
+  @media screen and (min-width: 40rem) {
     & {
       padding: 0 6vw;
     }
   }
 
-  @media screen and (min-width: 960px) {
+  @media screen and (min-width: 60rem) {
     & {
       padding: 0 12vw;
     }
   }
 
-  @media screen and (min-width: 1280px) {
+  @media screen and (min-width: 80rem) {
     & {
       padding: 0 17vw;
     }
   }
 
-  @media screen and (min-width: 1600px) {
+  @media screen and (min-width: 100rem) {
     & {
       padding: 0 20vw;
     }
@@ -273,10 +277,43 @@ html {
         color: $primary;
       }
     }
+
+    .navigation-toggle {
+      border-radius: 0.25rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.375rem;
+
+      a.toggle-link {
+        @include font2;
+        padding: 0.75rem 1.25rem 0.75rem 1.5rem;
+        min-height: 0;
+        display: flex;
+        gap: 0.375rem;
+
+        svg {
+          margin: 0;
+        }
+      }
+    }
+    
+    .drop {
+      margin-top: 0.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      border-radius: 0.25rem;
+
+      & > li {
+        margin-top: 0;
+      }
+    }
   }
 
   .navigation-controls {
     margin-bottom: 0.25rem;
+    align-self: flex-start;
 
     .btn-default {
       padding: 0.75rem 1.25rem 0.75rem 1.5rem;
@@ -572,7 +609,8 @@ tr {
     padding: 22px 17px 22px 24px;
     height: auto;
 
-    .contents.clearfix {
+    .contents {
+      justify-content: space-between;
       .title {
         height: auto;
       }
@@ -585,15 +623,30 @@ tr {
       .panel {
         display: flex;
 
-        .icons.d-header-icons {
-          margin: 0;
-
-          li:not(#current-user) {
+        .header-buttons {
+          @media screen and (max-width: 55rem) {
             display: none;
           }
+        }
 
-          li#current-user {
-            margin-left: 2rem;
+        .icons.d-header-icons {
+          margin-left: 2rem;
+          gap: 1rem;
+
+          svg {
+            color: $secondary;
+          }
+          
+          li.search-dropdown {
+            @media screen and (max-width: 70rem) {
+              & {
+                display: block;
+              }
+            }
+
+            svg {
+              fill: $tertiary;
+            }
           }
         }
       }
@@ -605,14 +658,32 @@ tr {
           right: 0;
         };
 
-        .search-banner-inner.wrap {
-          padding: 0;
+        @media screen and (max-width: 70rem) {
+          & {
+            display: none;
+          }
+        }
+
+        &+.panel {
+          .search-menu {
+            display: block;
+          }
+        }
+      }
+
+      .floating-search-input .search-banner-inner.wrap, .floating-search-input+.panel, .panel {
+        padding: 0;
+
+        .search-menu {
+          margin: 0;
+          width: auto;
 
           .search-input {
             margin: 0;
             padding-left: 0.625rem;
             gap: 0.75rem;
             border: 0.0625rem solid $black20;
+            border-radius: 0.25rem;
             outline: none;
 
             .search-button.btn-icon {
@@ -628,6 +699,7 @@ tr {
 
             #search-term {
               padding: 0.625rem 0;
+              background-color: #ffffff00;
               box-shadow: none;
 
               &::-webkit-input-placeholder {
@@ -674,11 +746,32 @@ tr {
             }
 
             .searching {
+              .clear-search {
+                display: none;
+              }
+              
               svg {
                 fill: $black40;;
               }
             }
           }
+
+          .results {
+            width: 100%;
+
+            .d-icon-search {
+              display: none;
+            }
+          }
+        }
+      }
+
+      .menu-panel {
+        .results {
+          padding: {
+            left: 0.625rem;
+            right: 0.625rem;
+          };
         }
       }
     }
@@ -805,13 +898,13 @@ div.topic-navigation.with-timeline {
 #main-outlet-wrapper.wrap.post {
   padding: 0 5vw;
 
-  @media screen and (max-width: 960px) {
+  @media screen and (max-width: 60rem) {
     & {
       padding: 0 6vw;
     }
   }
 
-  @media screen and (max-width: 640px) {
+  @media screen and (max-width: 40rem) {
     & {
       padding: 0 1rem;
     }
@@ -826,6 +919,8 @@ div.topic-navigation.with-timeline {
       &.posts {
         margin: 0;
         grid-column: 1/2;
+        grid-template-areas: "posts";
+        grid-template-columns: auto;
       }
     }
     
@@ -837,15 +932,15 @@ div.topic-navigation.with-timeline {
       display: none;
     }
 
-    .suggested-topics-wrapper {
+    .more-content-wrapper {
       grid-column: 2/-1;
       grid-row: 2/7;
 
-      .suggested-topics {
+      .more-content-topics {
         margin: 0;
         padding: 0;
 
-        .suggested-topics-title {
+        .more-topics-title {
           margin-bottom: 0.75rem;
           font-family: 'Millik';
           font-weight: 400;
@@ -856,27 +951,29 @@ div.topic-navigation.with-timeline {
         .topics {
           padding: 0;
         }
+      }
 
-        .suggested-topics-message {
+      .suggested-topics-message {
+        margin: 0;
+        font-family: 'Moderat';
+        font-size: 0.875rem;
+        font-weight: 500;
+        color: $black40;
+
+        .badge-category-bg {
+          display: none;
+        }
+
+        a,
+        a.badge-wrapper.bullet span.badge-category {
           margin: 0;
-          font-family: 'Moderat';
-          font-size: 0.875rem;
-          font-weight: 500;
-          color: $black40;
-
-          .badge-category-bg {
-            display: none;
-          }
-
-          a,
-          a.badge-wrapper.bullet span.badge-category {
-            color: #ff5805;
-          }
+          color: #ff5805;
+          line-height: normal;
         }
       }
     }
 
-    @media screen and (max-width: 960px) {
+    @media screen and (max-width: 60rem) {
       & {
         grid-template-columns: 1fr;
 
@@ -886,7 +983,7 @@ div.topic-navigation.with-timeline {
           }
         }
 
-        &>.suggested-topics-wrapper {
+        &>.more-content-wrapper {
           grid-column: 1/-1;
           grid-row: auto/auto;
         }
@@ -910,7 +1007,6 @@ div.topic-navigation.with-timeline {
     }
   }
 }
-
 
 .topic-post {
   border: none;
@@ -1391,8 +1487,8 @@ body:not(.ios-safari-composer-hacks) #reply-control.open,
   .grippie,
   .reply-to,
   .d-editor-preview-wrapper,
-  .btn-mini-toggle {
-    display: none;
+  .submit-panel > :not(.save-or-cancel) {
+    display: none!important;
   }
 
   .reply-area {
@@ -1409,6 +1505,11 @@ body:not(.ios-safari-composer-hacks) #reply-control.open,
 
       .title-and-category {
         gap: 1rem;
+
+        & > .category-input, & > .mini-tag-chooser {
+          max-width: 100%;
+          flex: 1 1 45%;
+        }
       }
     }
 
@@ -1528,7 +1629,15 @@ body:not(.ios-safari-composer-hacks) #reply-control.open,
           background-color: #ffffff;
           border-radius: 0.25rem;
           border: 0.0625rem solid #2A3362;
+          font-family: 'Moderat';
+          font-size: 0.875rem;
+          font-weight: 500;
+          line-height: 1.05rem;
           order: 1;
+
+          svg {
+            font-size: 1rem;
+          }
         }
       }
     }
@@ -1544,7 +1653,32 @@ body:not(.ios-safari-composer-hacks) #reply-control.open,
 
 #reply-control.open,
 body:not(.ios-safari-composer-hacks) #reply-control.open {
-  margin: 0 17vw 0;
+  // margin: 0 17vw 0;
+  margin: 0 1rem;
+
+  @media screen and (min-width: 40rem) {
+    & {
+      margin: 0 6vw;
+    }
+  }
+
+  @media screen and (min-width: 60rem) {
+    & {
+      margin: 0 12vw;
+    }
+  }
+
+  @media screen and (min-width: 80rem) {
+    & {
+      margin: 0 17vw;
+    }
+  }
+
+  @media screen and (min-width: 100rem) {
+    & {
+      margin: 0 20vw;
+    }
+  }
 }
 
 .login-modal:not(.hidden) .login-modal-body.has-alt-auth .login-right-side,
@@ -2001,7 +2135,7 @@ body:not(.ios-safari-composer-hacks) #reply-control.open {
     .flw-auth-footer-helper-links {
       display: flex;
       flex-direction: row;
-      gap: 1.5em;
+      gap: min(2vw, 1.5rem);
 
       a {
         color: $black80;
@@ -2011,9 +2145,9 @@ body:not(.ios-safari-composer-hacks) #reply-control.open {
     p,
     a {
       font-family: 'Moderat';
-      font-size: 0.875rem;
       font-weight: 500;
       line-height: 1.05rem;
+      font-size: min(3vw, 0.875rem);
     }
   }
 }

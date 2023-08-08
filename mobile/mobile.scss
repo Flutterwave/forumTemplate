@@ -1,24 +1,58 @@
 @import "mixins";
 
 .mobile-view {
-  .top-level-links {
-    @include dropdown;
-    position: fixed;
-    left: 0;
-    margin: 0;
-    top: var(--header-offset);
-    width: 100%;
-    flex-flow: row wrap;
-    align-items: flex-start;
-    justify-content: flex-start;
-    overflow: scroll;
-    max-height: 90vh;
+  .d-header .wrap .contents .panel {
+    .header-buttons {
+      @media screen and (min-width: 30rem) {
+        display: block;
+      }
 
-    li {
-      width: 100%;
+      .btn-custom-header-dropdown-mobile .btn .d-icon {
+        color: #2a3362;
+      }
 
-      @media screen and (min-width: 768px) {
+      .top-level-links {
+        @include dropdown;
+        left: 0;
+        top: 0;
+        margin: 100% 0 0 -50% !important;
         width: auto;
+        align-items: flex-start;
+        justify-content: flex-start;
+        overflow: scroll;
+        max-height: 90vh;
+
+        li {
+          width: 100%;
+
+          @media screen and (min-width: 768px) {
+            width: auto;
+          }
+        }
+      }
+    }
+
+    .icons.d-header-icons {
+      margin-left: 0.5rem
+    }
+  }
+
+  .floating-search-input {
+    & + .panel {
+      margin: 0;
+    }
+
+    @media screen and (min-width: 45rem) {
+      & {
+        display: block !important;
+      }
+    }
+  }
+  
+  li.search-dropdown {
+    @media screen and (min-width: 45rem) {
+      & {
+        display: none !important;
       }
     }
   }

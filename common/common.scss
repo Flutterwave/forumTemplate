@@ -218,27 +218,19 @@ body {
   padding: 0 1rem;
 
   @media screen and (min-width: 40rem) {
-    & {
-      padding: 0 6vw;
-    }
+    padding: 0 6vw;
   }
 
   @media screen and (min-width: 60rem) {
-    & {
-      padding: 0 12vw;
-    }
+    padding: 0 12vw;
   }
 
   @media screen and (min-width: 80rem) {
-    & {
-      padding: 0 17vw;
-    }
+    padding: 0 17vw;
   }
 
   @media screen and (min-width: 100rem) {
-    & {
-      padding: 0 20vw;
-    }
+    padding: 0 20vw;
   }
 }
 
@@ -431,12 +423,15 @@ tr {
 
   .topic-list-item-extras {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+    gap: 1rem;
 
     .topic-list-item-tags {
       .discourse-tags {
         display: flex;
+        flex-wrap: wrap;
         gap: 0.5rem;
 
         .discourse-tag {
@@ -541,7 +536,8 @@ tr {
 
       .metadata {
         display: flex;
-        gap: 1.5rem;
+        flex-wrap: wrap;
+        gap: 0.75rem 1.5rem;
 
         h3 {
           font-family: 'Moderat';
@@ -639,9 +635,7 @@ tr {
           
           li.search-dropdown {
             @media screen and (max-width: 70rem) {
-              & {
-                display: block;
-              }
+              display: block;
             }
 
             svg {
@@ -659,9 +653,7 @@ tr {
         };
 
         @media screen and (max-width: 70rem) {
-          & {
-            display: none;
-          }
+          display: none;
         }
 
         &+.panel {
@@ -899,15 +891,11 @@ div.topic-navigation.with-timeline {
   padding: 0 5vw;
 
   @media screen and (max-width: 60rem) {
-    & {
-      padding: 0 6vw;
-    }
+    padding: 0 6vw;
   }
 
   @media screen and (max-width: 40rem) {
-    & {
-      padding: 0 1rem;
-    }
+    padding: 0 1rem;
   }
 
   #main-outlet>.regular {
@@ -974,19 +962,17 @@ div.topic-navigation.with-timeline {
     }
 
     @media screen and (max-width: 60rem) {
-      & {
-        grid-template-columns: 1fr;
+      grid-template-columns: 1fr;
 
-        &>.container {
-          &.posts, &.posts+* {
-            grid-column: 1/-1;
-          }
-        }
-
-        &>.more-content-wrapper {
+      &>.container {
+        &.posts, &.posts+* {
           grid-column: 1/-1;
-          grid-row: auto/auto;
         }
+      }
+
+      &>.more-content-wrapper {
+        grid-column: 1/-1;
+        grid-row: auto/auto;
       }
     }
 
@@ -1194,14 +1180,19 @@ div.topic-navigation.with-timeline {
     .post-menu-buttons {
       padding: 1rem 0 2rem;
       display: flex;
+      flex-wrap: wrap;
       gap: 1rem;
 
       .add-comment {
         margin-left: auto;
+
+        @media screen and (max-width: 28.5rem) {
+          margin: 0;
+        }
       }
 
       .menu-button-item {
-        padding: 0.5rem 1rem;
+        padding: min(2vw, 0.5rem) min(4vw, 1rem);
         display: flex;
         align-items: center;
         gap: 0.25rem;
@@ -1442,7 +1433,7 @@ article:not(#post_1) {
   max-height: 100% !important;
 }
 
-.login-modal:not(.hidden) .modal-footer {
+.d-modal.login-modal:not(.hidden) .modal-footer {
   margin-top: 12px;
   padding: 0;
   border: 0;
@@ -1505,10 +1496,23 @@ body:not(.ios-safari-composer-hacks) #reply-control.open,
 
       .title-and-category {
         gap: 1rem;
+        flex-wrap: wrap;
+
+        @media screen and (min-width: 30rem) {
+          gap: 0;
+
+          & .title-input {
+            flex: 1 1 100%;
+          }
+        }
 
         & > .category-input, & > .mini-tag-chooser {
           max-width: 100%;
           flex: 1 1 45%;
+        }
+
+        & > .category-input {
+          margin: 0;
         }
       }
     }
@@ -1657,27 +1661,19 @@ body:not(.ios-safari-composer-hacks) #reply-control.open {
   margin: 0 1rem;
 
   @media screen and (min-width: 40rem) {
-    & {
-      margin: 0 6vw;
-    }
+    margin: 0 6vw;
   }
 
   @media screen and (min-width: 60rem) {
-    & {
-      margin: 0 12vw;
-    }
+    margin: 0 12vw;
   }
 
   @media screen and (min-width: 80rem) {
-    & {
-      margin: 0 17vw;
-    }
+    margin: 0 17vw;
   }
 
   @media screen and (min-width: 100rem) {
-    & {
-      margin: 0 20vw;
-    }
+    margin: 0 20vw;
   }
 }
 
@@ -1734,6 +1730,7 @@ body:not(.ios-safari-composer-hacks) #reply-control.open {
 
 .login-modal:not(.hidden) .login-left-side #login-form {
   margin: 0;
+  padding: 0;
 
   .input-group {
     margin: 12px 0;
@@ -1751,7 +1748,7 @@ body:not(.ios-safari-composer-hacks) #reply-control.open {
   }
 }
 
-.login-modal:not(.hidden) #login-form .input-group input {
+.d-modal.login-modal:not(.hidden) #login-form .input-group input {
   margin: 0;
   padding: 0.75em 0.77em;
   min-width: 250px;
@@ -1828,7 +1825,6 @@ body:not(.ios-safari-composer-hacks) #reply-control.open {
   position: relative;
   justify-content: center;
   align-items: center;
-  padding-bottom: 2em;
 
   #username-validation {
     display: none;
@@ -1841,13 +1837,15 @@ body:not(.ios-safari-composer-hacks) #reply-control.open {
 
 .d-modal.create-account .has-alt-auth .login-form,
 .d-modal.create-account .login-form {
-  background: #FFF;
+  margin: 0;
   padding: 0;
+  background: #FFF;
   grid-area: form;
   overflow-y: visible;
 
   form {
     margin: 0;
+    display: block;
 
     .input-group {
       margin: 12px 0;
@@ -1907,6 +1905,10 @@ body:not(.ios-safari-composer-hacks) #reply-control.open {
   margin: 16px 0 0;
   font-size: 12px;
   color: $black40;
+
+  a {
+    color: #576AE6;
+  }
 }
 
 .d-modal.create-account .create-account-form {
@@ -1972,6 +1974,12 @@ body:not(.ios-safari-composer-hacks) #reply-control.open {
     align-items: center;
     box-shadow: inset 0 -1px rgba(0, 0, 0, 0.12);
 
+    @media screen and (max-width: 28rem) {
+      flex-direction: column;
+      gap: 1rem;
+      align-items: stretch;
+    }
+
     .flw-header-btn {
       font-family: 'Moderat';
       font-style: normal;
@@ -1990,13 +1998,17 @@ body:not(.ios-safari-composer-hacks) #reply-control.open {
   }
 
   .flutterwave-footer-area {
-    margin: auto 5rem 0;
+    margin: auto 5vw 0;
     padding: 2.375rem 0 3rem;
   }
 
   #flw-logo-auth {
     width: 185px;
     cursor: pointer;
+
+    @media screen and (max-width: 28rem) {
+      align-self: center;
+    }
   }
 
   .modal-header {
@@ -2053,20 +2065,23 @@ body:not(.ios-safari-composer-hacks) #reply-control.open {
 
   .modal-body,
   .create-account-form {
-
     #login-form,
     .login-form {
       .input-group {
         .alt-placeholder {
           background-color: #FFF;
         }
-      }
 
-      .password-show-icon {
-        padding-right: 20px;
-        position: absolute;
-        right: 0;
-        top: 17px;
+        .password-show-icon {
+          padding-right: 20px;
+          position: absolute;
+          right: 0;
+          top: 17px;
+        }
+
+        .tip {
+          display: block;
+        }
       }
     }
 

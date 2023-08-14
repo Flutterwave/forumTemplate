@@ -608,7 +608,10 @@ tr {
     .contents {
       justify-content: space-between;
       .title {
-        height: auto;
+        .logo-mobile {
+          max-width: initial;
+          height: 2.375rem;
+        }
       }
 
       .header-buttons {
@@ -620,13 +623,14 @@ tr {
         display: flex;
 
         .header-buttons {
-          @media screen and (max-width: 55rem) {
+          @media screen and (max-width: 65rem) {
             display: none;
           }
         }
 
         .icons.d-header-icons {
           margin-left: 2rem;
+          display: flex;
           gap: 1rem;
 
           svg {
@@ -634,7 +638,7 @@ tr {
           }
           
           li.search-dropdown {
-            @media screen and (max-width: 70rem) {
+            @media screen and (max-width: 80rem) {
               display: block;
             }
 
@@ -652,7 +656,7 @@ tr {
           right: 0;
         };
 
-        @media screen and (max-width: 70rem) {
+        @media screen and (max-width: 80rem) {
           display: none;
         }
 
@@ -1429,8 +1433,10 @@ article:not(#post_1) {
   height: auto;
 }
 
-.fixed-modal:not(.history-modal) .modal-body:not(.reorder-categories):not(.poll-ui-builder):not(.poll-breakdown):not(.sidebar-categories-form-modal) {
+#discourse-modal.fixed-modal:not(.history-modal) .modal-body:not(.reorder-categories):not(.poll-ui-builder):not(.poll-breakdown):not(.sidebar-categories-form-modal) {
   max-height: 100% !important;
+  margin: 1rem 0;
+  padding: 0;
 }
 
 .d-modal.login-modal:not(.hidden) .modal-footer {
@@ -1679,13 +1685,13 @@ body:not(.ios-safari-composer-hacks) #reply-control.open {
 
 .login-modal:not(.hidden) .login-modal-body.has-alt-auth .login-right-side,
 .create-account {
-
   #login-buttons,
   #login-buttons:not(.hidden) {
     width: 100%;
     margin: 12px 0;
     text-align: center;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 24px;
@@ -1789,7 +1795,6 @@ body:not(.ios-safari-composer-hacks) #reply-control.open {
 .login-modal .modal-body.has-alt-auth,
 .create-account .modal-body.has-alt-auth .create-account-form {
   background: #FFFFFF;
-  padding: 32px 32px 48px;
 }
 
 .login-modal:not(.hidden) #login-form {
@@ -2089,6 +2094,7 @@ body:not(.ios-safari-composer-hacks) #reply-control.open {
     .create-account-login-buttons {
       padding: 0;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
       width: 100%;

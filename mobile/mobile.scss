@@ -1,79 +1,70 @@
 @import "mixins";
 
 .mobile-view {
-  .d-header .wrap .contents {
-    .title {
-      .logo-mobile {
-        max-width: initial;
-        height: 2.375rem;
+  .d-header .wrap .contents .panel {
+    .header-buttons {
+      margin: 0;
+      display: flex;
+      gap: 1rem;
+
+      @media screen and (min-width: 30rem) {
+        display: flex;
+      }
+
+      & > button {
+        display: flex;
+        margin: 0;
+
+        @media screen and (max-width: 24.5rem) {
+          &.sign-up-button {
+            display: none;
+          }
+        }
+      }
+
+      .btn-custom-header-dropdown-mobile .btn .d-icon {
+        color: #2a3362;
+      }
+
+      .custom-header-links {
+        & > .btn-custom-header-dropdown-mobile button {
+          width: 2.375rem;
+          height: 2.375rem;
+          padding: 0;
+        }
+
+        .top-level-links {
+          @include dropdown;
+          left: 0;
+          top: 0;
+          margin: 100% 0 0 -50% !important;
+          width: auto;
+          align-items: flex-start;
+          justify-content: flex-start;
+          overflow: scroll;
+          max-height: 90vh;
+
+          li {
+            width: 100%;
+
+            @media screen and (min-width: 48rem) {
+              width: auto;
+            }
+          }
+
+          .custom-header-link:hover {
+            .custom-header-dropdown {
+              position: relative;
+              left: -6rem;
+              top: 0.5rem;
+            }
+          }
+        }
       }
     }
 
-    .panel {
-      .header-buttons {
-        margin: 0;
-        display: flex;
-        gap: 1rem;
-
-        @media screen and (min-width: 30rem) {
-          display: flex;
-        }
-
-        & > button {
-          display: flex;
-          margin: 0;
-
-          @media screen and (max-width: 24.5rem) {
-            &.sign-up-button {
-              display: none;
-            }
-          }
-        }
-
-        .btn-custom-header-dropdown-mobile .btn .d-icon {
-          color: #2a3362;
-        }
-
-        .custom-header-links {
-          & > .btn-custom-header-dropdown-mobile button {
-            width: 2.375rem;
-            height: 2.375rem;
-            padding: 0;
-          }
-
-          .top-level-links {
-            @include dropdown;
-            left: 0;
-            top: 0;
-            margin: 100% 0 0 -50% !important;
-            width: auto;
-            align-items: flex-start;
-            justify-content: flex-start;
-            overflow: scroll;
-            max-height: 90vh;
-
-            li {
-              width: 100%;
-
-              @media screen and (min-width: 48rem) {
-                width: auto;
-              }
-            }
-
-            .custom-header-link:hover {
-              .custom-header-dropdown {
-                position: relative;
-                left: -6rem;
-                top: 0.5rem;
-              }
-            }
-          }
-        }
-      }
-
-      .icons.d-header-icons {
-        margin-left: 1rem
-      }
+    .icons.d-header-icons {
+      margin-left: 1rem
     }
   }
 
@@ -116,11 +107,6 @@
     }
 
     .modal-body {
-      &:not(.reorder-categories):not(.poll-ui-builder):not(.poll-breakdown) {
-        max-height: 100% !important;
-        margin: 1rem 0;
-      }
-
       .create-account-form {
         padding: 0;
       }

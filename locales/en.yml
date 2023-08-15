@@ -7,3 +7,4 @@ en:
   create_account:
     login_cta_text: "Already have an account? Login"
     cta_text: "Get Started"
+  publish: "Publish"

@@ -6,25 +6,11 @@
   @action={{action "login"}}
 >
   <PluginOutlet @name="login-before-modal-body" @connectorTagName="div" />
-  <div id="flutterwave-auth-header">
-    <FlwLogoButton @action={{ route-action "closeModal" }} />
-
-    <DButton
-      @class="flw-header-btn"
-      @id="flw-create-account-header-btn"
-      @action={{route-action "showCreateAccount"}}
-      @label={{(theme-prefix "login.create_account_cta_text")}}
-    />
-  </div>
-  
   <DModalBody @class={{this.modalBodyClasses}}>
-
     {{#if this.canLoginLocal}}
       <div class="login-left-side">
         <div class="login-welcome-header">
-          <h1 class="login-title">{{i18n "login.header_title"}}</h1>
-          <img src={{this.wavingHandURL}} alt="" class="waving-hand" />
-          <p class="login-subheader">{{i18n "login.subheader_title"}}</p>
+          <h1 class="mobile-login-title">Login</h1>
         </div>
         <form id="login-form" method="post">
           <div id="credentials" class={{this.credentialsClass}}>
@@ -78,7 +64,7 @@
                   id="forgot-password-link"
                   tabindex="3"
                   {{on "click" this.handleForgotPassword}}
-                >{{i18n "forgot_password.action"}}</a>
+                >Forgot password?</a>
               </div>
               <div
                 class="caps-lock-warning {{unless this.capsLockOn 'hidden'}}"
@@ -165,16 +151,4 @@
   <PluginOutlet @name="login-after-modal-footer" @connectorTagName="div" />
 
   <div class={{this.alertClass}} id="login-alert">{{this.alert}}</div>
-  <div class="flutterwave-footer-area">
-    <div class="flutterwave-footer">
-      <p>
-        © Flutterwave  2023
-      </p>
-      <div class="flw-auth-footer-helper-links">
-        <a href="#">FAQs</a>
-        <a href="https://flutterwave.com/ng/privacy-policy">Privacy policy</a>
-        <a href="https://flutterwave.com/ng/terms">Terms and Conditions</a>
-      </div>
-    </div>
-  </div>
 </LoginModal>

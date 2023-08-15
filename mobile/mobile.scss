@@ -1,70 +1,127 @@
 @import "mixins";
 
 .mobile-view {
-  .d-header .wrap .contents .panel {
-    .header-buttons {
-      margin: 0;
-      display: flex;
-      gap: 1rem;
+  .d-header {
+    box-shadow: none;
 
-      @media screen and (min-width: 30rem) {
-        display: flex;
-      }
+    .wrap {
+      padding: 1rem 1.25rem 0.5rem;
 
-      & > button {
-        display: flex;
-        margin: 0;
+      .contents .panel {
+        .header-buttons {
+          margin: 0;
+          display: flex;
+          gap: 1rem;
 
-        @media screen and (max-width: 24.5rem) {
-          &.sign-up-button {
-            display: none;
+          @media screen and (min-width: 30rem) {
+            display: flex;
           }
-        }
-      }
 
-      .btn-custom-header-dropdown-mobile .btn .d-icon {
-        color: #2a3362;
-      }
+          & > button {
+            display: flex;
+            margin: 0;
 
-      .custom-header-links {
-        & > .btn-custom-header-dropdown-mobile button {
-          width: 2.375rem;
-          height: 2.375rem;
-          padding: 0;
-        }
+            @media screen and (max-width: 24.5rem) {
+              &.sign-up-button {
+                display: none;
+              }
+            }
+          }
 
-        .top-level-links {
-          @include dropdown;
-          left: 0;
-          top: 0;
-          margin: 100% 0 0 -50% !important;
-          width: auto;
-          align-items: flex-start;
-          justify-content: flex-start;
-          overflow: scroll;
-          max-height: 90vh;
+          .btn-custom-header-dropdown-mobile .btn .d-icon {
+            color: #2a3362;
+          }
 
-          li {
-            width: 100%;
+          .custom-header-links {
+            & > .btn-custom-header-dropdown-mobile button {
+              width: 2.375rem;
+              height: 2.375rem;
+              padding: 0;
+            }
 
-            @media screen and (min-width: 48rem) {
+            .top-level-links {
+              @include dropdown;
+              left: 0;
+              top: 0;
+              margin: 100% 0 0 -50% !important;
               width: auto;
-            }
-          }
+              align-items: flex-start;
+              justify-content: flex-start;
+              overflow: scroll;
+              max-height: 90vh;
 
-          .custom-header-link:hover {
-            .custom-header-dropdown {
-              position: relative;
-              left: -6rem;
-              top: 0.5rem;
+              li {
+                width: 100%;
+
+                @media screen and (min-width: 48rem) {
+                  width: auto;
+                }
+              }
+
+              .custom-header-link:hover {
+                .custom-header-dropdown {
+                  position: relative;
+                  left: -6rem;
+                  top: 0.5rem;
+                }
+              }
             }
           }
+        }
+
+        .icons.d-header-icons {
+          margin-left: 1rem
         }
       }
     }
+  }
 
-    .icons.d-header-icons {
-      margin-left: 1rem
+  .wrap.post {
+    & ~ #reply-control.open.composer-action-reply, & ~ #reply-control.hide-preview, & ~ #reply-control {
+      .reply-area .reply-to {
+        display: flex !important;
+        margin: 0;
+
+        .reply-details .composer-action-title {
+          gap: 0.75rem;
+
+          .select-kit .select-kit-header {
+            margin: 0;
+            border: none;
+
+            svg {
+              padding: 0;
+            }
+          }
+
+          .action-title {
+            gap: 0.5rem;
+
+            img {
+              margin: 0;
+              width: 1.125rem;
+              height: 1.125rem;
+              border: none;
+            }
+
+            a {
+              font-size: 0.875rem;
+              font-weight: 500;
+              line-height: normal;
+              letter-spacing: -0.3px;
+              color: #2a3362;
+            }
+          }
+        }
+
+        .composer-controls {
+          display: none;
+        }
+      }
+
+      .new-post-description-area .new-post-description {
+        display: none;
+      }
     }
   }
 
@@ -97,6 +154,101 @@
     position: fixed;
   }
 
+  body:not(.ios-safari-composer-hacks) #reply-control.open,
+  #reply-control.hide-preview,
+  #reply-control {
+    margin: 0;
+    height: calc(100% - 3rem);
+    background-color: #ffffff;
+
+    &.open {
+      padding: 1.5rem 1rem 1.25rem;
+    }
+
+    .reply-area {
+      p {
+        margin: 0;
+      }
+
+      .new-post-heading {
+        margin: 0;
+        font-size: 1.5rem;
+        font-family: 'Millik';
+        line-height: 1.98rem;
+        color: #2a3362;
+      }
+
+      .new-post-title, .new-post-description, .new-post-category {
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+        color: #2a3362;
+      }
+
+      .new-post-title-area, .new-post-description-area, .new-post-category-area {
+        display: flex;
+        flex-direction: column;
+        gap: 0.625rem;
+      }
+
+      .new-post-title-area {
+        gap: 0.5rem;
+
+        #reply-title {
+          padding: 0.875rem 1.25rem 0.75rem 0.75rem;
+          border: 0.0625rem solid #C4CDD5;
+          border-radius: 0.25rem;
+          box-shadow: 0px 1px 4px 0px rgba(102, 113, 123, 0.21) inset;
+        }
+      }
+
+      .new-post-description-area {
+        flex-grow: 1;
+
+        .d-editor-textarea-column {
+          border-radius: 0.25rem;
+          box-shadow: 0px 1px 4px 0px rgba(102, 113, 123, 0.21) inset;
+        }
+      }
+
+      .new-post-category-area {
+        .category-input, .select-kit, .select-kit-body {
+          max-width: 100%;
+          width: auto;
+          margin: 0;
+        }
+
+        .category-input .category-chooser, .select-kit {
+          .select-kit-header {
+            padding: 0.875rem 1.25rem 0.75rem 0.75rem;
+            border-radius: 0.25rem;
+            border: 0.0625rem solid #D4DCE3;
+
+            .selected-name, .formatted-selection {
+              font-size: 0.875rem;
+              font-weight: 400;
+              line-height: 1.25rem;
+              color: #000000;
+            }
+          }
+        }
+      }
+
+      .submit-panel .save-or-cancel {
+        margin: 0;
+      }
+    }
+  }
+
+  .forgot-password-modal, #bookmark-reminder-modal {
+    .modal-middle-container {
+      background-color: #ffffff;
+
+      .modal-inner-container {
+        box-shadow: none;
+      }
+    }
+  }
+
   #discourse-modal.d-modal.login-modal:not(.hidden).fixed-modal .modal-inner-container, .d-modal.create-account.fixed-modal .modal-inner-container {
     max-width: 100%;
     max-height: 100%;
@@ -112,8 +264,17 @@
       }
 
       .login-welcome-header {
-        width: auto;
+        margin: 0;
         position: relative;
+        background-color: #ffffff00;
+        align-self: flex-start;
+
+        .mobile-login-title {
+          margin-bottom: 0.25rem;
+          line-height: 2.24rem;
+          font-family: 'Millik';
+          color: $secondary;
+        }
       }
     }
   }

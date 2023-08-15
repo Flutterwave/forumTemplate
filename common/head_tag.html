@@ -2,7 +2,7 @@
   api.onPageChange((url) => {
     const router = api.container.lookup('service:router');
 
-    if (router.currentRoute.name !== 'discovery.latest') {
+    if (router.currentRoute.parent.name === 'topic') {
       document.getElementById("main-outlet-wrapper").classList.add("post");
     } else {
       document.getElementById("main-outlet-wrapper").classList.remove("post");

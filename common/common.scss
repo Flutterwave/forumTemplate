@@ -271,6 +271,7 @@ body {
     }
 
     .navigation-toggle {
+      border: none;
       border-radius: 0.25rem;
       display: flex;
       justify-content: center;
@@ -278,11 +279,15 @@ body {
       gap: 0.375rem;
 
       a.toggle-link {
-        @include font2;
-        padding: 0.75rem 1.25rem 0.75rem 1.5rem;
+        padding: 0.5rem 1rem;
+        font-size: 0.75rem;
+        font-weight: 500;
+        line-height: 1rem;
         min-height: 0;
         display: flex;
         gap: 0.375rem;
+        background-color: $primary-light;
+        color: $primary;
 
         svg {
           margin: 0;
@@ -308,8 +313,10 @@ body {
     align-self: flex-start;
 
     .btn-default {
-      padding: 0.75rem 1.25rem 0.75rem 1.5rem;
+      margin: 0;
+      padding: 0.5rem 1rem;
       border-radius: 0.25rem;
+      border: none;
       background-color: $primary;
       display: flex;
       justify-content: center;
@@ -326,6 +333,10 @@ body {
         @include font2;
         color: $tertiary;
       }
+    }
+
+    & > :not(.btn-default) {
+      display: none;
     }
   }
 }
@@ -629,7 +640,7 @@ tr {
         }
 
         .icons.d-header-icons {
-          margin-left: 2rem;
+          margin: 0 0 0 2rem;
           display: flex;
           gap: 1rem;
 
@@ -638,13 +649,19 @@ tr {
           }
           
           li.search-dropdown {
+            order: 2;
+
             @media screen and (max-width: 80rem) {
               display: block;
             }
+          }
 
-            svg {
-              fill: $tertiary;
-            }
+          li.hamburger-dropdown {
+            order: 3;
+          }
+
+          li.current-user {
+            order: 1;
           }
         }
       }
@@ -673,6 +690,7 @@ tr {
         .search-menu {
           margin: 0;
           width: auto;
+          display: block;
 
           .search-input {
             margin: 0;
@@ -686,11 +704,6 @@ tr {
               position: relative;
               left: 0;
               top: 0;
-
-              svg {
-                color: $black40;
-                fill: none;
-              }
             }
 
             #search-term {
@@ -742,13 +755,7 @@ tr {
             }
 
             .searching {
-              .clear-search {
-                display: none;
-              }
-              
-              svg {
-                fill: $black40;;
-              }
+              display: none;
             }
           }
 
@@ -809,7 +816,7 @@ tr {
           transform: translate(0, -0.125rem);
 
           svg {
-            transform-origin: 30% 60%;
+            transform-origin: 50% 50%;
             transition: transform 0.25s ease;
           }
         }
@@ -865,10 +872,6 @@ tr {
   // hide on scroll when nav is positioned to left of header:
   .title .custom-header-links.scrolling {
     display: none;
-  }
-
-  .icons.d-header-icons {
-    margin: 0 0 0 2rem;
   }
 
   .icon.btn-flat {
@@ -1148,12 +1151,6 @@ div.topic-navigation.with-timeline {
               margin-left: 0.25rem;
               color: #2A3362;
             }
-
-            .caret-icon {
-              padding-left: 0.25rem;
-              scale: 0.8;
-              margin-bottom: 0.125rem;
-            }
           }
 
           .discourse-no-touch .btn:hover .d-icon,
@@ -1429,14 +1426,315 @@ article:not(#post_1) {
   margin: 0;
 }
 
-.modal-outer-container {
-  height: auto;
+.forgot-password-modal .modal-inner-container {
+  margin: 0 auto;
+  padding: 1.5rem 1rem;
+  min-width: 20rem;
+  max-width: 100%;
+  width: 50vmin;
+  display: flex;
+  flex-direction: column;
+  background-color: $tertiary;
+
+  .modal-header {
+    padding: 0 0 1rem 0;
+    border: none;
+
+    button {
+      display: none;
+    }
+
+    .modal-title-wrapper #discourse-modal-title {
+      font-family: 'Millik';
+      font-size: 1.75rem;
+      line-height: 2.24rem;
+      letter-spacing: 0.002px;
+      color: $secondary;
+    }
+  }
+
+  form {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    .modal-body {
+      margin: 0 !important;
+      padding: 0 !important;
+
+      label {
+        display: none;
+      }
+
+      #username-or-email {
+        margin: 0;
+        padding: 0.875rem 1.125rem;
+        width: 100%;
+        background-color: $tertiary;
+        border: 0.0625rem solid $black20;
+        border-radius: 0.25rem;
+        outline: none;
+
+        &:focus {
+          border-color: $secondary;
+        }
+
+        &::-webkit-input-placeholder {
+          /* WebKit/Chrome/Opera/Safari */
+          font-size: 0.875rem;
+          line-height: 1.25rem;
+          color: $black40;
+        }
+
+        &:-moz-placeholder {
+          /* Firefox 4-18 */
+          font-size: 0.875rem;
+          line-height: 1.25rem;
+          color: $black40;
+        }
+
+        &::-moz-placeholder {
+          /* Firefox 19+ */
+          font-size: 0.875rem;
+          line-height: 1.25rem;
+          color: $black40;
+        }
+
+        &:-ms-input-placeholder {
+          /* IE 10-11 */
+          font-size: 0.875rem;
+          line-height: 1.25rem;
+          color: $black40;
+        }
+
+        &::-ms-input-placeholder {
+          /* Edge */
+          font-size: 0.875rem;
+          line-height: 1.25rem;
+          color: $black40;
+        }
+
+        &::placeholder {
+          /* Modern Browser */
+          font-size: 0.875rem;
+          line-height: 1.25rem;
+          color: $black40;
+        }
+      }
+    }
+
+    .modal-footer {
+      padding: 0;
+      border: none;
+
+      button {
+        margin: 0;
+        padding: 1rem 1.5rem;
+        width: 100%;
+        border-radius: 0.25rem;
+        background-color: $primary;
+
+        span {
+          font-size: 1rem;
+          font-weight: 500;
+          line-height: 1.5rem;
+          letter-spacing: 0.002px;
+        }
+      }
+    }
+  }
+}
+
+#bookmark-reminder-modal .modal-inner-container {
+  margin: 0 auto;
+  padding: 1.5rem 1rem;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: $tertiary;
+
+  & > div {
+    padding: 0;
+  }
+
+  .modal-header {
+    padding-bottom: 1rem;
+    border-bottom: 0.0625rem solid $black10;
+
+    & > button {
+      font-size: 0.75rem;
+      margin: auto 0 auto auto;
+    }
+
+    .modal-title-wrapper #discourse-modal-title {
+      font-family: 'Millik';
+      font-size: 1.5rem;
+      line-height: 1.98rem;
+      color: $secondary;
+    }
+  }
+
+  .modal-body {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    .bookmark-name-wrap {
+      margin: 0;
+      align-items: center;
+      gap: 1.25rem;
+
+      .bookmark-options-button {
+        margin: 0;
+        padding: 0;
+      }
+    }
+
+    .bookmark-options-panel {
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .bookmark-name-wrap .ember-text-field.bookmark-name, .bookmark-options-panel .select-kit-header:not(.btn) {
+      margin: 0;
+      padding: 0.625rem;
+      border: 0.0625rem solid #C4CDD5;
+      border-radius: 0.25rem;
+      outline: none;
+
+      &:focus {
+        border-color: $secondary;
+      }
+
+      &::-webkit-input-placeholder {
+        /* WebKit/Chrome/Opera/Safari */
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+        color: #B5B8BA;
+      }
+
+      &:-moz-placeholder {
+        /* Firefox 4-18 */
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+        color: #B5B8BA;
+      }
+
+      &::-moz-placeholder {
+        /* Firefox 19+ */
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+        color: #B5B8BA;
+      }
+
+      &:-ms-input-placeholder {
+        /* IE 10-11 */
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+        color: #B5B8BA;
+      }
+
+      &::-ms-input-placeholder {
+        /* Edge */
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+        color: #B5B8BA;
+      }
+
+      &::placeholder {
+        /* Modern Browser */
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+        color: #B5B8BA;
+      }
+
+      .name {
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+      }
+    }
+
+    .control-label, .control-group:not(.bookmark-name-wrap) .control-label {
+      margin: 0;
+      font-size: 1.125rem;
+      line-height: 1.75rem;
+      color: $black80;
+    }
+
+    .control-group:not(.bookmark-name-wrap) {
+      margin: 0.5rem 0;
+
+      .control-label {
+        margin: 0;
+        font-size: 1.125rem;
+        line-height: 1.75rem;
+        color: $black80;
+      }
+
+      .tap-tile-grid {
+        margin: 0;
+
+        .tap-tile {
+          padding: 1rem 0 0.5rem;
+          border-top: none;
+          border-bottom: 0.0625rem solid $black10;
+
+          svg {
+            display: none;
+          }
+
+          div {
+            font-size: 0.875rem;
+            line-height: 1.25rem;
+          }
+        }
+      }
+    }
+  }
+
+  .modal-footer {
+    border: none;
+    gap: 1.5rem;
+
+    button {
+      margin: 0;
+      padding: 0.75rem 1.25rem;
+      border-radius: 0.25rem;
+
+      span {
+        font-size: 0.875rem;
+        font-weight: 500;
+        line-height: 1.25rem;
+      }
+    }
+
+    #save-bookmark {
+      background-color: $primary;
+      border: none;
+      order: 3;
+    }
+
+    .d-modal-cancel {
+      border: 0.125rem solid $secondary;
+      color: $secondary;
+      order: 2;
+      margin-left: auto;
+    }
+
+    #delete-bookmark {
+      order: 1;
+    }
+  }
 }
 
 #discourse-modal.fixed-modal:not(.history-modal) .modal-body:not(.reorder-categories):not(.poll-ui-builder):not(.poll-breakdown):not(.sidebar-categories-form-modal) {
   max-height: 100% !important;
-  margin: 1rem 0;
-  padding: 0;
+  margin: auto;
+  padding: 1rem 0;
 }
 
 .d-modal.login-modal:not(.hidden) .modal-footer {
@@ -1458,6 +1756,125 @@ article:not(#post_1) {
     font-size: 14px;
     font-weight: 500;
     line-height: 16.8px;
+  }
+}
+
+body.search-page {
+  #main-outlet {
+    padding: 1.5rem 0;
+
+    .search-header {
+      padding: 0;
+      background-color: #ffffff00;
+
+      .search-page-heading {
+        font-size: 1.125rem;
+        font-weight: 700;
+        line-height: 2.125rem;
+        color: $secondary;
+
+        .term {
+          background-color: #ffffff00;
+          color: #576AE6;
+        }
+      }
+
+      .search-bar {
+        & > :not(input.full-page-search) {
+          display: none;
+        }
+
+        input.full-page-search {
+          margin: 0;
+          border: 0.0625rem solid $black20;
+          border-radius: 0.25rem;
+        }
+      }
+
+      .search-context {
+        label {
+          align-items: center;
+        }
+      }
+
+      .search-filters {
+        display: none;
+      }
+    }
+
+    .search-advanced {
+      .search-info {
+        display: none;
+      }
+
+      .search-results {
+        margin: 0.5rem 0;
+        padding: 0;
+
+        .fps-result {
+          margin: 0;
+          padding: 1rem 0 0.75rem;
+          flex-direction: column;
+          border-bottom: 0.0625rem solid #f5f5f5;
+
+          .author {
+            margin: 0 0 0.75rem 0;
+            padding: 0;
+
+            img {
+              width: 2rem;
+              height: 2rem;
+            }
+          }
+
+          .fps-topic {
+            .topic {
+              padding: 0;
+
+              .search-link {
+                font-size: 1rem;
+                font-weight: 500;
+                line-height: 1.5rem;
+                color: $secondary;
+              }
+
+              .search-category {
+                margin: 0.25rem 0 0 0;
+
+                .badge-category-bg {
+                  display: none;
+                }
+
+                .badge-category {
+                  font-size: 0.75rem;
+                  font-weight: 400;
+                  line-height: 1rem;
+                  color: $black40;
+                }
+
+                .discourse-tags {
+                  display: none;
+                }
+              }
+            }
+
+            .container {
+              font-size: 0.875rem;
+              line-height: 1.5625rem;
+              color: $black60;
+
+              .date {
+                display: none;
+              }
+            }
+          }
+        }
+
+        .search-footer {
+          margin: 1.5rem 0;
+        }
+      }
+    }
   }
 }
 
@@ -1799,7 +2216,6 @@ body:not(.ios-safari-composer-hacks) #reply-control.open {
 
 .login-modal:not(.hidden) #login-form {
   .input-group {
-
     label.alt-placeholder,
     input:not(.value-entered):not(:focus)+label.alt-placeholder {
       color: $black40;
@@ -1971,7 +2387,6 @@ body:not(.ios-safari-composer-hacks) #reply-control.open {
   --modal-max-width: 100%;
 
   #flutterwave-auth-header {
-    margin-bottom: auto;
     padding: 24px 16px 32px 24px;
     display: flex;
     flex-direction: row;
@@ -2003,7 +2418,7 @@ body:not(.ios-safari-composer-hacks) #reply-control.open {
   }
 
   .flutterwave-footer-area {
-    margin: auto 5vw 0;
+    margin: 0 5vw;
     padding: 2.375rem 0 3rem;
   }
 
@@ -2034,15 +2449,17 @@ body:not(.ios-safari-composer-hacks) #reply-control.open {
 
   .modal-body {
     .login-left-side {
+      padding: 0;
+      width: auto;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      padding: 0;
       background-color: #FFF;
 
       .login-welcome-header {
-        left: -50px;
+        margin: 0;
+        align-self: flex-start;
       }
     }
 
@@ -2149,6 +2566,12 @@ body:not(.ios-safari-composer-hacks) #reply-control.open {
     align-items: center;
     color: $black80;
 
+    @media screen and (max-width: 32rem) {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 2rem;
+    }
+
     p {
       margin: 0;
     }
@@ -2156,7 +2579,11 @@ body:not(.ios-safari-composer-hacks) #reply-control.open {
     .flw-auth-footer-helper-links {
       display: flex;
       flex-direction: row;
-      gap: min(2vw, 1.5rem);
+      gap: 1.5rem;
+
+      @media screen and (max-width: 32rem) {
+        flex-direction: column;
+      }
 
       a {
         color: $black80;
@@ -2168,7 +2595,7 @@ body:not(.ios-safari-composer-hacks) #reply-control.open {
       font-family: 'Moderat';
       font-weight: 500;
       line-height: 1.05rem;
-      font-size: min(3vw, 0.875rem);
+      font-size: 0.875rem;
     }
   }
 }

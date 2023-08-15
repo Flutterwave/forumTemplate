@@ -1732,9 +1732,11 @@ article:not(#post_1) {
 }
 
 #discourse-modal.fixed-modal:not(.history-modal) .modal-body:not(.reorder-categories):not(.poll-ui-builder):not(.poll-breakdown):not(.sidebar-categories-form-modal) {
+  min-width: initial;
   max-height: 100% !important;
   margin: auto;
   padding: 1rem 0;
+  background-color: #ffffff00;
 }
 
 .d-modal.login-modal:not(.hidden) .modal-footer {
@@ -2112,6 +2114,7 @@ body:not(.ios-safari-composer-hacks) #reply-control.open {
     justify-content: center;
     align-items: center;
     gap: 24px;
+    flex-wrap: nowrap;
 
     .btn {
       margin: 0;

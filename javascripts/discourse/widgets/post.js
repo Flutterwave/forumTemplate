@@ -577,7 +577,7 @@ createWidget("post-reply-button", {
       this,
       "button.menu-button-item.add-reply",
       HBS`
-      {{d-icon "plus"}}
+      {{d-icon "share"}}
       <span>Reply</span>`,
       {}
     );

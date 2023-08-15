@@ -1738,6 +1738,7 @@ article:not(#post_1) {
   margin: auto;
   padding: 1rem 0;
   background-color: #ffffff00;
+  overflow: visible;
 }
 
 .d-modal.login-modal:not(.hidden) .modal-footer {
@@ -2104,7 +2105,7 @@ body:not(.ios-safari-composer-hacks) #reply-control.open {
 }
 
 .login-modal:not(.hidden) .login-modal-body.has-alt-auth .login-right-side,
-.create-account {
+.d-modal.create-account {
   #login-buttons,
   #login-buttons:not(.hidden) {
     width: 100%;
@@ -2153,6 +2154,7 @@ body:not(.ios-safari-composer-hacks) #reply-control.open {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  overflow: auto;
 }
 
 .login-modal:not(.hidden) .login-left-side #login-form {

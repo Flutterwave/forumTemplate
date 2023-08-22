@@ -19,7 +19,7 @@ createWidget("header-contents", {
 
     {{#if attrs.topic}}
       {{floating-search-input attrs=attrs}}
-    {{if this.siteSettings.bootstrap_mode_enabled}}
+    {{#if this.siteSettings.bootstrap_mode_enabled}}
       {{#if transformed.showBootstrapMode}}
         {{header-bootstrap-mode attrs=attrs}}
       {{/if}}

@@ -29,6 +29,9 @@
     "logo": "assets/icons/logo.png",
     "flw-logo": "assets/icons/flutterwave_logo.svg"
   },
+  "components": [
+    "https://github.com/discourse/discourse-header-search.git"
+  ],
   "modifiers": {
     "serialize_topic_excerpts": true,
     "svg_icons": [

@@ -26,10 +26,13 @@ import autoGroupFlairForUser from "discourse/lib/avatar-flair";
 import showModal from "discourse/lib/show-modal";
 import { nativeShare } from "discourse/lib/pwa-utils";
 // import { hideUserTip } from "discourse/lib/user-tips";
-import { showUserTip, hideUserTip, hideAllUserTips, showNextUserTip } from "discourse/lib/user-tips";
+// import { showUserTip, hideAllUserTips, showNextUserTip } from "discourse/lib/user-tips";
+import * as Everything from "discourse/lib/pwa-utils";
 
 import RenderGlimmer from "discourse/widgets/render-glimmer";
 import { hbs as HBS } from "ember-cli-htmlbars";
+
+console.log(Everything)
 
 function transformWithCallbacks(post) {
   let transformed = transformBasicPost(post);

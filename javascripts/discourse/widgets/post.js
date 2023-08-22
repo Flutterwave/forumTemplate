@@ -1,9 +1,6 @@
 import { applyDecorators, createWidget } from "discourse/widgets/widget";
-import {
-  avatarUrl,
-  formatUsername,
-  translateSize,
-} from "discourse/lib/utilities";
+import { formatUsername } from "discourse/lib/utilities";
+import { avatarUrl, translateSize } from "discourse-common/lib/avatar-utils";
 import getURL, { getURLWithCDN } from "discourse-common/lib/get-url";
 import DecoratorHelper from "discourse/widgets/decorator-helper";
 import DiscourseURL from "discourse/lib/url";
@@ -23,16 +20,10 @@ import {
 import { relativeAgeMediumSpan } from "discourse/lib/formatter";
 import { transformBasicPost } from "discourse/lib/transform-post";
 import autoGroupFlairForUser from "discourse/lib/avatar-flair";
-import showModal from "discourse/lib/show-modal";
 import { nativeShare } from "discourse/lib/pwa-utils";
-// import { hideUserTip } from "discourse/lib/user-tips";
-// import { showUserTip, hideAllUserTips, showNextUserTip } from "discourse/lib/user-tips";
-import * as Everything from "discourse/lib/user-tips";
-
-import RenderGlimmer from "discourse/widgets/render-glimmer";
-import { hbs as HBS } from "ember-cli-htmlbars";
-
-console.log(Everything)
+import { hideUserTip } from "discourse/lib/user-tips";
+import ShareTopicModal from "discourse/components/modal/share-topic";
+import { getOwner } from "@ember/application";
 
 function transformWithCallbacks(post) {
   let transformed = transformBasicPost(post);
@@ -334,10 +325,6 @@ createWidget("post-meta-data", {
       );
     }
 
-    if (this.settings.displayPosterName) {
-      postInfo.push(this.attach("poster-name", attrs));
-    }
-
     if (attrs.via_email) {
       postInfo.push(this.attach("post-email-indicator", attrs));
     }
@@ -373,24 +360,11 @@ createWidget("post-meta-data", {
       )
     );
 
-    let model = this.findAncestorModel();
-
-    let result = [this.attach("post-avatar", attrs)];
-    result.push(h("div.post-infos", postInfo));
-    if (attrs.firstPost) {
-      result.push(new RenderGlimmer(
-        this,
-        "div.notification-button",
-        HBS`<TopicNotificationsButton
-          @notificationLevel={{@data.notification_level}}
-          @topic={{@data.topic}}
-        />`,
-        {
-          notification_level: model.topic.details.notification_level,
-          topic: model.topic
-        }
-      ));
+    let result = [];
+    if (this.settings.displayPosterName) {
+      result.push(this.attach("poster-name", attrs));
     }
+    result.push(h("div.post-infos", postInfo));
 
     return result;
   },
@@ -434,8 +408,11 @@ createWidget("post-date", {
   showShareModal() {
     const post = this.findAncestorModel();
     const topic = post.topic;
-    const controller = showModal("share-topic", { model: topic.category });
-    controller.setProperties({ topic, post });
+    getOwner(this)
+      .lookup("service:modal")
+      .show(ShareTopicModal, {
+        model: { category: topic.category, topic, post },
+      });
   },
 });
 
@@ -475,144 +452,6 @@ createWidget("post-group-request", {
 
     return h("a", { attributes: { href } }, I18n.t("groups.requests.handle"));
   },
-});
-
-createWidget("post-like-button", {
-  tagName: "div.like-count",
-
-  buildClasses(attrs) {
-    return attrs.liked ? "clicked" : "";
-  },
-
-  html(attrs) {
-    return new RenderGlimmer(
-      this,
-      "button.menu-button-item",
-      HBS`
-      {{d-icon "d-unliked"}}
-      <span>{{if @data.likeCount @data.likeCount "0"}}</span>`,
-      {
-        likeCount: attrs.likeCount
-      }
-    );
-  },
-
-  click() {
-    this.sendWidgetAction('toggleLike');
-  }
-});
-
-createWidget("post-share-button", {
-  tagName: "div.share-post",
-
-  html() {
-    return new RenderGlimmer(
-      this,
-      "button.menu-button-item.share-post",
-      HBS`
-      {{d-icon "link"}}
-      <span>Share</span>`,
-      {}
-    );
-  },
-
-  showShareModal() {
-    const post = this.findAncestorModel();
-    const topic = post.topic;
-    const controller = showModal("share-topic", { model: topic.category });
-    controller.setProperties({ topic, post });
-  },
-
-  click() {
-    this.showShareModal()
-  }
-});
-
-createWidget("post-bookmark-button", {
-  tagName: "div.add-bookmark",
-
-  buildClasses(attrs) {
-    return attrs.bookmarked ? "clicked" : "";
-  },
-
-  html() {
-    return new RenderGlimmer(
-      this,
-      "button.menu-button-item.add-bookmark",
-      HBS`
-      {{d-icon "bookmark"}}
-      <span>Bookmark</span>`,
-      {}
-    );
-  },
-
-  click() {
-    this.sendWidgetAction('toggleBookmark');
-  }
-});
-
-createWidget("post-comment-button", {
-  tagName: "div.add-comment",
-
-  html() {
-    return new RenderGlimmer(
-      this,
-      "button.menu-button-item.add-comment",
-      HBS`
-      {{d-icon "plus"}}
-      <span>Add a comment</span>`,
-      {}
-    );
-  },
-
-  click() {
-    this.state.loading = true;
-    this.sendWidgetAction("replyToPost").then(
-      () => (this.state.loading = false)
-    );
-  }
-});
-
-createWidget("post-reply-button", {
-  tagName: "div.add-reply",
-
-  html() {
-    return new RenderGlimmer(
-      this,
-      "button.menu-button-item.add-reply",
-      HBS`
-      {{d-icon "share"}}
-      <span>Reply</span>`,
-      {}
-    );
-  },
-
-  click() {
-    this.sendWidgetAction('replyToPost')
-  }
-});
-
-createWidget("post-menu-buttons", {
-  tagName: "div.post-menu-buttons",
-
-  html(attrs) {
-    let result = [];
-
-    if (attrs.firstPost) {
-      result.push(this.attach("post-like-button", attrs));
-    }
-
-    result.push(this.attach("post-share-button", attrs));
-    result.push(this.attach("post-bookmark-button", attrs));
-    
-    if (attrs.firstPost) {
-      result.push(this.attach("post-comment-button", attrs));
-    } else {
-      result.push(this.attach("post-reply-button", attrs));
-    }
-
-    return result;
-  }
 });
 
 createWidget("post-contents", {
@@ -673,12 +512,7 @@ createWidget("post-contents", {
         filteredRepliesShown: state.filteredRepliesShown,
       },
     };
-    
-    result.push(this.attach("post-menu-buttons", attrs));
-    
-    if (attrs.firstPost && attrs.topicPostsCount > 1) {
-      result.push(h("h1.post-comment-header", {}, 'Comments'));
-    }
+    result.push(this.attach("post-menu", attrs, extraState));
 
     const repliesBelow = state.repliesBelow;
     if (repliesBelow.length) {
@@ -794,8 +628,11 @@ createWidget("post-contents", {
     const post = this.findAncestorModel();
     nativeShare(this.capabilities, { url: post.shareUrl }).catch(() => {
       const topic = post.topic;
-      const controller = showModal("share-topic", { model: topic.category });
-      controller.setProperties({ topic, post });
+      getOwner(this)
+        .lookup("service:modal")
+        .show(ShareTopicModal, {
+          model: { category: topic.category, topic, post },
+        });
     });
   },
 
@@ -860,20 +697,7 @@ createWidget("post-body", {
 
   html(attrs, state) {
     const postContents = this.attach("post-contents", attrs);
-    let result = [
-      this.attach("post-meta-data", attrs),
-      attrs.firstPost ? h("div.topic-title-area", {},
-      [
-        h("a.fancy-title", {
-          attributes: {
-            href: attrs.topicUrl
-          }
-        }, [
-          this.findAncestorModel().topic.title
-        ])
-      ]) : null,
-    ];
-
+    let result = [this.attach("post-meta-data", attrs)];
     result = result.concat(
       applyDecorators(this, "after-meta-data", attrs, state)
     );
@@ -900,8 +724,11 @@ createWidget("post-article", {
     return `post_${attrs.post_number}`;
   },
 
-  buildClasses(attrs) {
+  buildClasses(attrs, state) {
     let classNames = [];
+    if (state.repliesAbove.length) {
+      classNames.push("replies-above");
+    }
     if (attrs.via_email) {
       classNames.push("via-email");
     }
@@ -964,6 +791,7 @@ createWidget("post-article", {
 
     rows.push(
       h("div.row", [
+        this.attach("post-avatar", attrs),
         this.attach("post-body", {
           ...attrs,
           repliesAbove: state.repliesAbove,
@@ -1175,11 +1003,11 @@ export default createWidget("post", {
     });
   },
 
-  // destroy() {
-  //   hideUserTip("post_menu");
-  // },
+  destroy() {
+    hideUserTip("post_menu");
+  },
 
-  // willRerenderWidget() {
-  //   hideUserTip("post_menu");
-  // },
+  willRerenderWidget() {
+    hideUserTip("post_menu");
+  },
 });

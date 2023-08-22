@@ -1201,13 +1201,11 @@ div.topic-navigation.with-timeline {
         border: 0.0625rem solid #2A3362;
         background-color: #ffffff;
         border-radius: 0.1875rem;
+        color: #2A3362;
 
         &:hover {
           background-color: #c9cfe8;
-
-          svg {
-            color: $primary;
-          }
+          color: $primary;
         }
 
         &:active {
@@ -1227,7 +1225,6 @@ div.topic-navigation.with-timeline {
           font-size: 0.7rem;
           font-weight: 500;
           line-height: 0.85rem;
-          color: #2A3362;
         }
       }
 
@@ -2117,6 +2114,7 @@ body:not(.ios-safari-composer-hacks) #reply-control.open {
     align-items: center;
     gap: 24px;
     flex-wrap: nowrap;
+    border: none;
 
     .btn {
       margin: 0;

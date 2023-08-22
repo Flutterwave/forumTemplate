@@ -911,8 +911,12 @@ div.topic-navigation.with-timeline {
     grid-template-columns: 2.25fr 1fr;
     column-gap: 5vw;
 
-    &>:not(.container.posts):not(.more-content-wrapper) {
+    &>:not(.container.posts):not(.more-topics__container):not(.ember-view) {
       display: none;
+    }
+
+    &>.ember-view {
+      order: 3;
     }
     
     &>.container.posts {
@@ -926,9 +930,9 @@ div.topic-navigation.with-timeline {
     //   display: none;
     // }
 
-    // #topic-title {
-    //   display: none;
-    // }
+    #topic-title {
+      display: none;
+    }
 
     .more-content-wrapper {
       grid-column: 2/-1;

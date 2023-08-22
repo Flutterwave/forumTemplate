@@ -917,7 +917,6 @@ div.topic-navigation.with-timeline {
       &.posts {
         display: grid;
         margin: 0;
-        grid-column: 1/2;
         grid-template-areas: "posts";
         grid-template-columns: auto;
         order: -2;
@@ -933,8 +932,6 @@ div.topic-navigation.with-timeline {
     }
 
     .more-topics__container {
-      grid-column: 2/-1;
-      grid-row: 2/7;
       order: -1;
 
       .more-topics__lists {

@@ -25,7 +25,7 @@ import { transformBasicPost } from "discourse/lib/transform-post";
 import autoGroupFlairForUser from "discourse/lib/avatar-flair";
 import showModal from "discourse/lib/show-modal";
 import { nativeShare } from "discourse/lib/pwa-utils";
-import { hideUserTip } from "discourse/lib/user-tips";
+// import { hideUserTip } from "discourse/lib/user-tips";
 
 import RenderGlimmer from "discourse/widgets/render-glimmer";
 import { hbs as HBS } from "ember-cli-htmlbars";
@@ -1171,11 +1171,11 @@ export default createWidget("post", {
     });
   },
 
-  destroy() {
-    hideUserTip("post_menu");
-  },
+  // destroy() {
+  //   hideUserTip("post_menu");
+  // },
 
-  willRerenderWidget() {
-    hideUserTip("post_menu");
-  },
+  // willRerenderWidget() {
+  //   hideUserTip("post_menu");
+  // },
 });

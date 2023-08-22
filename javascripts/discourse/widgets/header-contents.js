@@ -25,6 +25,6 @@ createWidget("header-contents", {
       {{/if}}
     {{/if}}
 
-    <div class="panel clearfix" role="navigation">{{yield}}</div>
+    <div class="panel clearfix" role="navigation"></div>
   `,
 });

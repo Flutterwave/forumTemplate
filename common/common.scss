@@ -914,7 +914,7 @@ div.topic-navigation.with-timeline {
     &>.container {
       display: none;
 
-      .posts {
+      &.posts {
         display: grid;
         margin: 0;
         grid-column: 1/2;
@@ -932,13 +932,10 @@ div.topic-navigation.with-timeline {
       display: none;
     }
 
-    &>.more-topics__container {
-      order: -1;
-    }
-
     .more-topics__container {
       grid-column: 2/-1;
       grid-row: 2/7;
+      order: -1;
 
       .more-topics__lists {
         margin: 0;

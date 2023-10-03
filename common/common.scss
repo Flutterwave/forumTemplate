@@ -149,7 +149,7 @@ $tertiary: #ffffff;
 }
 
 html {
-  font-size: 16px; // set base reference from rem units
+  font-size: 16px !important; // set base reference from rem units
 }
 
 body {
@@ -335,9 +335,9 @@ body {
       }
     }
 
-    & > :not(.btn-default) {
-      display: none;
-    }
+    // & > :not(.btn-default) {
+    //   display: none;
+    // }
   }
 }
 
